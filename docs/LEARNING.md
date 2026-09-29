@@ -95,6 +95,20 @@ The branch holds `checkpoints.sqlite` (LangGraph's official SQLite checkpointer)
 
 **Interview line:** *"Cheap checks run first, so rejected inputs never cost API credit, and the audit log is honest about the one control a solo demo can't enforce."*
 
+### 10. What the first live test taught me (a good interview story)
+
+**What happened:** the first test issue ran about a minute before the API key secret was saved. The pipeline failed safe: it held the invoice for a person, showed the error, and spent $0. But the code still recorded that attempt as "processed". It used up a daily-cap slot and claimed the PDF hash, so `/retry` would have said "already processed", and re-submitting would have been flagged as a duplicate.
+
+**The fix:**
+- Check the key up front.
+- Record a run that reads nothing as "failed": no hash claimed, no cap slot used.
+- Give each retry a fresh LangGraph thread.
+- Correct the bad record with an appended `voided` event rather than editing history, so the audit log stays append-only.
+
+Three new tests cover it. The retry then ran for real ($0.033), was held for the price variance and short shipment, and `/approve` posted it and closed the issue.
+
+**Interview line:** *"My first live run exposed that failed attempts were being counted as processed. I made failures release their duplicate-hash and quota claims, and I corrected the record by appending a void event, because you don't rewrite an audit trail."*
+
 ---
 
 ## Parked: Azure
