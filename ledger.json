@@ -1,0 +1,21 @@
+[
+  {
+    "document_number": "5105900001",
+    "invoice_date": "2026-09-09",
+    "invoice_number": "LIS-0003353",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "60.0"
+      },
+      {
+        "po_line": 20,
+        "quantity": "48.0"
+      }
+    ],
+    "po_number": "4500012118",
+    "posted_date": "2026-09-29",
+    "total": "1564.2",
+    "vendor_id": "V1008"
+  }
+]
