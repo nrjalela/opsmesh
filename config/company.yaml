@@ -1,0 +1,7 @@
+# The (fictional) client. All data in this project is synthetic.
+name: Corio Packaging Pty Ltd
+abn: "89032851097"
+address:
+  - 18 Foundry Lane
+  - Corio VIC 3214
+ap_email: accounts.payable@coriopackaging.example

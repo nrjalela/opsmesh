@@ -1,3 +1,20 @@
+# Secrets — never commit
 .env
-venv/
-node_modules/
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Runtime state (live-mode checkpoints, scratch)
+data/runtime/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

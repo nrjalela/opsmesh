@@ -1,0 +1,1636 @@
+[
+  {
+    "po_number": "4500012003",
+    "vendor_id": "V1001",
+    "order_date": "2026-06-19",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "RES-PP-HOMO",
+        "description": "PP homopolymer resin",
+        "quantity": "4",
+        "uom": "t",
+        "unit_price": "1690.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "RES-PET-BTL",
+        "description": "PET bottle-grade resin",
+        "quantity": "3",
+        "uom": "t",
+        "unit_price": "1780.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012005",
+    "vendor_id": "V1001",
+    "order_date": "2026-06-25",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "RES-HDPE-BM",
+        "description": "HDPE blow-moulding resin",
+        "quantity": "4",
+        "uom": "t",
+        "unit_price": "1965.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "RES-PET-BTL",
+        "description": "PET bottle-grade resin",
+        "quantity": "4",
+        "uom": "t",
+        "unit_price": "1780.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012009",
+    "vendor_id": "V1002",
+    "order_date": "2026-07-03",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "CTN-DIV-12",
+        "description": "12-cell carton divider",
+        "quantity": "1400",
+        "uom": "ea",
+        "unit_price": "0.38",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "CTN-RSC-400",
+        "description": "RSC carton 400x300x250 C-flute",
+        "quantity": "3600",
+        "uom": "ea",
+        "unit_price": "1.12",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012011",
+    "vendor_id": "V1002",
+    "order_date": "2026-06-29",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "CTN-DIV-12",
+        "description": "12-cell carton divider",
+        "quantity": "1000",
+        "uom": "ea",
+        "unit_price": "0.38",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012012",
+    "vendor_id": "V1003",
+    "order_date": "2026-07-10",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "INK-FLX-BK",
+        "description": "Flexo process ink - black",
+        "quantity": "115",
+        "uom": "kg",
+        "unit_price": "10.90",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "VAR-OPV-W",
+        "description": "Water-based overprint varnish",
+        "quantity": "51",
+        "uom": "kg",
+        "unit_price": "8.60",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012016",
+    "vendor_id": "V1003",
+    "order_date": "2026-06-18",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "INK-FLX-YL",
+        "description": "Flexo process ink - yellow",
+        "quantity": "57",
+        "uom": "kg",
+        "unit_price": "11.80",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "INK-FLX-BK",
+        "description": "Flexo process ink - black",
+        "quantity": "64",
+        "uom": "kg",
+        "unit_price": "10.90",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012019",
+    "vendor_id": "V1004",
+    "order_date": "2026-07-13",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FRT-WHARF",
+        "description": "Wharf cartage and container handling",
+        "quantity": "13",
+        "uom": "ea",
+        "unit_price": "385.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012022",
+    "vendor_id": "V1004",
+    "order_date": "2026-06-12",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FRT-WHARF",
+        "description": "Wharf cartage and container handling",
+        "quantity": "9",
+        "uom": "ea",
+        "unit_price": "385.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      },
+      {
+        "line_no": 20,
+        "item_code": "FRT-INTL-SEA",
+        "description": "International sea freight - Ningbo to Melbourne, 20ft",
+        "quantity": "4",
+        "uom": "ctr",
+        "unit_price": "2480.00",
+        "tax_code": "FRE",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012026",
+    "vendor_id": "V1005",
+    "order_date": "2026-06-21",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "ADH-PVA-CS",
+        "description": "PVA case-seal adhesive, 1000 L IBC",
+        "quantity": "4",
+        "uom": "ea",
+        "unit_price": "2340.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "ADH-HM-EVA",
+        "description": "Hot-melt adhesive EVA, 20 kg bag",
+        "quantity": "38",
+        "uom": "bag",
+        "unit_price": "96.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012028",
+    "vendor_id": "V1005",
+    "order_date": "2026-06-09",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "ADH-HM-EVA",
+        "description": "Hot-melt adhesive EVA, 20 kg bag",
+        "quantity": "96",
+        "uom": "bag",
+        "unit_price": "96.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "ADH-PVA-CS",
+        "description": "PVA case-seal adhesive, 1000 L IBC",
+        "quantity": "3",
+        "uom": "ea",
+        "unit_price": "2340.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012032",
+    "vendor_id": "V1006",
+    "order_date": "2026-07-06",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-STR-23",
+        "description": "Machine stretch film 23um x 500mm",
+        "quantity": "91",
+        "uom": "roll",
+        "unit_price": "38.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012035",
+    "vendor_id": "V1006",
+    "order_date": "2026-06-17",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-STR-17H",
+        "description": "Hand stretch film 17um x 450mm",
+        "quantity": "95",
+        "uom": "roll",
+        "unit_price": "21.90",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "FLM-STR-23",
+        "description": "Machine stretch film 23um x 500mm",
+        "quantity": "136",
+        "uom": "roll",
+        "unit_price": "38.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012039",
+    "vendor_id": "V1007",
+    "order_date": "2026-06-20",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "PAL-AUS-STD",
+        "description": "Timber pallet 1165x1165 standard",
+        "quantity": "116",
+        "uom": "ea",
+        "unit_price": "24.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "PAL-EXP-HT",
+        "description": "Heat-treated export pallet 1200x1000",
+        "quantity": "112",
+        "uom": "ea",
+        "unit_price": "31.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012043",
+    "vendor_id": "V1007",
+    "order_date": "2026-06-11",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "PAL-EXP-HT",
+        "description": "Heat-treated export pallet 1200x1000",
+        "quantity": "34",
+        "uom": "ea",
+        "unit_price": "31.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012045",
+    "vendor_id": "V1008",
+    "order_date": "2026-06-21",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "MRO-BRG-6205",
+        "description": "Deep groove bearing 6205-2RS",
+        "quantity": "78",
+        "uom": "ea",
+        "unit_price": "14.80",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012049",
+    "vendor_id": "V1008",
+    "order_date": "2026-06-27",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "MRO-GRS-LI2",
+        "description": "Lithium grease EP2, 450 g",
+        "quantity": "47",
+        "uom": "ea",
+        "unit_price": "9.75",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012053",
+    "vendor_id": "V1009",
+    "order_date": "2026-07-01",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "LBL-PS-100150",
+        "description": "PS label 100x150, per 1000",
+        "quantity": "23",
+        "uom": "1000",
+        "unit_price": "21.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012057",
+    "vendor_id": "V1009",
+    "order_date": "2026-06-26",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "LBL-SHIP-A6",
+        "description": "Shipping label A6, per 1000",
+        "quantity": "52",
+        "uom": "1000",
+        "unit_price": "18.40",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "LBL-PS-100150",
+        "description": "PS label 100x150, per 1000",
+        "quantity": "74",
+        "uom": "1000",
+        "unit_price": "21.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012061",
+    "vendor_id": "V1010",
+    "order_date": "2026-06-28",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "SVC-CALLOUT",
+        "description": "Emergency call-out fee",
+        "quantity": "5",
+        "uom": "ea",
+        "unit_price": "280.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012063",
+    "vendor_id": "V1010",
+    "order_date": "2026-06-06",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "SVC-PM-L3",
+        "description": "Preventive maintenance - Line 3 blow moulder",
+        "quantity": "15",
+        "uom": "hr",
+        "unit_price": "135.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      },
+      {
+        "line_no": 20,
+        "item_code": "SVC-CALLOUT",
+        "description": "Emergency call-out fee",
+        "quantity": "6",
+        "uom": "ea",
+        "unit_price": "280.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012067",
+    "vendor_id": "V1011",
+    "order_date": "2026-07-07",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "CHM-ACID-CIP",
+        "description": "Acid CIP detergent, 200 L drum",
+        "quantity": "19",
+        "uom": "drum",
+        "unit_price": "412.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "CHM-SAN-PAA",
+        "description": "Peracetic acid sanitiser, 20 L",
+        "quantity": "113",
+        "uom": "ea",
+        "unit_price": "96.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012068",
+    "vendor_id": "V1011",
+    "order_date": "2026-06-27",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "CHM-SAN-PAA",
+        "description": "Peracetic acid sanitiser, 20 L",
+        "quantity": "39",
+        "uom": "ea",
+        "unit_price": "96.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "CHM-NAOH-30",
+        "description": "Caustic soda 30% bulk",
+        "quantity": "1400",
+        "uom": "L",
+        "unit_price": "1.425",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012072",
+    "vendor_id": "V1012",
+    "order_date": "2026-07-01",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "TOOL-SPR-KIT",
+        "description": "Mould spares kit",
+        "quantity": "3",
+        "uom": "ea",
+        "unit_price": "3450.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012073",
+    "vendor_id": "V1012",
+    "order_date": "2026-07-05",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "TOOL-SPR-KIT",
+        "description": "Mould spares kit",
+        "quantity": "4",
+        "uom": "ea",
+        "unit_price": "3450.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012077",
+    "vendor_id": "V1013",
+    "order_date": "2026-06-15",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "ELEC-SWBD",
+        "description": "Switchboard upgrade - Building B, fixed price",
+        "quantity": "3",
+        "uom": "ea",
+        "unit_price": "9850.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      },
+      {
+        "line_no": 20,
+        "item_code": "ELEC-LAB",
+        "description": "Electrician labour",
+        "quantity": "19",
+        "uom": "hr",
+        "unit_price": "118.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012081",
+    "vendor_id": "V1013",
+    "order_date": "2026-06-27",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "ELEC-LAB",
+        "description": "Electrician labour",
+        "quantity": "5",
+        "uom": "hr",
+        "unit_price": "118.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012085",
+    "vendor_id": "V1014",
+    "order_date": "2026-06-18",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-BOPP-20",
+        "description": "BOPP film 20um x 1000mm, 6000 m roll",
+        "quantity": "9",
+        "uom": "roll",
+        "unit_price": "265.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012089",
+    "vendor_id": "V1014",
+    "order_date": "2026-06-28",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-CPP-30",
+        "description": "CPP sealant film 30um x 1000mm",
+        "quantity": "17",
+        "uom": "roll",
+        "unit_price": "288.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "FLM-BOPP-20",
+        "description": "BOPP film 20um x 1000mm, 6000 m roll",
+        "quantity": "14",
+        "uom": "roll",
+        "unit_price": "265.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012091",
+    "vendor_id": "V1015",
+    "order_date": "2026-06-11",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "GAS-RENT-G",
+        "description": "Cylinder rental, G-size (monthly)",
+        "quantity": "69",
+        "uom": "ea",
+        "unit_price": "12.80",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012095",
+    "vendor_id": "V1015",
+    "order_date": "2026-06-17",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "GAS-RENT-G",
+        "description": "Cylinder rental, G-size (monthly)",
+        "quantity": "53",
+        "uom": "ea",
+        "unit_price": "12.80",
+        "tax_code": "GST",
+        "line_type": "service"
+      },
+      {
+        "line_no": 20,
+        "item_code": "GAS-N2-G",
+        "description": "Nitrogen, G-size cylinder refill",
+        "quantity": "47",
+        "uom": "ea",
+        "unit_price": "64.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012096",
+    "vendor_id": "V1003",
+    "order_date": "2026-08-08",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "INK-FLX-CY",
+        "description": "Flexo process ink - cyan",
+        "quantity": "120",
+        "uom": "kg",
+        "unit_price": "12.35",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "INK-FLX-MG",
+        "description": "Flexo process ink - magenta",
+        "quantity": "120",
+        "uom": "kg",
+        "unit_price": "12.35",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 30,
+        "item_code": "INK-FLX-YL",
+        "description": "Flexo process ink - yellow",
+        "quantity": "100",
+        "uom": "kg",
+        "unit_price": "11.80",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 40,
+        "item_code": "INK-FLX-BK",
+        "description": "Flexo process ink - black",
+        "quantity": "80",
+        "uom": "kg",
+        "unit_price": "10.90",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012099",
+    "vendor_id": "V1007",
+    "order_date": "2026-07-29",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "PAL-AUS-STD",
+        "description": "Timber pallet 1165x1165 standard",
+        "quantity": "240",
+        "uom": "ea",
+        "unit_price": "24.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012100",
+    "vendor_id": "V1008",
+    "order_date": "2026-07-30",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "MRO-BRG-6205",
+        "description": "Deep groove bearing 6205-2RS",
+        "quantity": "40",
+        "uom": "ea",
+        "unit_price": "14.80",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "MRO-VBELT-B52",
+        "description": "V-belt B52",
+        "quantity": "12",
+        "uom": "ea",
+        "unit_price": "22.40",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 30,
+        "item_code": "MRO-GRS-LI2",
+        "description": "Lithium grease EP2, 450 g",
+        "quantity": "24",
+        "uom": "ea",
+        "unit_price": "9.75",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 40,
+        "item_code": "MRO-GLV-NIT",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": "30",
+        "uom": "box",
+        "unit_price": "11.20",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012102",
+    "vendor_id": "V1008",
+    "order_date": "2026-08-02",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "MRO-VBELT-B52",
+        "description": "V-belt B52",
+        "quantity": "20",
+        "uom": "ea",
+        "unit_price": "22.40",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "MRO-GLV-NIT",
+        "description": "Nitrile gloves, box of 100",
+        "quantity": "50",
+        "uom": "box",
+        "unit_price": "11.20",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012103",
+    "vendor_id": "V1005",
+    "order_date": "2026-08-08",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "ADH-HM-EVA",
+        "description": "Hot-melt adhesive EVA, 20 kg bag",
+        "quantity": "40",
+        "uom": "bag",
+        "unit_price": "96.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "ADH-PVA-CS",
+        "description": "PVA case-seal adhesive, 1000 L IBC",
+        "quantity": "1",
+        "uom": "ea",
+        "unit_price": "2340.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012106",
+    "vendor_id": "V1002",
+    "order_date": "2026-07-28",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "CTN-RSC-400",
+        "description": "RSC carton 400x300x250 C-flute",
+        "quantity": "4000",
+        "uom": "ea",
+        "unit_price": "1.12",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "CTN-DIV-12",
+        "description": "12-cell carton divider",
+        "quantity": "4000",
+        "uom": "ea",
+        "unit_price": "0.38",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012108",
+    "vendor_id": "V1015",
+    "order_date": "2026-07-30",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "GAS-N2-G",
+        "description": "Nitrogen, G-size cylinder refill",
+        "quantity": "12",
+        "uom": "ea",
+        "unit_price": "64.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "GAS-RENT-G",
+        "description": "Cylinder rental, G-size (monthly)",
+        "quantity": "12",
+        "uom": "ea",
+        "unit_price": "12.80",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012110",
+    "vendor_id": "V1014",
+    "order_date": "2026-08-07",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-BOPP-20",
+        "description": "BOPP film 20um x 1000mm, 6000 m roll",
+        "quantity": "30",
+        "uom": "roll",
+        "unit_price": "265.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "FLM-CPP-30",
+        "description": "CPP sealant film 30um x 1000mm",
+        "quantity": "10",
+        "uom": "roll",
+        "unit_price": "288.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012111",
+    "vendor_id": "V1013",
+    "order_date": "2026-08-09",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "ELEC-LAB",
+        "description": "Electrician labour",
+        "quantity": "40",
+        "uom": "hr",
+        "unit_price": "118.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012114",
+    "vendor_id": "V1006",
+    "order_date": "2026-08-01",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-STR-23",
+        "description": "Machine stretch film 23um x 500mm",
+        "quantity": "120",
+        "uom": "roll",
+        "unit_price": "38.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012115",
+    "vendor_id": "V1010",
+    "order_date": "2026-08-16",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "SVC-PM-L3",
+        "description": "Preventive maintenance - Line 3 blow moulder",
+        "quantity": "40",
+        "uom": "hr",
+        "unit_price": "135.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      },
+      {
+        "line_no": 20,
+        "item_code": "SVC-CALLOUT",
+        "description": "Emergency call-out fee",
+        "quantity": "1",
+        "uom": "ea",
+        "unit_price": "280.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012116",
+    "vendor_id": "V1005",
+    "order_date": "2026-08-01",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "ADH-HM-EVA",
+        "description": "Hot-melt adhesive EVA, 20 kg bag",
+        "quantity": "40",
+        "uom": "bag",
+        "unit_price": "96.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012118",
+    "vendor_id": "V1008",
+    "order_date": "2026-08-20",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "MRO-BRG-6205",
+        "description": "Deep groove bearing 6205-2RS",
+        "quantity": "60",
+        "uom": "ea",
+        "unit_price": "14.80",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "MRO-GRS-LI2",
+        "description": "Lithium grease EP2, 450 g",
+        "quantity": "48",
+        "uom": "ea",
+        "unit_price": "9.75",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012122",
+    "vendor_id": "V1014",
+    "order_date": "2026-08-16",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-BOPP-20",
+        "description": "BOPP film 20um x 1000mm, 6000 m roll",
+        "quantity": "24",
+        "uom": "roll",
+        "unit_price": "265.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012124",
+    "vendor_id": "V1003",
+    "order_date": "2026-08-22",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "INK-FLX-CY",
+        "description": "Flexo process ink - cyan",
+        "quantity": "150",
+        "uom": "kg",
+        "unit_price": "12.35",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "INK-FLX-BK",
+        "description": "Flexo process ink - black",
+        "quantity": "100",
+        "uom": "kg",
+        "unit_price": "10.90",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012128",
+    "vendor_id": "V1001",
+    "order_date": "2026-08-17",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "RES-HDPE-BM",
+        "description": "HDPE blow-moulding resin",
+        "quantity": "10",
+        "uom": "t",
+        "unit_price": "1965.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012130",
+    "vendor_id": "V1009",
+    "order_date": "2026-08-13",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "LBL-PS-100150",
+        "description": "PS label 100x150, per 1000",
+        "quantity": "180",
+        "uom": "1000",
+        "unit_price": "21.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012132",
+    "vendor_id": "V1011",
+    "order_date": "2026-08-09",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "CHM-NAOH-30",
+        "description": "Caustic soda 30% bulk",
+        "quantity": "18000",
+        "uom": "L",
+        "unit_price": "1.425",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012133",
+    "vendor_id": "V1001",
+    "order_date": "2026-08-13",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "RES-PET-BTL",
+        "description": "PET bottle-grade resin",
+        "quantity": "8",
+        "uom": "t",
+        "unit_price": "1780.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012137",
+    "vendor_id": "V1001",
+    "order_date": "2026-08-21",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "RES-PP-HOMO",
+        "description": "PP homopolymer resin",
+        "quantity": "6",
+        "uom": "t",
+        "unit_price": "1690.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012140",
+    "vendor_id": "V1015",
+    "order_date": "2026-08-04",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "GAS-N2-G",
+        "description": "Nitrogen, G-size cylinder refill",
+        "quantity": "18",
+        "uom": "ea",
+        "unit_price": "64.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "GAS-RENT-G",
+        "description": "Cylinder rental, G-size (monthly)",
+        "quantity": "20",
+        "uom": "ea",
+        "unit_price": "12.80",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012141",
+    "vendor_id": "V1001",
+    "order_date": "2026-08-21",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "RES-PET-BTL",
+        "description": "PET bottle-grade resin",
+        "quantity": "20",
+        "uom": "t",
+        "unit_price": "1780.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012142",
+    "vendor_id": "V1002",
+    "order_date": "2026-08-24",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "SHT-BC-1200",
+        "description": "B/C double-wall sheet 1200x1000",
+        "quantity": "5000",
+        "uom": "ea",
+        "unit_price": "2.95",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012144",
+    "vendor_id": "V1013",
+    "order_date": "2026-08-16",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "ELEC-SWBD",
+        "description": "Switchboard upgrade - Building B, fixed price",
+        "quantity": "1",
+        "uom": "ea",
+        "unit_price": "9850.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      },
+      {
+        "line_no": 20,
+        "item_code": "ELEC-LAB",
+        "description": "Electrician labour",
+        "quantity": "40",
+        "uom": "hr",
+        "unit_price": "118.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012145",
+    "vendor_id": "V1002",
+    "order_date": "2026-08-22",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "CTN-RSC-400",
+        "description": "RSC carton 400x300x250 C-flute",
+        "quantity": "18000",
+        "uom": "ea",
+        "unit_price": "1.12",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "CTN-DIV-12",
+        "description": "12-cell carton divider",
+        "quantity": "5000",
+        "uom": "ea",
+        "unit_price": "0.38",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012147",
+    "vendor_id": "V1011",
+    "order_date": "2026-08-09",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "CHM-ACID-CIP",
+        "description": "Acid CIP detergent, 200 L drum",
+        "quantity": "6",
+        "uom": "drum",
+        "unit_price": "412.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "CHM-SAN-PAA",
+        "description": "Peracetic acid sanitiser, 20 L",
+        "quantity": "12",
+        "uom": "ea",
+        "unit_price": "96.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012148",
+    "vendor_id": "V1002",
+    "order_date": "2026-07-22",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "CTN-RSC-400",
+        "description": "RSC carton 400x300x250 C-flute",
+        "quantity": "8800",
+        "uom": "ea",
+        "unit_price": "1.12",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012149",
+    "vendor_id": "V1008",
+    "order_date": "2026-07-23",
+    "buyer": "S. Kowalski",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "MRO-BRG-6205",
+        "description": "Deep groove bearing 6205-2RS",
+        "quantity": "60",
+        "uom": "ea",
+        "unit_price": "14.80",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "MRO-GRS-LI2",
+        "description": "Lithium grease EP2, 450 g",
+        "quantity": "72",
+        "uom": "ea",
+        "unit_price": "9.75",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012153",
+    "vendor_id": "V1004",
+    "order_date": "2026-08-29",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FRT-INTL-SEA",
+        "description": "International sea freight - Ningbo to Melbourne, 20ft",
+        "quantity": "1",
+        "uom": "ctr",
+        "unit_price": "2480.00",
+        "tax_code": "FRE",
+        "line_type": "service"
+      },
+      {
+        "line_no": 20,
+        "item_code": "FRT-WHARF",
+        "description": "Wharf cartage and container handling",
+        "quantity": "1",
+        "uom": "ea",
+        "unit_price": "385.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      },
+      {
+        "line_no": 30,
+        "item_code": "FRT-LOCAL",
+        "description": "Local cartage - Corio to Laverton North, B-double",
+        "quantity": "1",
+        "uom": "trip",
+        "unit_price": "1150.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012154",
+    "vendor_id": "V1009",
+    "order_date": "2026-08-12",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "LBL-SHIP-A6",
+        "description": "Shipping label A6, per 1000",
+        "quantity": "150",
+        "uom": "1000",
+        "unit_price": "18.40",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012158",
+    "vendor_id": "V1004",
+    "order_date": "2026-08-18",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FRT-LOCAL",
+        "description": "Local cartage - Corio to Laverton North, B-double",
+        "quantity": "4",
+        "uom": "trip",
+        "unit_price": "1150.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012160",
+    "vendor_id": "V1012",
+    "order_date": "2026-08-26",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "TOOL-MLD-PF28",
+        "description": "8-cavity preform mould, 28 mm neck",
+        "quantity": "1",
+        "uom": "set",
+        "unit_price": "118000.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "TOOL-SPR-KIT",
+        "description": "Mould spares kit",
+        "quantity": "1",
+        "uom": "ea",
+        "unit_price": "3450.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012163",
+    "vendor_id": "V1009",
+    "order_date": "2026-08-20",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "LBL-PS-100150",
+        "description": "PS label 100x150, per 1000",
+        "quantity": "120",
+        "uom": "1000",
+        "unit_price": "21.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012165",
+    "vendor_id": "V1006",
+    "order_date": "2026-08-18",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-STR-23",
+        "description": "Machine stretch film 23um x 500mm",
+        "quantity": "120",
+        "uom": "roll",
+        "unit_price": "38.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012166",
+    "vendor_id": "V1004",
+    "order_date": "2026-09-01",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FRT-INTL-SEA",
+        "description": "International sea freight - Ningbo to Melbourne, 20ft",
+        "quantity": "1",
+        "uom": "ctr",
+        "unit_price": "2480.00",
+        "tax_code": "FRE",
+        "line_type": "service"
+      },
+      {
+        "line_no": 20,
+        "item_code": "FRT-WHARF",
+        "description": "Wharf cartage and container handling",
+        "quantity": "1",
+        "uom": "ea",
+        "unit_price": "385.00",
+        "tax_code": "GST",
+        "line_type": "service"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012167",
+    "vendor_id": "V1007",
+    "order_date": "2026-09-04",
+    "buyer": "J. Okafor",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "PAL-AUS-STD",
+        "description": "Timber pallet 1165x1165 standard",
+        "quantity": "300",
+        "uom": "ea",
+        "unit_price": "24.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012168",
+    "vendor_id": "V1006",
+    "order_date": "2026-09-04",
+    "buyer": "R. Delaney",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-STR-23",
+        "description": "Machine stretch film 23um x 500mm",
+        "quantity": "96",
+        "uom": "roll",
+        "unit_price": "38.50",
+        "tax_code": "GST",
+        "line_type": "goods"
+      },
+      {
+        "line_no": 20,
+        "item_code": "FLM-STR-17H",
+        "description": "Hand stretch film 17um x 450mm",
+        "quantity": "48",
+        "uom": "roll",
+        "unit_price": "21.90",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  },
+  {
+    "po_number": "4500012169",
+    "vendor_id": "V1014",
+    "order_date": "2026-08-21",
+    "buyer": "M. Tran",
+    "lines": [
+      {
+        "line_no": 10,
+        "item_code": "FLM-CPP-30",
+        "description": "CPP sealant film 30um x 1000mm",
+        "quantity": "36",
+        "uom": "roll",
+        "unit_price": "288.00",
+        "tax_code": "GST",
+        "line_type": "goods"
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+anthropic==1.9.0
+langgraph==1.2.12
+pydantic==2.13.5
+reportlab==5.0.1
+pypdfium2==5.13.0
+streamlit==1.64.0
+pandas==3.0.6
+altair==6.3.0
+PyYAML==6.0.3
+python-dotenv==1.2.3

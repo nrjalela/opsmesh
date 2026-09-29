@@ -1,0 +1,9 @@
+[project]
+name = "opsmesh"
+version = "0.1.0"
+description = "Multi-agent procure-to-pay automation demo (synthetic data)"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

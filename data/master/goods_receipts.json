@@ -1,0 +1,800 @@
+[
+  {
+    "gr_number": "5000034005",
+    "po_number": "4500012003",
+    "receipt_date": "2026-07-06",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "4",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "3",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034009",
+    "po_number": "4500012005",
+    "receipt_date": "2026-07-19",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "4",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "4",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034014",
+    "po_number": "4500012009",
+    "receipt_date": "2026-07-25",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "1400",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "3600",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034015",
+    "po_number": "4500012011",
+    "receipt_date": "2026-07-10",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "1000",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034020",
+    "po_number": "4500012012",
+    "receipt_date": "2026-07-25",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "115",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "51",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034025",
+    "po_number": "4500012016",
+    "receipt_date": "2026-07-14",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "57",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "64",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034030",
+    "po_number": "4500012026",
+    "receipt_date": "2026-07-09",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "4",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "38",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034031",
+    "po_number": "4500012028",
+    "receipt_date": "2026-07-01",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "96",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "3",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034036",
+    "po_number": "4500012032",
+    "receipt_date": "2026-07-22",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "91",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034042",
+    "po_number": "4500012035",
+    "receipt_date": "2026-07-13",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "95",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "136",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034046",
+    "po_number": "4500012039",
+    "receipt_date": "2026-07-03",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "116",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "112",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034049",
+    "po_number": "4500012043",
+    "receipt_date": "2026-06-30",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "34",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034052",
+    "po_number": "4500012045",
+    "receipt_date": "2026-07-16",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "78",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034058",
+    "po_number": "4500012049",
+    "receipt_date": "2026-07-18",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "47",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034059",
+    "po_number": "4500012053",
+    "receipt_date": "2026-07-18",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "23",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034064",
+    "po_number": "4500012057",
+    "receipt_date": "2026-07-16",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "52",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "74",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034068",
+    "po_number": "4500012067",
+    "receipt_date": "2026-07-20",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "19",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "113",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034073",
+    "po_number": "4500012068",
+    "receipt_date": "2026-07-21",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "39",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "1400",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034079",
+    "po_number": "4500012072",
+    "receipt_date": "2026-07-14",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "3",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034085",
+    "po_number": "4500012073",
+    "receipt_date": "2026-07-23",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "4",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034087",
+    "po_number": "4500012085",
+    "receipt_date": "2026-07-10",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "9",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034090",
+    "po_number": "4500012089",
+    "receipt_date": "2026-07-23",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "17",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "14",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034093",
+    "po_number": "4500012095",
+    "receipt_date": "2026-07-11",
+    "lines": [
+      {
+        "po_line": 20,
+        "quantity": "47",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034097",
+    "po_number": "4500012096",
+    "receipt_date": "2026-08-29",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "120",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "120",
+        "note": null
+      },
+      {
+        "po_line": 30,
+        "quantity": "100",
+        "note": null
+      },
+      {
+        "po_line": 40,
+        "quantity": "80",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034100",
+    "po_number": "4500012099",
+    "receipt_date": "2026-08-26",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "240",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034103",
+    "po_number": "4500012100",
+    "receipt_date": "2026-09-01",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "40",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "12",
+        "note": null
+      },
+      {
+        "po_line": 30,
+        "quantity": "24",
+        "note": null
+      },
+      {
+        "po_line": 40,
+        "quantity": "30",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034104",
+    "po_number": "4500012102",
+    "receipt_date": "2026-08-29",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "20",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "50",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034108",
+    "po_number": "4500012103",
+    "receipt_date": "2026-08-28",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "40",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "1",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034113",
+    "po_number": "4500012106",
+    "receipt_date": "2026-08-30",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "4000",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "4000",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034119",
+    "po_number": "4500012108",
+    "receipt_date": "2026-08-29",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "10",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034123",
+    "po_number": "4500012110",
+    "receipt_date": "2026-09-03",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "30",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "10",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034124",
+    "po_number": "4500012114",
+    "receipt_date": "2026-09-02",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "96",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034126",
+    "po_number": "4500012116",
+    "receipt_date": "2026-09-07",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "40",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034131",
+    "po_number": "4500012118",
+    "receipt_date": "2026-09-05",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "60",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "36",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034134",
+    "po_number": "4500012122",
+    "receipt_date": "2026-09-02",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "24",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034137",
+    "po_number": "4500012124",
+    "receipt_date": "2026-09-04",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "150",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "100",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034139",
+    "po_number": "4500012128",
+    "receipt_date": "2026-08-05",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "5",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034141",
+    "po_number": "4500012128",
+    "receipt_date": "2026-09-07",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "5",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034145",
+    "po_number": "4500012130",
+    "receipt_date": "2026-09-09",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "180",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034150",
+    "po_number": "4500012132",
+    "receipt_date": "2026-09-06",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "18000",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034156",
+    "po_number": "4500012133",
+    "receipt_date": "2026-09-08",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "8",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034160",
+    "po_number": "4500012140",
+    "receipt_date": "2026-09-08",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "18",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034165",
+    "po_number": "4500012141",
+    "receipt_date": "2026-09-13",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "20",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034166",
+    "po_number": "4500012142",
+    "receipt_date": "2026-09-15",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "3000",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034170",
+    "po_number": "4500012145",
+    "receipt_date": "2026-09-14",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "18000",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "5000",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034172",
+    "po_number": "4500012147",
+    "receipt_date": "2026-09-11",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "6",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "12",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034175",
+    "po_number": "4500012148",
+    "receipt_date": "2026-08-13",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "4400",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034177",
+    "po_number": "4500012149",
+    "receipt_date": "2026-08-14",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "30",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "36",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034182",
+    "po_number": "4500012154",
+    "receipt_date": "2026-09-15",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "150",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034186",
+    "po_number": "4500012160",
+    "receipt_date": "2026-09-17",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "1",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "1",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034187",
+    "po_number": "4500012165",
+    "receipt_date": "2026-09-20",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "120",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034193",
+    "po_number": "4500012167",
+    "receipt_date": "2026-09-18",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "280",
+        "note": "20 pallets rejected at receipt: broken bearers"
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034197",
+    "po_number": "4500012168",
+    "receipt_date": "2026-09-22",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "96",
+        "note": null
+      },
+      {
+        "po_line": 20,
+        "quantity": "48",
+        "note": null
+      }
+    ]
+  },
+  {
+    "gr_number": "5000034201",
+    "po_number": "4500012169",
+    "receipt_date": "2026-08-19",
+    "lines": [
+      {
+        "po_line": 10,
+        "quantity": "18",
+        "note": null
+      }
+    ]
+  }
+]

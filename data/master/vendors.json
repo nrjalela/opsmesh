@@ -1,0 +1,212 @@
+[
+  {
+    "vendor_id": "V1001",
+    "name": "Barwon Polymers Pty Ltd",
+    "abn": "64939659707",
+    "gst_registered": true,
+    "payment_terms": "EOM30",
+    "category": "Resin",
+    "email": "accounts@barwonpolymers.example",
+    "address": [
+      "7 Resin Court",
+      "Lara VIC 3212"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1002",
+    "name": "Surf Coast Corrugated Pty Ltd",
+    "abn": "27591768909",
+    "gst_registered": true,
+    "payment_terms": "EOM30",
+    "category": "Corrugated",
+    "email": "ar@surfcoastcorrugated.example",
+    "address": [
+      "22 Fluting Way",
+      "Breakwater VIC 3219"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1003",
+    "name": "Bellarine Inks & Coatings Pty Ltd",
+    "abn": "30214928551",
+    "gst_registered": true,
+    "payment_terms": "NET30",
+    "category": "Inks",
+    "email": "invoices@bellarineinks.example",
+    "address": [
+      "3 Pigment Street",
+      "Moolap VIC 3224"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1004",
+    "name": "Corio Bay Freight Pty Ltd",
+    "abn": "88165912623",
+    "gst_registered": true,
+    "payment_terms": "NET14",
+    "category": "Freight",
+    "email": "billing@coriobayfreight.example",
+    "address": [
+      "110 Wharf Access Road",
+      "Corio VIC 3214"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1005",
+    "name": "Otway Adhesives Pty Ltd",
+    "abn": "10398434205",
+    "gst_registered": true,
+    "payment_terms": "NET30",
+    "category": "Adhesives",
+    "email": "accounts@otwayadhesives.example",
+    "address": [
+      "5 Tack Place",
+      "North Geelong VIC 3215"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1006",
+    "name": "Norlane Stretch Films Pty Ltd",
+    "abn": "47742356164",
+    "gst_registered": true,
+    "payment_terms": "EOM30",
+    "category": "Films",
+    "email": "ar@norlanefilms.example",
+    "address": [
+      "41 Cling Road",
+      "Norlane VIC 3214"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1007",
+    "name": "Moorabool Pallets Pty Ltd",
+    "abn": "76367121947",
+    "gst_registered": true,
+    "payment_terms": "NET30",
+    "category": "Pallets",
+    "email": "office@mooraboolpallets.example",
+    "address": [
+      "9 Bearer Lane",
+      "Batesford VIC 3213"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1008",
+    "name": "Limeburners Industrial Supplies Pty Ltd",
+    "abn": "18524709412",
+    "gst_registered": true,
+    "payment_terms": "NET30",
+    "category": "MRO",
+    "email": "accounts@limeburnersindustrial.example",
+    "address": [
+      "16 Spanner Street",
+      "Geelong East VIC 3219"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1009",
+    "name": "Point Henry Labels Pty Ltd",
+    "abn": "64644338086",
+    "gst_registered": true,
+    "payment_terms": "NET30",
+    "category": "Labels",
+    "email": "billing@pointhenrylabels.example",
+    "address": [
+      "2 Die-Cut Drive",
+      "Moolap VIC 3224"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1010",
+    "name": "Anakie Engineering Services Pty Ltd",
+    "abn": "56231520675",
+    "gst_registered": true,
+    "payment_terms": "NET30",
+    "category": "Maintenance",
+    "email": "admin@anakieengineering.example",
+    "address": [
+      "58 Lathe Road",
+      "Lara VIC 3212"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1011",
+    "name": "Hovells Creek Chemicals Pty Ltd",
+    "abn": "98988677750",
+    "gst_registered": true,
+    "payment_terms": "NET30",
+    "category": "Chemicals",
+    "email": "accounts@hovellscreekchem.example",
+    "address": [
+      "12 Reagent Road",
+      "Lara VIC 3212"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1012",
+    "name": "Barrabool Tooling Pty Ltd",
+    "abn": "64806631468",
+    "gst_registered": true,
+    "payment_terms": "NET30",
+    "category": "Tooling",
+    "email": "finance@barrabooltooling.example",
+    "address": [
+      "30 Cavity Crescent",
+      "Waurn Ponds VIC 3216"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1013",
+    "name": "Leopold Electrical Contractors Pty Ltd",
+    "abn": "65338848939",
+    "gst_registered": true,
+    "payment_terms": "NET14",
+    "category": "Electrical",
+    "email": "accounts@leopoldelectrical.example",
+    "address": [
+      "7 Circuit Place",
+      "Leopold VIC 3224"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1014",
+    "name": "Portarlington Packaging Films Pty Ltd",
+    "abn": "21983167249",
+    "gst_registered": true,
+    "payment_terms": "EOM30",
+    "category": "Films",
+    "email": "ar@portarlingtonfilms.example",
+    "address": [
+      "19 Extrusion Avenue",
+      "Portarlington VIC 3223"
+    ],
+    "active": true
+  },
+  {
+    "vendor_id": "V1015",
+    "name": "You Yangs Gas & Welding Pty Ltd",
+    "abn": "33515465462",
+    "gst_registered": true,
+    "payment_terms": "NET30",
+    "category": "Gases",
+    "email": "accounts@youyangsgas.example",
+    "address": [
+      "4 Cylinder Street",
+      "Little River VIC 3211"
+    ],
+    "active": true
+  }
+]

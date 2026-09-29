@@ -1,0 +1,27 @@
+# Three-way match tolerances. The engine reads these at runtime, so AP can
+# tune them without a code change (the same way you'd set them in an ERP).
+
+price:
+  # An invoice price ABOVE the PO price is blocked if it breaches EITHER limit
+  # ("whichever is lower"). A price below PO is noted but never blocked.
+  pct: 0.02            # 2% over PO unit price
+  abs_per_line: 250.00 # AUD over PO value on a single line
+
+quantity:
+  # Goods: invoiced qty may not exceed (received - already invoiced).
+  # 0 means no over-receipt allowance.
+  over_receipt_pct: 0.0
+
+gst:
+  rate: 0.10
+  # Per-line vs whole-invoice rounding can legitimately differ by a few cents.
+  rounding: 0.05
+
+duplicates:
+  # Same vendor + same total within this many days of a posted invoice is a
+  # "possible duplicate" even when the invoice number differs.
+  window_days: 7
+
+arithmetic:
+  # Allowed difference when checking qty x price = amount, lines = subtotal, etc.
+  tolerance: 0.02

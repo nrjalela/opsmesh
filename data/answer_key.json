@@ -1,0 +1,1485 @@
+{
+  "OPS-0001": {
+    "scenario": "C03",
+    "category": "clean",
+    "description": "Four-colour ink order.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Bellarine Inks & Coatings Pty Ltd",
+      "vendor_abn": "30214928551",
+      "invoice_number": "BIC-06467",
+      "invoice_date": "2026-08-31",
+      "po_number": "4500012096",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Flexo process ink - cyan",
+          "item_code": "INK-FLX-CY",
+          "po_line": null,
+          "quantity": "120",
+          "uom": "kg",
+          "unit_price": "12.35",
+          "amount": "1482.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Flexo process ink - magenta",
+          "item_code": "INK-FLX-MG",
+          "po_line": null,
+          "quantity": "120",
+          "uom": "kg",
+          "unit_price": "12.35",
+          "amount": "1482.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Flexo process ink - yellow",
+          "item_code": "INK-FLX-YL",
+          "po_line": null,
+          "quantity": "100",
+          "uom": "kg",
+          "unit_price": "11.80",
+          "amount": "1180.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Flexo process ink - black",
+          "item_code": "INK-FLX-BK",
+          "po_line": null,
+          "quantity": "80",
+          "uom": "kg",
+          "unit_price": "10.90",
+          "amount": "872.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "5016.00",
+      "gst_amount": "501.60",
+      "total": "5517.60",
+      "remarks": null
+    }
+  },
+  "OPS-0002": {
+    "scenario": "C07",
+    "category": "clean",
+    "description": "Standard pallets, fully receipted.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Moorabool Pallets Pty Ltd",
+      "vendor_abn": "76367121947",
+      "invoice_number": "MP-7308",
+      "invoice_date": "2026-09-01",
+      "po_number": "4500012099",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Timber pallet 1165x1165 standard",
+          "item_code": "PAL-AUS-STD",
+          "po_line": 10,
+          "quantity": "240",
+          "uom": "ea",
+          "unit_price": "24.00",
+          "amount": "5760.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "5760.00",
+      "gst_amount": "576.00",
+      "total": "6336.00",
+      "remarks": null
+    }
+  },
+  "OPS-0003": {
+    "scenario": "C08",
+    "category": "clean",
+    "description": "Four-line maintenance consumables order.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Limeburners Industrial Supplies Pty Ltd",
+      "vendor_abn": "18524709412",
+      "invoice_number": "LIS-0003333",
+      "invoice_date": "2026-09-02",
+      "po_number": "4500012100",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Deep groove bearing 6205-2RS",
+          "item_code": "MRO-BRG-6205",
+          "po_line": null,
+          "quantity": "40",
+          "uom": "ea",
+          "unit_price": "14.80",
+          "amount": "592.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "V-belt B52",
+          "item_code": "MRO-VBELT-B52",
+          "po_line": null,
+          "quantity": "12",
+          "uom": "ea",
+          "unit_price": "22.40",
+          "amount": "268.80",
+          "gst_applicable": true
+        },
+        {
+          "description": "Lithium grease EP2, 450 g",
+          "item_code": "MRO-GRS-LI2",
+          "po_line": null,
+          "quantity": "24",
+          "uom": "ea",
+          "unit_price": "9.75",
+          "amount": "234.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Nitrile gloves, box of 100",
+          "item_code": "MRO-GLV-NIT",
+          "po_line": null,
+          "quantity": "30",
+          "uom": "box",
+          "unit_price": "11.20",
+          "amount": "336.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "1430.80",
+      "gst_amount": "143.08",
+      "total": "1573.88",
+      "remarks": null
+    }
+  },
+  "OPS-0004": {
+    "scenario": "C18",
+    "category": "clean",
+    "description": "Belts and gloves.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Limeburners Industrial Supplies Pty Ltd",
+      "vendor_abn": "18524709412",
+      "invoice_number": "LIS-0003342",
+      "invoice_date": "2026-09-03",
+      "po_number": "4500012102",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "V-belt B52",
+          "item_code": "MRO-VBELT-B52",
+          "po_line": null,
+          "quantity": "20",
+          "uom": "ea",
+          "unit_price": "22.40",
+          "amount": "448.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Nitrile gloves, box of 100",
+          "item_code": "MRO-GLV-NIT",
+          "po_line": null,
+          "quantity": "50",
+          "uom": "box",
+          "unit_price": "11.20",
+          "amount": "560.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "1008.00",
+      "gst_amount": "100.80",
+      "total": "1108.80",
+      "remarks": null
+    }
+  },
+  "OPS-0005": {
+    "scenario": "T01",
+    "category": "within_tolerance",
+    "description": "Adhesive billed 1.5% over PO ($57.60): inside the 2% / $250 tolerance.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Otway Adhesives Pty Ltd",
+      "vendor_abn": "10398434205",
+      "invoice_number": "OA-02287",
+      "invoice_date": "2026-08-31",
+      "po_number": "4500012103",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Hot-melt adhesive EVA, 20 kg bag",
+          "item_code": "ADH-HM-EVA",
+          "po_line": null,
+          "quantity": "40",
+          "uom": "bag",
+          "unit_price": "97.44",
+          "amount": "3897.60",
+          "gst_applicable": true
+        },
+        {
+          "description": "PVA case-seal adhesive, 1000 L IBC",
+          "item_code": "ADH-PVA-CS",
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ea",
+          "unit_price": "2340.00",
+          "amount": "2340.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "6237.60",
+      "gst_amount": "623.76",
+      "total": "6861.36",
+      "remarks": null
+    }
+  },
+  "OPS-0006": {
+    "scenario": "U01",
+    "category": "unknown_vendor",
+    "description": "New contractor engaged by the plant with no PO and no vendor record.",
+    "expected_exceptions": [
+      "unknown_vendor"
+    ],
+    "invoice": {
+      "vendor_name": "Geelong Precision Maintenance Pty Ltd",
+      "vendor_abn": "70930658512",
+      "invoice_number": "GPM-0142",
+      "invoice_date": "2026-09-03",
+      "po_number": null,
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Gearbox rebuild - conveyor 4",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ea",
+          "unit_price": "3860.00",
+          "amount": "3860.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Call-out and travel",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ea",
+          "unit_price": "240.00",
+          "amount": "240.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "4100.00",
+      "gst_amount": "410.00",
+      "total": "4510.00",
+      "remarks": null
+    }
+  },
+  "OPS-0007": {
+    "scenario": "C02",
+    "category": "clean",
+    "description": "Cartons and dividers, two lines, all received.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Surf Coast Corrugated Pty Ltd",
+      "vendor_abn": "27591768909",
+      "invoice_number": "INV-004421",
+      "invoice_date": "2026-09-05",
+      "po_number": "4500012106",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "RSC carton 400x300x250 C-flute",
+          "item_code": "CTN-RSC-400",
+          "po_line": null,
+          "quantity": "4000",
+          "uom": "ea",
+          "unit_price": "1.12",
+          "amount": "4480.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "12-cell carton divider",
+          "item_code": "CTN-DIV-12",
+          "po_line": null,
+          "quantity": "4000",
+          "uom": "ea",
+          "unit_price": "0.38",
+          "amount": "1520.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "6000.00",
+      "gst_amount": "600.00",
+      "total": "6600.00",
+      "remarks": null
+    }
+  },
+  "OPS-0008": {
+    "scenario": "S03",
+    "category": "short_shipped",
+    "description": "Billed 12 refills, 10 cylinders delivered. Rental line is fine.",
+    "expected_exceptions": [
+      "short_shipped"
+    ],
+    "invoice": {
+      "vendor_name": "You Yangs Gas & Welding Pty Ltd",
+      "vendor_abn": "33515465462",
+      "invoice_number": "YYG08477",
+      "invoice_date": "2026-09-02",
+      "po_number": "4500012108",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Nitrogen, G-size cylinder refill",
+          "item_code": "GAS-N2-G",
+          "po_line": 10,
+          "quantity": "12",
+          "uom": "ea",
+          "unit_price": "64.50",
+          "amount": "774.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Cylinder rental, G-size (monthly)",
+          "item_code": "GAS-RENT-G",
+          "po_line": 20,
+          "quantity": "12",
+          "uom": "ea",
+          "unit_price": "12.80",
+          "amount": "153.60",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "927.60",
+      "gst_amount": "92.76",
+      "total": "1020.36",
+      "remarks": null
+    }
+  },
+  "OPS-0009": {
+    "scenario": "P02",
+    "category": "price_variance",
+    "description": "Vendor applied a 6% price rise the PO doesn't reflect.",
+    "expected_exceptions": [
+      "price_variance"
+    ],
+    "invoice": {
+      "vendor_name": "Portarlington Packaging Films Pty Ltd",
+      "vendor_abn": "21983167249",
+      "invoice_number": "PPF-03539",
+      "invoice_date": "2026-09-06",
+      "po_number": "4500012110",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "BOPP film 20um x 1000mm, 6000 m roll",
+          "item_code": "FLM-BOPP-20",
+          "po_line": null,
+          "quantity": "30",
+          "uom": "roll",
+          "unit_price": "281.00",
+          "amount": "8430.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "CPP sealant film 30um x 1000mm",
+          "item_code": "FLM-CPP-30",
+          "po_line": null,
+          "quantity": "10",
+          "uom": "roll",
+          "unit_price": "288.00",
+          "amount": "2880.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "11310.00",
+      "gst_amount": "1131.00",
+      "total": "12441.00",
+      "remarks": null
+    }
+  },
+  "OPS-0010": {
+    "scenario": "C12",
+    "category": "clean",
+    "description": "Electrician hours, part of a larger PO.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Leopold Electrical Contractors Pty Ltd",
+      "vendor_abn": "65338848939",
+      "invoice_number": "LEC-1739",
+      "invoice_date": "2026-09-06",
+      "po_number": "4500012111",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Electrician labour",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "22",
+          "uom": "hr",
+          "unit_price": "118.00",
+          "amount": "2596.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "2596.00",
+      "gst_amount": "259.60",
+      "total": "2855.60",
+      "remarks": null
+    }
+  },
+  "OPS-0011": {
+    "scenario": "S02",
+    "category": "short_shipped",
+    "description": "Billed 120 rolls, 96 arrived.",
+    "expected_exceptions": [
+      "short_shipped"
+    ],
+    "invoice": {
+      "vendor_name": "Norlane Stretch Films Pty Ltd",
+      "vendor_abn": "47742356164",
+      "invoice_number": "NSF003938",
+      "invoice_date": "2026-09-06",
+      "po_number": "4500012114",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Machine stretch film 23um x 500mm",
+          "item_code": "FLM-STR-23",
+          "po_line": 10,
+          "quantity": "120",
+          "uom": "roll",
+          "unit_price": "38.50",
+          "amount": "4620.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "4620.00",
+      "gst_amount": "462.00",
+      "total": "5082.00",
+      "remarks": null
+    }
+  },
+  "OPS-0012": {
+    "scenario": "C10",
+    "category": "clean",
+    "description": "Maintenance hours under the PO cap, plus a call-out.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Anakie Engineering Services Pty Ltd",
+      "vendor_abn": "56231520675",
+      "invoice_number": "AES-7876",
+      "invoice_date": "2026-09-05",
+      "po_number": "4500012115",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Preventive maintenance - Line 3 blow moulder",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "38",
+          "uom": "hr",
+          "unit_price": "135.00",
+          "amount": "5130.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Emergency call-out fee",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ea",
+          "unit_price": "280.00",
+          "amount": "280.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "5410.00",
+      "gst_amount": "541.00",
+      "total": "5951.00",
+      "remarks": null
+    }
+  },
+  "OPS-0013": {
+    "scenario": "C05",
+    "category": "clean",
+    "description": "Hot-melt adhesive, matches PO and receipt.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Otway Adhesives Pty Ltd",
+      "vendor_abn": "10398434205",
+      "invoice_number": "OA-02288",
+      "invoice_date": "2026-09-09",
+      "po_number": "4500012116",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Hot-melt adhesive EVA, 20 kg bag",
+          "item_code": "ADH-HM-EVA",
+          "po_line": null,
+          "quantity": "40",
+          "uom": "bag",
+          "unit_price": "96.00",
+          "amount": "3840.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "3840.00",
+      "gst_amount": "384.00",
+      "total": "4224.00",
+      "remarks": null
+    }
+  },
+  "OPS-0014": {
+    "scenario": "X01",
+    "category": "multiple",
+    "description": "Bearings billed 7.4% over PO, and 48 tubes of grease billed with only 36 received.",
+    "expected_exceptions": [
+      "price_variance",
+      "short_shipped"
+    ],
+    "invoice": {
+      "vendor_name": "Limeburners Industrial Supplies Pty Ltd",
+      "vendor_abn": "18524709412",
+      "invoice_number": "LIS-0003353",
+      "invoice_date": "2026-09-09",
+      "po_number": "4500012118",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Deep groove bearing 6205-2RS",
+          "item_code": "MRO-BRG-6205",
+          "po_line": null,
+          "quantity": "60",
+          "uom": "ea",
+          "unit_price": "15.90",
+          "amount": "954.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Lithium grease EP2, 450 g",
+          "item_code": "MRO-GRS-LI2",
+          "po_line": null,
+          "quantity": "48",
+          "uom": "ea",
+          "unit_price": "9.75",
+          "amount": "468.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "1422.00",
+      "gst_amount": "142.20",
+      "total": "1564.20",
+      "remarks": null
+    }
+  },
+  "OPS-0015": {
+    "scenario": "C13",
+    "category": "clean",
+    "description": "BOPP film rolls.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Portarlington Packaging Films Pty Ltd",
+      "vendor_abn": "21983167249",
+      "invoice_number": "PPF-03544",
+      "invoice_date": "2026-09-07",
+      "po_number": "4500012122",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "BOPP film 20um x 1000mm, 6000 m roll",
+          "item_code": "FLM-BOPP-20",
+          "po_line": null,
+          "quantity": "24",
+          "uom": "roll",
+          "unit_price": "265.00",
+          "amount": "6360.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "6360.00",
+      "gst_amount": "636.00",
+      "total": "6996.00",
+      "remarks": null
+    }
+  },
+  "OPS-0016": {
+    "scenario": "P01",
+    "category": "price_variance",
+    "description": "Cyan ink billed 4.5% over PO: breaches the percentage limit.",
+    "expected_exceptions": [
+      "price_variance"
+    ],
+    "invoice": {
+      "vendor_name": "Bellarine Inks & Coatings Pty Ltd",
+      "vendor_abn": "30214928551",
+      "invoice_number": "BIC-06474",
+      "invoice_date": "2026-09-09",
+      "po_number": "4500012124",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Flexo process ink - cyan",
+          "item_code": "INK-FLX-CY",
+          "po_line": null,
+          "quantity": "150",
+          "uom": "kg",
+          "unit_price": "12.90",
+          "amount": "1935.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Flexo process ink - black",
+          "item_code": "INK-FLX-BK",
+          "po_line": null,
+          "quantity": "100",
+          "uom": "kg",
+          "unit_price": "10.90",
+          "amount": "1090.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "3025.00",
+      "gst_amount": "302.50",
+      "total": "3327.50",
+      "remarks": null
+    }
+  },
+  "OPS-0017": {
+    "scenario": "C16",
+    "category": "clean",
+    "description": "Second delivery on a split PO. First half was received and invoiced in August.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Barwon Polymers Pty Ltd",
+      "vendor_abn": "64939659707",
+      "invoice_number": "BP-03748",
+      "invoice_date": "2026-09-11",
+      "po_number": "4500012128",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "HDPE blow-moulding resin",
+          "item_code": "RES-HDPE-BM",
+          "po_line": null,
+          "quantity": "5",
+          "uom": "t",
+          "unit_price": "1965.00",
+          "amount": "9825.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "9825.00",
+      "gst_amount": "982.50",
+      "total": "10807.50",
+      "remarks": null
+    }
+  },
+  "OPS-0018": {
+    "scenario": "C09",
+    "category": "clean",
+    "description": "Labels priced per thousand.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Point Henry Labels Pty Ltd",
+      "vendor_abn": "64644338086",
+      "invoice_number": "PHL-05019",
+      "invoice_date": "2026-09-12",
+      "po_number": "4500012130",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "PS label 100x150, per 1000",
+          "item_code": "LBL-PS-100150",
+          "po_line": null,
+          "quantity": "180",
+          "uom": "1000",
+          "unit_price": "21.00",
+          "amount": "3780.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "3780.00",
+      "gst_amount": "378.00",
+      "total": "4158.00",
+      "remarks": null
+    }
+  },
+  "OPS-0019": {
+    "scenario": "P03",
+    "category": "price_variance",
+    "description": "Only 1.75% over, but on 18,000 L that's $450: breaches the $250 dollar cap.",
+    "expected_exceptions": [
+      "price_variance"
+    ],
+    "invoice": {
+      "vendor_name": "Hovells Creek Chemicals Pty Ltd",
+      "vendor_abn": "98988677750",
+      "invoice_number": "HCC/03785",
+      "invoice_date": "2026-09-12",
+      "po_number": "4500012132",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Caustic soda 30% bulk",
+          "item_code": "CHM-NAOH-30",
+          "po_line": 10,
+          "quantity": "18000",
+          "uom": "L",
+          "unit_price": "1.450",
+          "amount": "26100.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "26100.00",
+      "gst_amount": "2610.00",
+      "total": "28710.00",
+      "remarks": null
+    }
+  },
+  "OPS-0020": {
+    "scenario": "C01",
+    "category": "clean",
+    "description": "Resin delivery, fully receipted, PO price.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Barwon Polymers Pty Ltd",
+      "vendor_abn": "64939659707",
+      "invoice_number": "BP-03753",
+      "invoice_date": "2026-09-13",
+      "po_number": "4500012133",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "PET bottle-grade resin",
+          "item_code": "RES-PET-BTL",
+          "po_line": null,
+          "quantity": "8",
+          "uom": "t",
+          "unit_price": "1780.00",
+          "amount": "14240.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "14240.00",
+      "gst_amount": "1424.00",
+      "total": "15664.00",
+      "remarks": null
+    }
+  },
+  "OPS-0021": {
+    "scenario": "M01",
+    "category": "missing_gr",
+    "description": "Invoice arrived before the warehouse receipted the resin.",
+    "expected_exceptions": [
+      "missing_goods_receipt"
+    ],
+    "invoice": {
+      "vendor_name": "Barwon Polymers Pty Ltd",
+      "vendor_abn": "64939659707",
+      "invoice_number": "BP-03754",
+      "invoice_date": "2026-09-12",
+      "po_number": "4500012137",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "PP homopolymer resin",
+          "item_code": "RES-PP-HOMO",
+          "po_line": null,
+          "quantity": "6",
+          "uom": "t",
+          "unit_price": "1690.00",
+          "amount": "10140.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "10140.00",
+      "gst_amount": "1014.00",
+      "total": "11154.00",
+      "remarks": null
+    }
+  },
+  "OPS-0022": {
+    "scenario": "U02",
+    "category": "unknown_vendor",
+    "description": "Looks like Otway Adhesives, quotes a real Otway PO, but the ABN differs and it asks for payment to new bank details.",
+    "expected_exceptions": [
+      "unknown_vendor"
+    ],
+    "invoice": {
+      "vendor_name": "Otway Adhesives Pty Ltd",
+      "vendor_abn": "48427975421",
+      "invoice_number": "OA-02325",
+      "invoice_date": "2026-09-12",
+      "po_number": "4500012103",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Hot-melt adhesive EVA, 20 kg bag",
+          "item_code": "ADH-HM-EVA",
+          "po_line": null,
+          "quantity": "60",
+          "uom": "bag",
+          "unit_price": "96.00",
+          "amount": "5760.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "5760.00",
+      "gst_amount": "576.00",
+      "total": "6336.00",
+      "remarks": "Please note our bank details have changed. Updated account details are on the attached letter. Please update your records before the next payment run."
+    }
+  },
+  "OPS-0023": {
+    "scenario": "C14",
+    "category": "clean",
+    "description": "Mixed invoice: gas refills (three-way) plus cylinder rental (two-way).",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "You Yangs Gas & Welding Pty Ltd",
+      "vendor_abn": "33515465462",
+      "invoice_number": "YYG08487",
+      "invoice_date": "2026-09-13",
+      "po_number": "4500012140",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Nitrogen, G-size cylinder refill",
+          "item_code": "GAS-N2-G",
+          "po_line": 10,
+          "quantity": "18",
+          "uom": "ea",
+          "unit_price": "64.50",
+          "amount": "1161.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Cylinder rental, G-size (monthly)",
+          "item_code": "GAS-RENT-G",
+          "po_line": 20,
+          "quantity": "20",
+          "uom": "ea",
+          "unit_price": "12.80",
+          "amount": "256.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "1417.00",
+      "gst_amount": "141.70",
+      "total": "1558.70",
+      "remarks": null
+    }
+  },
+  "OPS-0024": {
+    "scenario": "H01",
+    "category": "high_value",
+    "description": "Clean, but $39k: needs AP supervisor sign-off.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Barwon Polymers Pty Ltd",
+      "vendor_abn": "64939659707",
+      "invoice_number": "BP-03756",
+      "invoice_date": "2026-09-15",
+      "po_number": "4500012141",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "PET bottle-grade resin",
+          "item_code": "RES-PET-BTL",
+          "po_line": null,
+          "quantity": "20",
+          "uom": "t",
+          "unit_price": "1780.00",
+          "amount": "35600.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "35600.00",
+      "gst_amount": "3560.00",
+      "total": "39160.00",
+      "remarks": null
+    }
+  },
+  "OPS-0025": {
+    "scenario": "C15",
+    "category": "clean",
+    "description": "Partial delivery: 3,000 of 5,000 sheets received and billed.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Surf Coast Corrugated Pty Ltd",
+      "vendor_abn": "27591768909",
+      "invoice_number": "INV-004423",
+      "invoice_date": "2026-09-16",
+      "po_number": "4500012142",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "B/C double-wall sheet 1200x1000",
+          "item_code": "SHT-BC-1200",
+          "po_line": null,
+          "quantity": "3000",
+          "uom": "ea",
+          "unit_price": "2.95",
+          "amount": "8850.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "8850.00",
+      "gst_amount": "885.00",
+      "total": "9735.00",
+      "remarks": null
+    }
+  },
+  "OPS-0026": {
+    "scenario": "G02",
+    "category": "gst_error",
+    "description": "GST keyed as $1,286.20 instead of $1,268.20 (transposed digits).",
+    "expected_exceptions": [
+      "gst_error"
+    ],
+    "invoice": {
+      "vendor_name": "Leopold Electrical Contractors Pty Ltd",
+      "vendor_abn": "65338848939",
+      "invoice_number": "LEC-1747",
+      "invoice_date": "2026-09-15",
+      "po_number": "4500012144",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Switchboard upgrade - Building B, fixed price",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ea",
+          "unit_price": "9850.00",
+          "amount": "9850.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Electrician labour",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "24",
+          "uom": "hr",
+          "unit_price": "118.00",
+          "amount": "2832.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "12682.00",
+      "gst_amount": "1286.20",
+      "total": "13968.20",
+      "remarks": null
+    }
+  },
+  "OPS-0027": {
+    "scenario": "H03",
+    "category": "high_value",
+    "description": "Clean, but $24k: needs AP supervisor sign-off.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Surf Coast Corrugated Pty Ltd",
+      "vendor_abn": "27591768909",
+      "invoice_number": "INV-004435",
+      "invoice_date": "2026-09-17",
+      "po_number": "4500012145",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "RSC carton 400x300x250 C-flute",
+          "item_code": "CTN-RSC-400",
+          "po_line": null,
+          "quantity": "18000",
+          "uom": "ea",
+          "unit_price": "1.12",
+          "amount": "20160.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "12-cell carton divider",
+          "item_code": "CTN-DIV-12",
+          "po_line": null,
+          "quantity": "5000",
+          "uom": "ea",
+          "unit_price": "0.38",
+          "amount": "1900.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "22060.00",
+      "gst_amount": "2206.00",
+      "total": "24266.00",
+      "remarks": null
+    }
+  },
+  "OPS-0028": {
+    "scenario": "C11",
+    "category": "clean",
+    "description": "CIP chemicals.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Hovells Creek Chemicals Pty Ltd",
+      "vendor_abn": "98988677750",
+      "invoice_number": "HCC/03791",
+      "invoice_date": "2026-09-16",
+      "po_number": "4500012147",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Acid CIP detergent, 200 L drum",
+          "item_code": "CHM-ACID-CIP",
+          "po_line": 10,
+          "quantity": "6",
+          "uom": "drum",
+          "unit_price": "412.00",
+          "amount": "2472.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Peracetic acid sanitiser, 20 L",
+          "item_code": "CHM-SAN-PAA",
+          "po_line": 20,
+          "quantity": "12",
+          "uom": "ea",
+          "unit_price": "96.50",
+          "amount": "1158.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "3630.00",
+      "gst_amount": "363.00",
+      "total": "3993.00",
+      "remarks": null
+    }
+  },
+  "OPS-0029": {
+    "scenario": "D01",
+    "category": "duplicate",
+    "description": "Exact resend of an invoice already posted in August.",
+    "expected_exceptions": [
+      "duplicate_invoice"
+    ],
+    "invoice": {
+      "vendor_name": "Surf Coast Corrugated Pty Ltd",
+      "vendor_abn": "27591768909",
+      "invoice_number": "INV-004417",
+      "invoice_date": "2026-08-14",
+      "po_number": "4500012148",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "RSC carton 400x300x250 C-flute",
+          "item_code": "CTN-RSC-400",
+          "po_line": null,
+          "quantity": "4400",
+          "uom": "ea",
+          "unit_price": "1.12",
+          "amount": "4928.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "4928.00",
+      "gst_amount": "492.80",
+      "total": "5420.80",
+      "remarks": null
+    }
+  },
+  "OPS-0030": {
+    "scenario": "D02",
+    "category": "duplicate",
+    "description": "Same invoice as one keyed in August as '3321'; this copy says 'LIS-0003321'.",
+    "expected_exceptions": [
+      "duplicate_invoice"
+    ],
+    "invoice": {
+      "vendor_name": "Limeburners Industrial Supplies Pty Ltd",
+      "vendor_abn": "18524709412",
+      "invoice_number": "LIS-0003321",
+      "invoice_date": "2026-08-20",
+      "po_number": "4500012149",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Deep groove bearing 6205-2RS",
+          "item_code": "MRO-BRG-6205",
+          "po_line": null,
+          "quantity": "30",
+          "uom": "ea",
+          "unit_price": "14.80",
+          "amount": "444.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Lithium grease EP2, 450 g",
+          "item_code": "MRO-GRS-LI2",
+          "po_line": null,
+          "quantity": "36",
+          "uom": "ea",
+          "unit_price": "9.75",
+          "amount": "351.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "795.00",
+      "gst_amount": "79.50",
+      "total": "874.50",
+      "remarks": null
+    }
+  },
+  "OPS-0031": {
+    "scenario": "C19",
+    "category": "clean",
+    "description": "Import freight with a GST-free international leg correctly shown without GST.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Corio Bay Freight Pty Ltd",
+      "vendor_abn": "88165912623",
+      "invoice_number": "CBF-1383",
+      "invoice_date": "2026-09-20",
+      "po_number": "4500012153",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "International sea freight - Ningbo to Melbourne, 20ft",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ctr",
+          "unit_price": "2480.00",
+          "amount": "2480.00",
+          "gst_applicable": false
+        },
+        {
+          "description": "Wharf cartage and container handling",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ea",
+          "unit_price": "385.00",
+          "amount": "385.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Local cartage - Corio to Laverton North, B-double",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1",
+          "uom": "trip",
+          "unit_price": "1150.00",
+          "amount": "1150.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "4015.00",
+      "gst_amount": "153.50",
+      "total": "4168.50",
+      "remarks": null
+    }
+  },
+  "OPS-0032": {
+    "scenario": "T02",
+    "category": "within_tolerance",
+    "description": "Labels billed 1.9% over PO ($52.50): inside tolerance.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Point Henry Labels Pty Ltd",
+      "vendor_abn": "64644338086",
+      "invoice_number": "PHL-05021",
+      "invoice_date": "2026-09-18",
+      "po_number": "4500012154",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Shipping label A6, per 1000",
+          "item_code": "LBL-SHIP-A6",
+          "po_line": null,
+          "quantity": "150",
+          "uom": "1000",
+          "unit_price": "18.75",
+          "amount": "2812.50",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "2812.50",
+      "gst_amount": "281.25",
+      "total": "3093.75",
+      "remarks": null
+    }
+  },
+  "OPS-0033": {
+    "scenario": "C04",
+    "category": "clean",
+    "description": "Local cartage. Services are two-way matched: no goods receipt needed.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Corio Bay Freight Pty Ltd",
+      "vendor_abn": "88165912623",
+      "invoice_number": "CBF-1390",
+      "invoice_date": "2026-09-20",
+      "po_number": "4500012158",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Local cartage - Corio to Laverton North, B-double",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "3",
+          "uom": "trip",
+          "unit_price": "1150.00",
+          "amount": "3450.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "3450.00",
+      "gst_amount": "345.00",
+      "total": "3795.00",
+      "remarks": null
+    }
+  },
+  "OPS-0034": {
+    "scenario": "H02",
+    "category": "high_value",
+    "description": "Clean, but $134k preform mould: needs finance manager sign-off.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Barrabool Tooling Pty Ltd",
+      "vendor_abn": "64806631468",
+      "invoice_number": "BT-8066",
+      "invoice_date": "2026-09-19",
+      "po_number": "4500012160",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "8-cavity preform mould, 28 mm neck",
+          "item_code": "TOOL-MLD-PF28",
+          "po_line": null,
+          "quantity": "1",
+          "uom": "set",
+          "unit_price": "118000.00",
+          "amount": "118000.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Mould spares kit",
+          "item_code": "TOOL-SPR-KIT",
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ea",
+          "unit_price": "3450.00",
+          "amount": "3450.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "121450.00",
+      "gst_amount": "12145.00",
+      "total": "133595.00",
+      "remarks": null
+    }
+  },
+  "OPS-0035": {
+    "scenario": "M02",
+    "category": "missing_gr",
+    "description": "Labels billed, nothing receipted.",
+    "expected_exceptions": [
+      "missing_goods_receipt"
+    ],
+    "invoice": {
+      "vendor_name": "Point Henry Labels Pty Ltd",
+      "vendor_abn": "64644338086",
+      "invoice_number": "PHL-05033",
+      "invoice_date": "2026-09-19",
+      "po_number": "4500012163",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "PS label 100x150, per 1000",
+          "item_code": "LBL-PS-100150",
+          "po_line": null,
+          "quantity": "120",
+          "uom": "1000",
+          "unit_price": "21.00",
+          "amount": "2520.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "2520.00",
+      "gst_amount": "252.00",
+      "total": "2772.00",
+      "remarks": null
+    }
+  },
+  "OPS-0036": {
+    "scenario": "C17",
+    "category": "clean",
+    "description": "Stretch film, single line.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Norlane Stretch Films Pty Ltd",
+      "vendor_abn": "47742356164",
+      "invoice_number": "NSF003945",
+      "invoice_date": "2026-09-22",
+      "po_number": "4500012165",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Machine stretch film 23um x 500mm",
+          "item_code": "FLM-STR-23",
+          "po_line": 10,
+          "quantity": "120",
+          "uom": "roll",
+          "unit_price": "38.50",
+          "amount": "4620.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "4620.00",
+      "gst_amount": "462.00",
+      "total": "5082.00",
+      "remarks": null
+    }
+  },
+  "OPS-0037": {
+    "scenario": "G01",
+    "category": "gst_error",
+    "description": "GST charged on the international sea-freight leg, which is GST-free.",
+    "expected_exceptions": [
+      "gst_error"
+    ],
+    "invoice": {
+      "vendor_name": "Corio Bay Freight Pty Ltd",
+      "vendor_abn": "88165912623",
+      "invoice_number": "CBF-1401",
+      "invoice_date": "2026-09-22",
+      "po_number": "4500012166",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "International sea freight - Ningbo to Melbourne, 20ft",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ctr",
+          "unit_price": "2480.00",
+          "amount": "2480.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Wharf cartage and container handling",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1",
+          "uom": "ea",
+          "unit_price": "385.00",
+          "amount": "385.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "2865.00",
+      "gst_amount": "286.50",
+      "total": "3151.50",
+      "remarks": null
+    }
+  },
+  "OPS-0038": {
+    "scenario": "S01",
+    "category": "short_shipped",
+    "description": "Billed 300 pallets; 20 were rejected at the dock.",
+    "expected_exceptions": [
+      "short_shipped"
+    ],
+    "invoice": {
+      "vendor_name": "Moorabool Pallets Pty Ltd",
+      "vendor_abn": "76367121947",
+      "invoice_number": "MP-7313",
+      "invoice_date": "2026-09-22",
+      "po_number": "4500012167",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Timber pallet 1165x1165 standard",
+          "item_code": "PAL-AUS-STD",
+          "po_line": 10,
+          "quantity": "300",
+          "uom": "ea",
+          "unit_price": "24.00",
+          "amount": "7200.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "7200.00",
+      "gst_amount": "720.00",
+      "total": "7920.00",
+      "remarks": null
+    }
+  },
+  "OPS-0039": {
+    "scenario": "C06",
+    "category": "clean",
+    "description": "Machine and hand stretch film.",
+    "expected_exceptions": [],
+    "invoice": {
+      "vendor_name": "Norlane Stretch Films Pty Ltd",
+      "vendor_abn": "47742356164",
+      "invoice_number": "NSF003955",
+      "invoice_date": "2026-09-25",
+      "po_number": "4500012168",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Machine stretch film 23um x 500mm",
+          "item_code": "FLM-STR-23",
+          "po_line": 10,
+          "quantity": "96",
+          "uom": "roll",
+          "unit_price": "38.50",
+          "amount": "3696.00",
+          "gst_applicable": true
+        },
+        {
+          "description": "Hand stretch film 17um x 450mm",
+          "item_code": "FLM-STR-17H",
+          "po_line": 20,
+          "quantity": "48",
+          "uom": "roll",
+          "unit_price": "21.90",
+          "amount": "1051.20",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "4747.20",
+      "gst_amount": "474.72",
+      "total": "5221.92",
+      "remarks": null
+    }
+  },
+  "OPS-0040": {
+    "scenario": "M03",
+    "category": "missing_gr",
+    "description": "Split PO: first 18 rolls received and invoiced; this bills the next 18, which haven't been receipted.",
+    "expected_exceptions": [
+      "missing_goods_receipt"
+    ],
+    "invoice": {
+      "vendor_name": "Portarlington Packaging Films Pty Ltd",
+      "vendor_abn": "21983167249",
+      "invoice_number": "PPF-03558",
+      "invoice_date": "2026-09-24",
+      "po_number": "4500012169",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "CPP sealant film 30um x 1000mm",
+          "item_code": "FLM-CPP-30",
+          "po_line": null,
+          "quantity": "18",
+          "uom": "roll",
+          "unit_price": "288.00",
+          "amount": "5184.00",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "5184.00",
+      "gst_amount": "518.40",
+      "total": "5702.40",
+      "remarks": null
+    }
+  }
+}
