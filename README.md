@@ -148,3 +148,7 @@ tests/         pytest: engine, schema, offline graph, Streamlit smoke test
 ```
 
 **Stack:** Python 3.13, LangGraph, Anthropic SDK (`claude-sonnet-5-5`, structured outputs, adaptive thinking, server-side refusal fallback), Pydantic, reportlab, Streamlit, React 19 + TypeScript + Vite, Vitest, GitHub Actions.
+
+---
+
+Built by Nihar Jalela · [GitHub](https://github.com/nrjalela)

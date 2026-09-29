@@ -1,5 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { money } from "../format";
+
+const NARROW = "(max-width: 599px)";
+
+function useNarrow(): boolean {
+  const supported = typeof window !== "undefined" && typeof window.matchMedia === "function";
+  const [narrow, setNarrow] = useState(() => supported && window.matchMedia(NARROW).matches);
+  useEffect(() => {
+    if (!supported) return;
+    const mq = window.matchMedia(NARROW);
+    const onChange = () => setNarrow(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, [supported]);
+  return narrow;
+}
 
 export interface Bar {
   label: string;
@@ -10,16 +25,20 @@ export interface Bar {
 /** Single-series horizontal bars: one accent colour, value at the tip, tooltip on hover/focus. */
 export function BarChart({ data, caption }: { data: Bar[]; caption: string }) {
   const [hover, setHover] = useState<number | null>(null);
+  // Phones: labels sit above full-width bars, and the viewBox is close to the real width,
+  // so text renders near its true size instead of shrinking with the whole chart.
+  const compact = useNarrow();
   const sorted = [...data].sort((a, b) => b.value - a.value || a.label.localeCompare(b.label));
   const max = Math.max(1, ...sorted.map((d) => d.value));
   const ticks = Array.from({ length: max + 1 }, (_, i) => i).filter((t) => max <= 6 || t % 2 === 0);
-  const row = 44;
-  const barH = 20;
-  const labelW = 210;
-  const plotW = 460;
-  const width = labelW + plotW + 40;
+  const row = compact ? 52 : 44;
+  const barH = compact ? 16 : 20;
+  const labelW = compact ? 0 : 210;
+  const plotW = compact ? 280 : 460;
+  const width = labelW + plotW + (compact ? 30 : 40);
   const height = sorted.length * row + 28;
   const x = (v: number) => labelW + (v / max) * plotW;
+  const barTop = (i: number) => (compact ? i * row + 26 : i * row + (row - barH) / 2);
 
   return (
     <figure className="chart">
@@ -33,7 +52,7 @@ export function BarChart({ data, caption }: { data: Bar[]; caption: string }) {
           </g>
         ))}
         {sorted.map((d, i) => {
-          const y = i * row + (row - barH) / 2;
+          const y = barTop(i);
           const w = Math.max(2, x(d.value) - labelW);
           const r = Math.min(4, w / 2);
           // square at the baseline, 4px rounded at the data end
@@ -49,7 +68,13 @@ export function BarChart({ data, caption }: { data: Bar[]; caption: string }) {
               onBlur={() => setHover(null)}
             >
               <rect x={0} y={i * row} width={width} height={row} className="hit" />
-              <text x={labelW - 12} y={y + barH / 2} className="bar-label" textAnchor="end" dominantBaseline="central">
+              <text
+                x={compact ? 0 : labelW - 12}
+                y={compact ? i * row + 14 : y + barH / 2}
+                className="bar-label"
+                textAnchor={compact ? "start" : "end"}
+                dominantBaseline="central"
+              >
                 {d.label}
               </text>
               <path d={path} className="bar" />

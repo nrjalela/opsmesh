@@ -4,6 +4,9 @@ import { day } from "../format";
 import { href, type RouteMatch } from "../router";
 
 export const REPO_URL = "https://github.com/nrjalela/opsmesh";
+export const GITHUB_URL = "https://github.com/nrjalela";
+// TODO: set to the LinkedIn profile URL; the link is hidden while this is empty.
+export const LINKEDIN_URL = "";
 
 function Label({ long, short }: { long: string; short: string }) {
   return (
@@ -61,10 +64,19 @@ export function Layout({ route, children }: { route: RouteMatch; children: React
         <p>
           <strong>Synthetic data.</strong> Corio Packaging, its vendors, people, invoices, ABNs and addresses are all
           made up. ABNs are generated to pass the ATO checksum, so any match with a real business is coincidental.
+          Recorded {recorded ? day(recorded) : ""} with {batch.summary.model} via LangGraph ·{" "}
+          <a href={REPO_URL}>Source and README</a>
         </p>
-        <p>
-          Recorded {recorded ? day(recorded) : ""} with {batch.summary.model} via LangGraph. Built by{" "}
-          <a href="https://github.com/nrjalela">nrjalela</a> · <a href={REPO_URL}>Source and README</a>
+        <p className="credit">
+          Built by Nihar Jalela
+          {LINKEDIN_URL && (
+            <>
+              {" · "}
+              <a href={LINKEDIN_URL}>LinkedIn</a>
+            </>
+          )}
+          {" · "}
+          <a href={GITHUB_URL}>GitHub</a>
         </p>
       </footer>
     </div>

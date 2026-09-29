@@ -17,6 +17,8 @@ const HEADER_FIELDS: [keyof Extraction, string][] = [
   ["total_inc_gst", "Total (inc GST)"],
 ];
 const TRACE_GLYPH = { pass: "✓", fail: "✕", info: "•" } as const;
+// Same line fields the router's confidence check uses (opsmesh/agents/schema.py), so the UI and routing agree.
+const LINE_CHECKED = ["description", "item_code", "po_line", "quantity", "unit_price", "amount"] as const;
 
 export function InvoicePage({ id, onToast }: { id: string; onToast: (m: string) => void }) {
   const { runs, byId } = useApp();
@@ -222,7 +224,7 @@ function Extracted({ run }: { run: Run }) {
             <th className="num">Qty</th>
             <th className="num">Price</th>
             <th className="num">Amount</th>
-            <th>Lowest confidence</th>
+            <th title="Lowest confidence among the fields the router checks">Lowest confidence</th>
           </tr>
         </thead>
         <tbody>
@@ -238,14 +240,20 @@ function Extracted({ run }: { run: Run }) {
               <td className="num">{money(ln.unit_price.value)}</td>
               <td className="num">{money(ln.amount.value)}</td>
               <td>
-                <Confidence value={Math.min(...Object.values(ln).map((f) => f.confidence))} />
+                <Confidence value={Math.min(...LINE_CHECKED.map((f) => ln[f].confidence))} />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
       </div>
-      {x.remarks.value && <p className="callout">Printed on the invoice: “{x.remarks.value}”</p>}
+      {x.remarks.value && (
+        // Amber only when the match engine flagged the remark (e.g. a bank-details change); otherwise neutral.
+        <p className={`callout ${remarkFlagged(run) ? "callout-warn" : ""}`}>
+          {remarkFlagged(run) ? "Flagged note printed on the invoice" : "Note printed on the invoice"}: “
+          {x.remarks.value}”
+        </p>
+      )}
       {x.notes_for_ap && <p className="muted small">Agent's note: {x.notes_for_ap}</p>}
     </div>
   );
@@ -303,4 +311,8 @@ function Timeline({ run }: { run: Run }) {
       </ol>
     </section>
   );
+}
+
+function remarkFlagged(run: Run): boolean {
+  return (run.state.match?.exceptions ?? []).some((e) => e.details?.bank_details_change);
 }

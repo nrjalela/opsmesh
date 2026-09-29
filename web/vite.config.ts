@@ -7,5 +7,6 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: "jsdom",
+    css: true, // the contrast test reads the real stylesheet
   },
 });

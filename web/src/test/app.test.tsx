@@ -68,6 +68,32 @@ describe("replay site", () => {
   });
 });
 
+describe("amber is reserved for holds and exceptions", () => {
+  it("a clean, auto-posted invoice shows no warning styling", () => {
+    const { container } = render(<App batch={batch} />);
+    goTo("#/invoice/OPS-0001");
+    expect(container.querySelectorAll(".conf-low, .callout-warn, .pill-wait, .panel-accent")).toHaveLength(0);
+  });
+
+  it("low-confidence markers match what the router flagged", () => {
+    const { container } = render(<App batch={batch} />);
+    for (const run of batch.runs) {
+      goTo(`#/invoice/${run.doc_id}`);
+      const flagged = run.state.route!.reasons.some((r) => r.includes("Low-confidence"));
+      expect(container.querySelectorAll(".conf-low").length > 0, run.doc_id).toBe(flagged);
+    }
+  });
+
+  it("only the bank-details remark is flagged", () => {
+    const { container } = render(<App batch={batch} />);
+    const flaggedDocs = batch.runs.filter((run) => {
+      goTo(`#/invoice/${run.doc_id}`);
+      return container.querySelector(".callout-warn") !== null;
+    });
+    expect(flaggedDocs.map((r) => r.doc_id)).toEqual(["OPS-0022"]);
+  });
+});
+
 describe("decisions", () => {
   it("reject uses the precomputed outcome and keeps the note", () => {
     const paused = batch.runs.find((r) => r.pending)!;
