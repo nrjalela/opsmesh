@@ -251,7 +251,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:23:08+00:00",
       "duration_ms": 4931,
-      "summary": "Read Corio Bay Freight Pty Ltd invoice CBF-1390: 1 line, total 3795.0.",
+      "summary": "Read Corio Bay Freight Pty Ltd invoice CBF-1390: 1 line, $3,795.00 inc GST.",
       "reasoning": "Freight invoice with a single line; the quantity column is labelled 'Qty / hrs', so the unit of measure is not stated. No currency is printed. The PO is given as 'Purchase order 4500012158' with no PO line number. Least certain fields: po_number (97%), line 1 item_code (97%), line 1 po_line (97%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

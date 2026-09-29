@@ -257,7 +257,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:23:07+00:00",
       "duration_ms": 4958,
-      "summary": "Read Point Henry Labels Pty Ltd invoice PHL-05021: 1 line, total 3093.75.",
+      "summary": "Read Point Henry Labels Pty Ltd invoice PHL-05021: 1 line, $3,093.75 inc GST.",
       "reasoning": "The Qty column prints '150 1000' (quantity 150 with unit-of-measure 1000, i.e. per 1000 labels). The line amount 2,812.50 equals 150 x 18.75, so the unit price is per quantity unit of 150, not per 1000 as the description implies; check the PO's unit and price basis. Least certain fields: line 1 quantity (60%), line 1 description (95%), line 1 po_line (95%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

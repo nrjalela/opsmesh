@@ -289,7 +289,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:43+00:00",
       "duration_ms": 4406,
-      "summary": "Read HOVELLS CREEK CHEMICALS PTY LTD invoice HCC/03785: 1 line, total 28710.0.",
+      "summary": "Read HOVELLS CREEK CHEMICALS PTY LTD invoice HCC/03785: 1 line, $28,710.00 inc GST.",
       "reasoning": "Due date is not printed; terms are 30 days from invoice date (would be 2026-10-12). Arithmetic and GST at 10% are consistent. Least certain fields: invoice_date (95%), vendor_abn (97%), invoice_number (97%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

@@ -326,7 +326,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:19+00:00",
       "duration_ms": 5311,
-      "summary": "Read Surf Coast Corrugated Pty Ltd invoice INV-004421: 2 lines, total 6600.0.",
+      "summary": "Read Surf Coast Corrugated Pty Ltd invoice INV-004421: 2 lines, $6,600.00 inc GST.",
       "reasoning": "Stated terms (30 days from end of month) may not match the printed due date of 30 Oct 2026, which is about 55 days after the issue date. Lines carry no PO line numbers. Least certain fields: line 1 description (95%), line 1 po_line (95%), line 2 description (95%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

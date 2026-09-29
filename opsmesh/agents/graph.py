@@ -83,6 +83,13 @@ def _error_text(e: Exception) -> str:
 
 # --- nodes ------------------------------------------------------------------------------
 
+def intake_summary(x: InvoiceExtraction) -> str:
+    n = len(x.lines)
+    total = aud(Decimal(str(x.total_inc_gst.value))) if x.total_inc_gst.value is not None else "unreadable"
+    return (f"Read {x.vendor_name.value or 'unknown vendor'} invoice {x.invoice_number.value or '?'}: "
+            f"{n} line{'s' if n != 1 else ''}, {total} inc GST.")
+
+
 def intake_node(state: APState) -> dict:
     timer = Timer()
     try:
@@ -93,9 +100,7 @@ def intake_node(state: APState) -> dict:
                 "steps": _step(node="intake", title="Intake agent read the PDF", kind="llm", started_at=timer.started_at,
                                duration_ms=timer.ms, summary="Couldn't extract the invoice.", error=err)}
     x = result.output
-    n = len(x.lines)
-    summary = (f"Read {x.vendor_name.value or 'unknown vendor'} invoice {x.invoice_number.value or '?'}: "
-               f"{n} line{'s' if n != 1 else ''}, total {x.total_inc_gst.value}.")
+    summary = intake_summary(x)
     confs = sorted(field_confidences(x).items(), key=lambda kv: kv[1])[:3]
     rationale = (x.notes_for_ap or "Nothing unusual noted on the document.") + " Least certain fields: " + \
         ", ".join(f"{k} ({c:.0%})" for k, c in confs) + "."

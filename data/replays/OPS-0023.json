@@ -326,7 +326,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:48+00:00",
       "duration_ms": 5316,
-      "summary": "Read YOU YANGS GAS & WELDING PTY LTD invoice YYG08487: 2 lines, total 1558.7.",
+      "summary": "Read YOU YANGS GAS & WELDING PTY LTD invoice YYG08487: 2 lines, $1,558.70 inc GST.",
       "reasoning": "No due date printed; terms are 30 days from invoice date (due 2026-10-13 if calculated). Docket DD659086 is referenced. Least certain fields: invoice_date (97%), line 2 description (97%), vendor_abn (98%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

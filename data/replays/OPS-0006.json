@@ -282,7 +282,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:17+00:00",
       "duration_ms": 7013,
-      "summary": "Read Geelong Precision Maintenance Pty Ltd invoice GPM-0142: 2 lines, total 4510.0.",
+      "summary": "Read Geelong Precision Maintenance Pty Ltd invoice GPM-0142: 2 lines, $4,510.00 inc GST.",
       "reasoning": "No purchase order number is on the invoice; the reference states no order number was supplied, so this is a service invoice with no PO to match. The Reference text overlaps the customer address block in the PDF layout. Least certain fields: po_number (95%), line 1 description (97%), line 1 item_code (97%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

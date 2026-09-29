@@ -251,7 +251,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:11+00:00",
       "duration_ms": 5607,
-      "summary": "Read MOORABOOL PALLETS PTY LTD invoice MP-7308: 1 line, total 6336.0.",
+      "summary": "Read MOORABOOL PALLETS PTY LTD invoice MP-7308: 1 line, $6,336.00 inc GST.",
       "reasoning": "No explicit due date printed; terms are 30 days from invoice date (would be 2026-10-01). Arithmetic and GST are consistent. Least certain fields: invoice_date (97%), line 1 po_line (97%), vendor_name (98%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

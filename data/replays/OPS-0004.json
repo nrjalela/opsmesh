@@ -326,7 +326,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:11+00:00",
       "duration_ms": 5258,
-      "summary": "Read Limeburners Industrial Supplies Pty Ltd invoice LIS-0003342: 2 lines, total 1108.8.",
+      "summary": "Read Limeburners Industrial Supplies Pty Ltd invoice LIS-0003342: 2 lines, $1,108.80 inc GST.",
       "reasoning": "Nothing unusual noted on the document. Least certain fields: line 1 po_line (95%), line 2 po_line (95%), invoice_date (97%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

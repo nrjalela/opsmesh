@@ -326,7 +326,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:29+00:00",
       "duration_ms": 5388,
-      "summary": "Read Anakie Engineering Services Pty Ltd invoice AES-7876: 2 lines, total 5951.0.",
+      "summary": "Read Anakie Engineering Services Pty Ltd invoice AES-7876: 2 lines, $5,951.00 inc GST.",
       "reasoning": "No currency is printed. The Qty / hrs column does not give a unit for each line, so the uom values are inferred or left empty. Line amounts and totals are consistent with the printed figures. Least certain fields: po_number (97%), line 1 item_code (97%), line 1 po_line (97%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

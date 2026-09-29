@@ -251,7 +251,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:23:13+00:00",
       "duration_ms": 4456,
-      "summary": "Read NORLANE STRETCH FILMS PTY LTD invoice NSF003945: 1 line, total 5082.0.",
+      "summary": "Read NORLANE STRETCH FILMS PTY LTD invoice NSF003945: 1 line, $5,082.00 inc GST.",
       "reasoning": "No explicit due date printed; terms are 30 days from end of month. Arithmetic and GST reconcile. Least certain fields: invoice_date (97%), line 1 description (97%), vendor_abn (98%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

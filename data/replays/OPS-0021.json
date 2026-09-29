@@ -287,7 +287,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:46+00:00",
       "duration_ms": 4703,
-      "summary": "Read Barwon Polymers Pty Ltd invoice BP-03754: 1 line, total 11154.0.",
+      "summary": "Read Barwon Polymers Pty Ltd invoice BP-03754: 1 line, $11,154.00 inc GST.",
       "reasoning": "Currency is not printed; AUD assumed. Terms are 30 days from end of month, which would normally give a due date of 31/10/2026, but the invoice prints 30/10/2026 and this was transcribed as printed. Least certain fields: line 1 po_line (95%), invoice_date (97%), vendor_abn (98%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

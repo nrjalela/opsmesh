@@ -363,7 +363,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:56+00:00",
       "duration_ms": 5854,
-      "summary": "Read Leopold Electrical Contractors Pty Ltd invoice LEC-1747: 2 lines, total 13968.2.",
+      "summary": "Read Leopold Electrical Contractors Pty Ltd invoice LEC-1747: 2 lines, $13,968.20 inc GST.",
       "reasoning": "GST of 1,286.20 is not 10% of the 12,682.00 subtotal (which would be 1,268.20), so the GST and total are overstated by 18.00 as printed. Invoice is for services (fixed-price work plus labour) and shows no line-level PO reference, only the PO number in the header. Least certain fields: line 1 item_code (95%), line 1 po_line (95%), line 2 item_code (95%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

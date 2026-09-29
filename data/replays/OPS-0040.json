@@ -287,7 +287,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:23:22+00:00",
       "duration_ms": 4786,
-      "summary": "Read Portarlington Packaging Films Pty Ltd invoice PPF-03558: 1 line, total 5702.4.",
+      "summary": "Read Portarlington Packaging Films Pty Ltd invoice PPF-03558: 1 line, $5,702.40 inc GST.",
       "reasoning": "Due date (30 Oct 2026) is printed on the invoice and is consistent with the 30 days from end of month terms. No PO line number is printed. Least certain fields: line 1 description (95%), line 1 po_line (95%), line 1 item_code (97%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

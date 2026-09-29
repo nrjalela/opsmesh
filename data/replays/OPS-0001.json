@@ -476,7 +476,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:11+00:00",
       "duration_ms": 7674,
-      "summary": "Read Bellarine Inks & Coatings Pty Ltd invoice BIC-06467: 4 lines, total 5517.6.",
+      "summary": "Read Bellarine Inks & Coatings Pty Ltd invoice BIC-06467: 4 lines, $5,517.60 inc GST.",
       "reasoning": "Line amounts sum to 5,016.00 and GST is 10% as printed. No currency is stated and no PO line numbers are printed. The document carries a footer stating it is synthetic and not a real tax invoice. Least certain fields: line 1 po_line (95%), line 2 po_line (95%), line 3 po_line (95%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

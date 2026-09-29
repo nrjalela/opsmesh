@@ -1,0 +1,27 @@
+[theme]
+base = "light"
+primaryColor = "#B4532A"            # terracotta: the one accent
+backgroundColor = "#FAF7F2"         # warm off-white
+secondaryBackgroundColor = "#F2ECE3"
+textColor = "#2B2A28"               # charcoal
+linkColor = "#B4532A"
+borderColor = "#E6DED2"
+showWidgetBorder = true
+baseRadius = "0.6rem"
+font = "Figtree:https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap"
+headingFont = "Figtree:https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap"
+headingFontWeights = [650, 600, 600, 600, 600, 600]
+baseFontSize = 15
+greenColor = "#4E7D55"
+orangeColor = "#B7791F"
+grayColor = "#6B645C"
+dataframeHeaderBackgroundColor = "#F2ECE3"
+
+[theme.sidebar]
+backgroundColor = "#F4EFE7"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

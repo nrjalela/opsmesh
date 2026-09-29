@@ -251,7 +251,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:22:39+00:00",
       "duration_ms": 4155,
-      "summary": "Read Barwon Polymers Pty Ltd invoice BP-03748: 1 line, total 10807.5.",
+      "summary": "Read Barwon Polymers Pty Ltd invoice BP-03748: 1 line, $10,807.50 inc GST.",
       "reasoning": "Nothing unusual noted on the document. Least certain fields: line 1 po_line (95%), invoice_date (97%), vendor_abn (98%).",
       "trace": [],
       "model": "claude-sonnet-5-5",

@@ -363,7 +363,7 @@
       "kind": "llm",
       "started_at": "2026-09-29T13:23:14+00:00",
       "duration_ms": 5209,
-      "summary": "Read Corio Bay Freight Pty Ltd invoice CBF-1401: 2 lines, total 3151.5.",
+      "summary": "Read Corio Bay Freight Pty Ltd invoice CBF-1401: 2 lines, $3,151.50 inc GST.",
       "reasoning": "Freight invoice for international sea freight; no currency stated (assumed AUD but not printed). Line-level GST treatment is not shown, though total GST is 10% of the subtotal. PO is referenced under 'Reference'. Least certain fields: po_number (97%), line 1 item_code (97%), line 1 po_line (97%).",
       "trace": [],
       "model": "claude-sonnet-5-5",
