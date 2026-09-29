@@ -36,6 +36,7 @@ def body_for(doc: str) -> str:
 @pytest.fixture
 def llm(monkeypatch):
     """Stub Claude: answer from the answer key, keyed by the PDF's hash. Counts calls."""
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test-not-a-real-key")
     by_hash = {hashlib.sha256(pdf_bytes(d)).hexdigest(): KEY[d]["invoice"] for d in KEY}
     calls = {"intake": 0}
 
@@ -215,3 +216,43 @@ def test_missing_attachment_asks_for_retry(tmp_path, llm):
 def test_comment_tables_escape_pipes(tmp_path, llm, monkeypatch):
     from opsmesh.live.render import cell
     assert cell("a|b\nc") == "a\\|b c"
+
+
+def test_missing_api_key_processes_nothing(tmp_path, llm, monkeypatch):
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "")
+    store = StateStore(tmp_path)
+    out = submit(store, 80, BY_SCENARIO["C01"])
+    assert out.status == "error" and "isn't configured" in out.comment
+    assert store.events() == [] and llm["intake"] == 0
+
+
+def test_failed_run_frees_the_hash_and_cap_and_retry_works(tmp_path, llm, monkeypatch):
+    from opsmesh.agents.llm import LLMRefusal
+    store = StateStore(tmp_path)
+    doc = BY_SCENARIO["X01"]
+    real_intake = graph_mod.run_intake
+
+    def broken(path, received=None):
+        raise LLMRefusal("simulated outage")
+    monkeypatch.setattr(graph_mod, "run_intake", broken)
+    failed = submit(store, 90, doc)
+    assert failed.status == "error" and "failed before reading" in failed.comment
+    assert store.processed_on("2026-10-01") == 0 and not store.has_run(90)
+
+    monkeypatch.setattr(graph_mod, "run_intake", real_intake)
+    retried = comment(store, 90, "/retry", doc)
+    assert retried.status == "held"
+    assert store.thread_for(90) == "GH-0090-r2"  # fresh thread, not the failed one
+    approved = comment(store, 90, "/approve ok", doc)
+    assert approved.status == "posted"
+
+
+def test_voided_run_can_be_retried(tmp_path, llm):
+    store = StateStore(tmp_path)
+    doc = BY_SCENARIO["X01"]
+    submit(store, 95, doc)
+    sha = store.events()[0]["sha256"]
+    store.audit("voided", 95, NOW, reason="maintenance")
+    store.release_hash(sha, 95)
+    assert not store.has_run(95)
+    assert comment(store, 95, "/retry", doc).status == "held"

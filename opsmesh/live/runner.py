@@ -19,6 +19,7 @@ from pathlib import Path
 from langgraph.checkpoint.sqlite import SqliteSaver
 
 import opsmesh.agents.graph as graph_mod
+from opsmesh.agents.llm import api_key_available
 from opsmesh.engine.models import LedgerLine, PostedInvoice
 from opsmesh.live import render
 from opsmesh.live.issue import PDFError, download_pdf, find_pdf_url, parse_command
@@ -84,20 +85,34 @@ def process_issue(*, issue: int, author: str, body: str, created_at: str, store:
                        f"Live mode processes at most {cap} invoices per day (Australian time) to keep API "
                        "spend predictable. Comment `/retry` tomorrow to process this one."), ["over-cap"])
 
+    if not api_key_available():
+        return Outcome("error", render.simple_comment(issue, "error", "⚠️ Live mode isn't configured",
+                       "The `ANTHROPIC_API_KEY` repository secret isn't reaching the workflow, so nothing was "
+                       "processed and nothing was counted. Set it with `gh secret set ANTHROPIC_API_KEY`, then "
+                       "comment `/retry`."))
+
+    thread = store.thread_for(issue)
     graph_mod.use_master(store.master())
     try:
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / f"{doc_id(issue)}.pdf"
             path.write_bytes(pdf)
             graph = _graph(store)
-            state = graph_mod.start_run(graph, doc_id(issue), path, created_at[:10])
+            state = graph_mod.start_run(graph, thread, path, created_at[:10])
     finally:
         graph_mod.use_master(None)
 
+    cost = round(sum(s.get("cost_usd", 0) for s in state.get("steps") or []), 6)
+    if state.get("extraction") is None:
+        # Nothing was read (API or config failure): don't claim the hash or a cap slot; allow /retry.
+        store.audit("failed", issue, now, sha256=sha, thread=thread, cost_usd=cost, errors=state.get("errors") or [])
+        errors = "; ".join(state.get("errors") or ["unknown error"])
+        return Outcome("error", render.simple_comment(issue, "error", "⚠️ The run failed before reading the invoice",
+                       f"{errors}\n\nNothing was counted against the daily cap. Comment `/retry` to try again."))
+
     store.record_hash(sha, issue)
     status = "held" if state.get("pending") else (state.get("outcome") or {}).get("status", "error")
-    cost = round(sum(s.get("cost_usd", 0) for s in state.get("steps") or []), 6)
-    store.audit("processed", issue, now, sha256=sha, status=status, cost_usd=cost,
+    store.audit("processed", issue, now, sha256=sha, thread=thread, status=status, cost_usd=cost,
                 exceptions=[e["type"] for e in (state.get("match") or {}).get("exceptions") or []])
     if status == "posted":
         _post_to_ledger(store, state, now)
@@ -120,8 +135,12 @@ def handle_comment(*, issue: int, author: str, comment_body: str, issue_body: st
         return process_issue(issue=issue, author=author, body=issue_body, created_at=created_at, store=store,
                              now=now, fetch=fetch, run_url=run_url, cap=cap, owner=owner)
 
+    if not store.has_run(issue):
+        return Outcome("noop", render.simple_comment(issue, "noop", "Nothing waiting for a decision",
+                       "This invoice hasn't been processed yet. Comment `/retry` to process it."))
+    thread = store.thread_for(issue)
     graph = _graph(store)
-    current = graph_mod.graph_state(graph, doc_id(issue))
+    current = graph_mod.graph_state(graph, thread)
     if not current.get("pending"):
         return Outcome("noop", render.simple_comment(issue, "noop", "Nothing waiting for a decision",
                        "This invoice isn't held (it may already be decided). Decisions only count once."))
@@ -130,7 +149,7 @@ def handle_comment(*, issue: int, author: str, comment_body: str, issue_body: st
     decision = {"decision": cmd.action, "note": cmd.note, "reviewer": f"@{author} ({approver_role})"}
     graph_mod.use_master(store.master())
     try:
-        state = graph_mod.resume_run(graph, doc_id(issue), decision)
+        state = graph_mod.resume_run(graph, thread, decision)
     finally:
         graph_mod.use_master(None)
 

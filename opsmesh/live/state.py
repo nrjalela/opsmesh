@@ -83,11 +83,33 @@ class StateStore:
         return [json.loads(line) for line in self._audit.read_text().splitlines() if line.strip()]
 
     def processed_on(self, day: str) -> int:
-        """Invoices that reached Claude on this local date (what the daily cap limits)."""
+        """Invoices processed on this local date (what the daily cap limits). Failed attempts don't count."""
         return sum(1 for e in self.events() if e["event"] == "processed" and e["local_date"] == day)
 
+    RUN_EVENTS = ("processed", "failed", "voided")
+
+    def latest_run(self, issue: int) -> dict | None:
+        """The most recent attempt for this issue (processed, failed, or voided by maintenance)."""
+        runs = [e for e in self.events() if e["issue"] == issue and e["event"] in self.RUN_EVENTS]
+        return runs[-1] if runs else None
+
     def has_run(self, issue: int) -> bool:
-        return any(e["event"] == "processed" and e["issue"] == issue for e in self.events())
+        latest = self.latest_run(issue)
+        return latest is not None and latest["event"] == "processed"
+
+    def thread_for(self, issue: int) -> str:
+        """LangGraph thread of the live attempt. Each retry after a failure gets a fresh thread."""
+        latest = self.latest_run(issue)
+        if latest and latest["event"] == "processed":
+            return latest.get("thread") or f"GH-{issue:04d}"
+        attempts = sum(1 for e in self.events() if e["issue"] == issue and e["event"] in self.RUN_EVENTS)
+        return f"GH-{issue:04d}" if attempts == 0 else f"GH-{issue:04d}-r{attempts + 1}"
+
+    def release_hash(self, sha256: str, issue: int) -> None:
+        hashes = self._read(self._hashes, {})
+        if hashes.get(sha256) == issue:
+            del hashes[sha256]
+            self._write(self._hashes, hashes)
 
     # --- live ledger -----------------------------------------------------------------------------
     def ledger(self) -> list[PostedInvoice]:
