@@ -1,0 +1,409 @@
+{
+  "doc_id": "OPS-0036",
+  "file": "OPS-0036.pdf",
+  "received_date": "2026-09-23",
+  "recorded_at": "2026-09-29T13:23:18+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "NORLANE STRETCH FILMS PTY LTD",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "47 742 356 164",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "NSF003945",
+        "confidence": 0.98
+      },
+      "invoice_date": {
+        "value": "2026-09-22",
+        "confidence": 0.97
+      },
+      "due_date": {
+        "value": null,
+        "confidence": 0.9
+      },
+      "po_number": {
+        "value": "4500012165",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.97
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "MACHINE STRETCH FILM 23UM X 500MM",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": "FLM-STR-23",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": 10,
+            "confidence": 0.98
+          },
+          "quantity": {
+            "value": 120.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "ROLL",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 38.5,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 4620.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.9
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 4620.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 462.0,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 5082.0,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "TERMS: 30 DAYS FROM END OF MONTH; DOCKET DD222448",
+        "confidence": 0.9
+      },
+      "notes_for_ap": "No explicit due date printed; terms are 30 days from end of month. Arithmetic and GST reconcile."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 47742356164 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($4,620.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$4,620.00 + $462.00 GST = $5,082.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.97
+    },
+    "invoice": {
+      "vendor_name": "NORLANE STRETCH FILMS PTY LTD",
+      "vendor_abn": "47742356164",
+      "invoice_number": "NSF003945",
+      "invoice_date": "2026-09-22",
+      "po_number": "4500012165",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "MACHINE STRETCH FILM 23UM X 500MM",
+          "item_code": "FLM-STR-23",
+          "po_line": 10,
+          "quantity": "120.0",
+          "uom": "ROLL",
+          "unit_price": "38.5",
+          "amount": "4620.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "4620.0",
+      "gst_amount": "462.0",
+      "total": "5082.0",
+      "remarks": "TERMS: 30 DAYS FROM END OF MONTH; DOCKET DD222448"
+    },
+    "match": {
+      "invoice_number": "NSF003945",
+      "vendor_id": "V1006",
+      "vendor_name": "Norlane Stretch Films Pty Ltd",
+      "po_number": "4500012165",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Machine stretch film 23um x 500mm",
+          "po_line": 10,
+          "match_method": "PO line reference",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "38.50",
+          "invoice_price": "38.5",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "120",
+          "received_qty": "120",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "120.0",
+          "amount": "4620.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($5,082.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 47 742 356 164 is Norlane Stretch Films Pty Ltd (V1006)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Norlane Stretch Films Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012165 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Machine stretch film 23um x 500mm) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$38.50/roll agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 120 roll; received 120 roll. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $462.00 = 10% of $4,620.00 taxable."
+        }
+      ],
+      "taxable_amount": "4620.00",
+      "expected_gst": "462.00",
+      "invoice_total": "5082.0"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $5,082.00 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:23:18+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900036",
+      "due_date": "2026-10-30",
+      "amount": "5082.0",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:13+00:00",
+      "duration_ms": 4456,
+      "summary": "Read NORLANE STRETCH FILMS PTY LTD invoice NSF003945: 1 line, total 5082.0.",
+      "reasoning": "No explicit due date printed; terms are 30 days from end of month. Arithmetic and GST reconcile. Least certain fields: invoice_date (97%), line 1 description (97%), vendor_abn (98%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2125,
+      "output_tokens": 584,
+      "cost_usd": 0.010597,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:18+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 47742356164 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($4,620.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$4,620.00 + $462.00 GST = $5,082.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:18+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($5,082.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 47 742 356 164 is Norlane Stretch Films Pty Ltd (V1006)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Norlane Stretch Films Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012165 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Machine stretch film 23um x 500mm) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$38.50/roll agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 120 roll; received 120 roll. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $462.00 = 10% of $4,620.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:18+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $5,082.00 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:18+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900036; $5,082.00 scheduled for payment on 30 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 4456,
+    "llm_ms": 4456,
+    "cost_usd": 0.010597,
+    "input_tokens": 2125,
+    "output_tokens": 584
+  }
+}

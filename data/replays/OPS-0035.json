@@ -1,0 +1,454 @@
+{
+  "doc_id": "OPS-0035",
+  "file": "OPS-0035.pdf",
+  "received_date": "2026-09-22",
+  "recorded_at": "2026-09-29T13:23:22+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Point Henry Labels Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "64 644 338 086",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "PHL-05033",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-19",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-10-19",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012163",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "PS label 100x150, per 1000",
+            "confidence": 0.95
+          },
+          "item_code": {
+            "value": "LBL-PS-100150",
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 120.0,
+            "confidence": 0.7
+          },
+          "uom": {
+            "value": "1000",
+            "confidence": 0.6
+          },
+          "unit_price": {
+            "value": 21.0,
+            "confidence": 0.95
+          },
+          "amount": {
+            "value": 2520.0,
+            "confidence": 0.97
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 2520.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 252.0,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 2772.0,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "Terms: 30 days from invoice date. Pay by EFT, reference PHL-05033.",
+        "confidence": 0.9
+      },
+      "notes_for_ap": "The Qty column prints '120 1000' (quantity 120, unit of 1000 labels), which is ambiguous. 120 x 21.00 = 2,520.00 matches the amount, so quantity is 120 and the UOM is per 1000."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 64644338086 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($2,520.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$2,520.00 + $252.00 GST = $2,772.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "fail",
+          "detail": "1 field(s) below 80%: line 1 quantity."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [
+        "line 1 quantity"
+      ],
+      "min_confidence": 0.7
+    },
+    "invoice": {
+      "vendor_name": "Point Henry Labels Pty Ltd",
+      "vendor_abn": "64644338086",
+      "invoice_number": "PHL-05033",
+      "invoice_date": "2026-09-19",
+      "po_number": "4500012163",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "PS label 100x150, per 1000",
+          "item_code": "LBL-PS-100150",
+          "po_line": null,
+          "quantity": "120.0",
+          "uom": "1000",
+          "unit_price": "21.0",
+          "amount": "2520.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "2520.0",
+      "gst_amount": "252.0",
+      "total": "2772.0",
+      "remarks": "Terms: 30 days from invoice date. Pay by EFT, reference PHL-05033."
+    },
+    "match": {
+      "invoice_number": "PHL-05033",
+      "vendor_id": "V1009",
+      "vendor_name": "Point Henry Labels Pty Ltd",
+      "po_number": "4500012163",
+      "exceptions": [
+        {
+          "type": "missing_goods_receipt",
+          "message": "Line 1 (PS label 100x150, per 1000): no goods receipt has been recorded against PO 4500012163 line 10. Receiving needs to confirm the 120 1000 arrived before this can be paid.",
+          "line": 1,
+          "details": {
+            "received": "0",
+            "previously_invoiced": "0",
+            "invoiced": "120.0"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "PS label 100x150, per 1000",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "21.00",
+          "invoice_price": "21.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "120",
+          "received_qty": "0",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "120.0",
+          "amount": "2520.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($2,772.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 64 644 338 086 is Point Henry Labels Pty Ltd (V1009)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Point Henry Labels Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012163 (1 line, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (PS label 100x150, per 1000) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$21.00/1000 agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "fail",
+          "detail": "Line 1 (PS label 100x150, per 1000): no goods receipt has been recorded against PO 4500012163 line 10. Receiving needs to confirm the 120 1000 arrived before this can be paid."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $252.00 = 10% of $2,520.00 taxable."
+        }
+      ],
+      "taxable_amount": "2520.00",
+      "expected_gst": "252.00",
+      "invoice_total": "2772.0"
+    },
+    "analysis": {
+      "headline": "Invoice PHL-05033 from Point Henry Labels for $2,772.00 can't be paid yet because no goods receipt has been recorded against PO 4500012163.",
+      "explanation": "Point Henry Labels has invoiced 120 units (per 1000) of PS label 100x150 on PO 4500012163 line 10. Nothing has been received against that line, and nothing has been invoiced before this. The vendor details match our records, so the only open issue is confirming delivery.",
+      "recommended_action": "Hold payment until Receiving confirms whether the labels arrived and posts the goods receipt. If they haven't arrived, AP will query the vendor.",
+      "drafts": [
+        {
+          "kind": "internal_note",
+          "to": "Receiving team, Corio plant",
+          "subject": "Goods receipt needed: PO 4500012163 line 10 (Point Henry Labels, invoice PHL-05033)",
+          "body": "Hi team,\n\nPoint Henry Labels has invoiced us on PO 4500012163 (invoice PHL-05033, $2,772.00 inc GST) for 120 x 1000 of PS label 100x150 (PO line 10). No goods receipt has been recorded against that line.\n\nCould you please check whether this delivery has arrived?\n\n- If it has, please post the goods receipt so we can pay the invoice.\n- If it hasn't, please let AP know and we will query the vendor.\n\nThe buyer on the PO is R. Delaney if you need to check the order details.\n\nThanks,\nAccounts Payable"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "internal_note",
+        "to": "Receiving team, Corio plant",
+        "purpose": "Ask receiving to confirm whether these goods arrived and, if so, post the goods receipt so the invoice can be paid. If they haven't arrived, say so and AP will query the vendor.",
+        "exception_types": [
+          "missing_goods_receipt"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Officer",
+      "reasons": [
+        "Low-confidence extraction (line 1 quantity). Check against the PDF.",
+        "No goods receipt yet (reviewer: AP Officer)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:23:22+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0035",
+    "approver": "AP Officer",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "Low-confidence extraction (line 1 quantity). Check against the PDF.",
+      "No goods receipt yet (reviewer: AP Officer)."
+    ],
+    "vendor": "Point Henry Labels Pty Ltd",
+    "invoice_number": "PHL-05033",
+    "total": "2772.0",
+    "headline": "Invoice PHL-05033 from Point Henry Labels for $2,772.00 can't be paid yet because no goods receipt has been recorded against PO 4500012163."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:12+00:00",
+      "duration_ms": 4838,
+      "summary": "Read Point Henry Labels Pty Ltd invoice PHL-05033: 1 line, total 2772.0.",
+      "reasoning": "The Qty column prints '120 1000' (quantity 120, unit of 1000 labels), which is ambiguous. 120 x 21.00 = 2,520.00 matches the amount, so quantity is 120 and the UOM is per 1000. Least certain fields: line 1 quantity (70%), line 1 description (95%), line 1 po_line (95%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2037,
+      "output_tokens": 618,
+      "cost_usd": 0.010761,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:17+00:00",
+      "duration_ms": 0,
+      "summary": "1 check(s) flagged: Confidence.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 64644338086 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($2,520.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$2,520.00 + $252.00 GST = $2,772.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "fail",
+          "detail": "1 field(s) below 80%: line 1 quantity."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:17+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: no goods receipt yet",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($2,772.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 64 644 338 086 is Point Henry Labels Pty Ltd (V1009)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Point Henry Labels Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012163 (1 line, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (PS label 100x150, per 1000) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$21.00/1000 agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "fail",
+          "detail": "Line 1 (PS label 100x150, per 1000): no goods receipt has been recorded against PO 4500012163 line 10. Receiving needs to confirm the 120 1000 arrived before this can be paid."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $252.00 = 10% of $2,520.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:17+00:00",
+      "duration_ms": 4856,
+      "summary": "Invoice PHL-05033 from Point Henry Labels for $2,772.00 can't be paid yet because no goods receipt has been recorded against PO 4500012163. Drafted 1 message(s).",
+      "reasoning": "Point Henry Labels has invoiced 120 units (per 1000) of PS label 100x150 on PO 4500012163 line 10. Nothing has been received against that line, and nothing has been invoiced before this. The vendor details match our records, so the only open issue is confirming delivery. Recommended: Hold payment until Receiving confirms whether the labels arrived and posts the goods receipt. If they haven't arrived, AP will query the vendor.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 539,
+      "output_tokens": 517,
+      "cost_usd": 0.006456,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:22+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Officer.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Low-confidence extraction (line 1 quantity). Check against the PDF."
+        },
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "No goods receipt yet (reviewer: AP Officer)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 9694,
+    "llm_ms": 9694,
+    "cost_usd": 0.017217,
+    "input_tokens": 2576,
+    "output_tokens": 1135
+  }
+}

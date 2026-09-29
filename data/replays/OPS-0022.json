@@ -1,0 +1,368 @@
+{
+  "doc_id": "OPS-0022",
+  "file": "OPS-0022.pdf",
+  "received_date": "2026-09-14",
+  "recorded_at": "2026-09-29T13:22:59+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Otway Adhesives Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "48 427 975 421",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "OA-02325",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-12",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-09-26",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012103",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "Hot-melt adhesive EVA, 20 kg bag",
+            "confidence": 0.95
+          },
+          "item_code": {
+            "value": "ADH-HM-EVA",
+            "confidence": 0.95
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 60.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "bag",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 96.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 5760.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 5760.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 576.0,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 6336.0,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Please note our bank details have changed. Updated account details are on the attached letter. Please update your records before the next payment run. Terms: 14 days from invoice date. Pay by EFT, reference OA-02325.",
+        "confidence": 0.95
+      },
+      "notes_for_ap": "Invoice states the vendor's bank details have changed, referring to an attached letter that was not included. Verify the change with the vendor through a known contact before updating any records or paying. Also, the stated 14-day terms from the 12 Sep invoice date would fall on 26 Sep, consistent with the due date."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 48427975421 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($5,760.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$5,760.00 + $576.00 GST = $6,336.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Otway Adhesives Pty Ltd",
+      "vendor_abn": "48427975421",
+      "invoice_number": "OA-02325",
+      "invoice_date": "2026-09-12",
+      "po_number": "4500012103",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Hot-melt adhesive EVA, 20 kg bag",
+          "item_code": "ADH-HM-EVA",
+          "po_line": null,
+          "quantity": "60.0",
+          "uom": "bag",
+          "unit_price": "96.0",
+          "amount": "5760.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "5760.0",
+      "gst_amount": "576.0",
+      "total": "6336.0",
+      "remarks": "Please note our bank details have changed. Updated account details are on the attached letter. Please update your records before the next payment run. Terms: 14 days from invoice date. Pay by EFT, reference OA-02325."
+    },
+    "match": {
+      "invoice_number": "OA-02325",
+      "vendor_id": null,
+      "vendor_name": null,
+      "po_number": "4500012103",
+      "exceptions": [
+        {
+          "type": "unknown_vendor",
+          "message": "ABN 48 427 975 421 isn't in the vendor master, but the name matches Otway Adhesives Pty Ltd (V1005), whose ABN on file is 10 398 434 205. This could be a restructure or an impersonation attempt. Verify with the vendor using the contact details already on file, not the ones printed on this invoice. The invoice asks us to pay into changed bank details, which is a common fraud pattern.",
+          "line": null,
+          "details": {
+            "abn": "48 427 975 421",
+            "bank_details_change": "mentioned on invoice",
+            "lookalike_vendor": "V1005"
+          }
+        }
+      ],
+      "lines": [],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($6,336.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "fail",
+          "detail": "ABN 48 427 975 421 isn't in the vendor master, but the name matches Otway Adhesives Pty Ltd (V1005), whose ABN on file is 10 398 434 205. This could be a restructure or an impersonation attempt. Verify with the vendor using the contact details already on file, not the ones printed on this invoice. The invoice asks us to pay into changed bank details, which is a common fraud pattern."
+        }
+      ],
+      "taxable_amount": null,
+      "expected_gst": null,
+      "invoice_total": "6336.0"
+    },
+    "analysis": {
+      "headline": "Invoice OA-02325 for $6,336.00 from Otway Adhesives Pty Ltd shows a possible vendor impersonation: the ABN doesn't match our vendor on file and the invoice asks for changed bank details.",
+      "explanation": "The name matches Otway Adhesives Pty Ltd (V1005), but the ABN on the invoice, 48 427 975 421, isn't in the vendor master and differs from the ABN on file, 10 398 434 205. The invoice also says bank details have changed and asks us to update our records before the next payment run. This could be a restructure or an impersonation attempt, and the bank details request is a common fraud pattern.",
+      "recommended_action": "Hold invoice OA-02325 and do not pay it or change any bank details. Ask the Vendor master team to verify with the vendor by phone using the contact details already on file, not those printed on the invoice.",
+      "drafts": [
+        {
+          "kind": "internal_note",
+          "to": "Vendor master team",
+          "subject": "Hold: possible impersonation of Otway Adhesives (V1005) - invoice OA-02325, PO 4500012103",
+          "body": "Hi team,\n\nWe've received invoice OA-02325 for $6,336.00 against PO 4500012103 (buyer M. Tran) from Otway Adhesives Pty Ltd. The name matches vendor V1005, but the ABN on the invoice (48 427 975 421) isn't in the vendor master and differs from the ABN on file (10 398 434 205). The invoice also says the vendor's bank details have changed.\n\nThis could be a restructure or an impersonation attempt. Please:\n1. Do not change any bank details or vendor records based on this invoice or its attached letter.\n2. Verify the invoice, the ABN and the claimed change by phone, using the contact details already on file for V1005 and not those printed on the invoice.\n3. Let AP know the outcome so we can decide whether to release or reject the invoice.\n\nThe invoice is on hold and must not be paid until you confirm.\n\nThanks,\nAccounts Payable, Corio Packaging"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "internal_note",
+        "to": "Vendor master team",
+        "purpose": "Possible impersonation of an existing vendor: the name matches a vendor on file but the ABN doesn't, and the invoice asks for payment to new bank details. Do not pay and do not change any bank details. Verify by phone using the contact details already on file.",
+        "exception_types": [
+          "unknown_vendor"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Supervisor",
+      "reasons": [
+        "Vendor not in master (reviewer: AP Supervisor)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:22:59+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0022",
+    "approver": "AP Supervisor",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "Vendor not in master (reviewer: AP Supervisor)."
+    ],
+    "vendor": "Otway Adhesives Pty Ltd",
+    "invoice_number": "OA-02325",
+    "total": "6336.0",
+    "headline": "Invoice OA-02325 for $6,336.00 from Otway Adhesives Pty Ltd shows a possible vendor impersonation: the ABN doesn't match our vendor on file and the invoice asks for changed bank details."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:48+00:00",
+      "duration_ms": 5197,
+      "summary": "Read Otway Adhesives Pty Ltd invoice OA-02325: 1 line, total 6336.0.",
+      "reasoning": "Invoice states the vendor's bank details have changed, referring to an attached letter that was not included. Verify the change with the vendor through a known contact before updating any records or paying. Also, the stated 14-day terms from the 12 Sep invoice date would fall on 26 Sep, consistent with the due date. Least certain fields: line 1 description (95%), line 1 item_code (95%), line 1 po_line (95%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2083,
+      "output_tokens": 679,
+      "cost_usd": 0.011463,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:53+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 48427975421 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($5,760.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$5,760.00 + $576.00 GST = $6,336.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:53+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: vendor not in master",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($6,336.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "fail",
+          "detail": "ABN 48 427 975 421 isn't in the vendor master, but the name matches Otway Adhesives Pty Ltd (V1005), whose ABN on file is 10 398 434 205. This could be a restructure or an impersonation attempt. Verify with the vendor using the contact details already on file, not the ones printed on this invoice. The invoice asks us to pay into changed bank details, which is a common fraud pattern."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:53+00:00",
+      "duration_ms": 5810,
+      "summary": "Invoice OA-02325 for $6,336.00 from Otway Adhesives Pty Ltd shows a possible vendor impersonation: the ABN doesn't match our vendor on file and the invoice asks for changed bank details. Drafted 1 message(s).",
+      "reasoning": "The name matches Otway Adhesives Pty Ltd (V1005), but the ABN on the invoice, 48 427 975 421, isn't in the vendor master and differs from the ABN on file, 10 398 434 205. The invoice also says bank details have changed and asks us to update our records before the next payment run. This could be a restructure or an impersonation attempt, and the bank details request is a common fraud pattern. Recommended: Hold invoice OA-02325 and do not pay it or change any bank details. Ask the Vendor master team to verify with the vendor by phone using the contact details already on file, not those printed on the invoice.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 648,
+      "output_tokens": 703,
+      "cost_usd": 0.008534,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:59+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Supervisor.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Vendor not in master (reviewer: AP Supervisor)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 11007,
+    "llm_ms": 11007,
+    "cost_usd": 0.019997,
+    "input_tokens": 2731,
+    "output_tokens": 1382
+  }
+}

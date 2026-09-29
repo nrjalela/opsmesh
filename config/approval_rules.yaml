@@ -1,0 +1,37 @@
+# Approval routing (a simplified delegation-of-authority matrix).
+# All amounts are invoice totals in AUD, inc GST.
+
+roles:            # lowest to highest authority
+  - AP Officer
+  - AP Supervisor
+  - Finance Manager
+
+# Clean, PO-matched invoices up to this total post with no human touch.
+# The PO itself was already approved when it was raised.
+auto_post_limit: 20000
+
+# Clean invoices above the auto-post limit still get a second look.
+amount_tiers:
+  - up_to: 100000
+    approver: AP Supervisor
+  - up_to: null
+    approver: Finance Manager
+
+# Invoices on hold go to this role, by exception type.
+exception_approvers:
+  price_variance: AP Officer
+  short_shipped: AP Officer
+  duplicate_invoice: AP Officer
+  missing_goods_receipt: AP Officer
+  gst_error: AP Officer
+  unknown_vendor: AP Supervisor       # onboarding or possible fraud
+  po_not_found: AP Officer
+  line_not_on_po: AP Officer
+  over_po_quantity: AP Officer
+  invoice_math: AP Officer
+
+# Held invoices above this total also need the Finance Manager.
+escalate_held_above: 100000
+
+# Extracted fields below this confidence are sent for a human check.
+min_field_confidence: 0.80

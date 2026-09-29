@@ -1,0 +1,499 @@
+{
+  "doc_id": "OPS-0004",
+  "file": "OPS-0004.pdf",
+  "received_date": "2026-09-03",
+  "recorded_at": "2026-09-29T13:22:16+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Limeburners Industrial Supplies Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "18 524 709 412",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "LIS-0003342",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-03",
+        "confidence": 0.97
+      },
+      "due_date": {
+        "value": "2026-10-03",
+        "confidence": 0.97
+      },
+      "po_number": {
+        "value": "4500012102",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": null,
+        "confidence": 0.9
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "V-belt B52",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": "MRO-VBELT-B52",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 20.0,
+            "confidence": 0.99
+          },
+          "uom": {
+            "value": "ea",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 22.4,
+            "confidence": 0.99
+          },
+          "amount": {
+            "value": 448.0,
+            "confidence": 0.99
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.8
+          }
+        },
+        {
+          "description": {
+            "value": "Nitrile gloves, box of 100",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": "MRO-GLV-NIT",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 50.0,
+            "confidence": 0.99
+          },
+          "uom": {
+            "value": "box",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 11.2,
+            "confidence": 0.99
+          },
+          "amount": {
+            "value": 560.0,
+            "confidence": 0.99
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.8
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 1008.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 100.8,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 1108.8,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Payment by EFT within terms. Please quote invoice number LIS-0003342 on your remittance.",
+        "confidence": 0.9
+      },
+      "notes_for_ap": ""
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 18524709412 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($1,008.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$1,008.00 + $100.80 GST = $1,108.80."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Limeburners Industrial Supplies Pty Ltd",
+      "vendor_abn": "18524709412",
+      "invoice_number": "LIS-0003342",
+      "invoice_date": "2026-09-03",
+      "po_number": "4500012102",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "V-belt B52",
+          "item_code": "MRO-VBELT-B52",
+          "po_line": null,
+          "quantity": "20.0",
+          "uom": "ea",
+          "unit_price": "22.4",
+          "amount": "448.0",
+          "gst_applicable": null
+        },
+        {
+          "description": "Nitrile gloves, box of 100",
+          "item_code": "MRO-GLV-NIT",
+          "po_line": null,
+          "quantity": "50.0",
+          "uom": "box",
+          "unit_price": "11.2",
+          "amount": "560.0",
+          "gst_applicable": null
+        }
+      ],
+      "subtotal": "1008.0",
+      "gst_amount": "100.8",
+      "total": "1108.8",
+      "remarks": "Payment by EFT within terms. Please quote invoice number LIS-0003342 on your remittance."
+    },
+    "match": {
+      "invoice_number": "LIS-0003342",
+      "vendor_id": "V1008",
+      "vendor_name": "Limeburners Industrial Supplies Pty Ltd",
+      "po_number": "4500012102",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "V-belt B52",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "22.40",
+          "invoice_price": "22.4",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "20",
+          "received_qty": "20",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "20.0",
+          "amount": "448.0"
+        },
+        {
+          "invoice_line": 2,
+          "description": "Nitrile gloves, box of 100",
+          "po_line": 20,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "11.20",
+          "invoice_price": "11.2",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "50",
+          "received_qty": "50",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "50.0",
+          "amount": "560.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($1,108.80 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 18 524 709 412 is Limeburners Industrial Supplies Pty Ltd (V1008)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Limeburners Industrial Supplies Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012102 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (V-belt B52) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$22.40/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 20 ea; received 20 ea. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Nitrile gloves, box of 100) by item code."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$11.20/box agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 50 box; received 50 box. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $100.80 = 10% of $1,008.00 taxable."
+        }
+      ],
+      "taxable_amount": "1008.00",
+      "expected_gst": "100.80",
+      "invoice_total": "1108.8"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $1,108.80 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:22:16+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900004",
+      "due_date": "2026-10-03",
+      "amount": "1108.8",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:11+00:00",
+      "duration_ms": 5258,
+      "summary": "Read Limeburners Industrial Supplies Pty Ltd invoice LIS-0003342: 2 lines, total 1108.8.",
+      "reasoning": "Nothing unusual noted on the document. Least certain fields: line 1 po_line (95%), line 2 po_line (95%), invoice_date (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2124,
+      "output_tokens": 727,
+      "cost_usd": 0.012025,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:16+00:00",
+      "duration_ms": 1,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 18524709412 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($1,008.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$1,008.00 + $100.80 GST = $1,108.80."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:16+00:00",
+      "duration_ms": 2,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($1,108.80 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 18 524 709 412 is Limeburners Industrial Supplies Pty Ltd (V1008)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Limeburners Industrial Supplies Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012102 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (V-belt B52) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$22.40/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 20 ea; received 20 ea. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Nitrile gloves, box of 100) by item code."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$11.20/box agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 50 box; received 50 box. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $100.80 = 10% of $1,008.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:16+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $1,108.80 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:16+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900004; $1,108.80 scheduled for payment on 3 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 5261,
+    "llm_ms": 5258,
+    "cost_usd": 0.012025,
+    "input_tokens": 2124,
+    "output_tokens": 727
+  }
+}

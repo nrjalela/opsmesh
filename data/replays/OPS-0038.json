@@ -1,0 +1,446 @@
+{
+  "doc_id": "OPS-0038",
+  "file": "OPS-0038.pdf",
+  "received_date": "2026-09-24",
+  "recorded_at": "2026-09-29T13:23:25+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "MOORABOOL PALLETS PTY LTD",
+        "confidence": 0.98
+      },
+      "vendor_abn": {
+        "value": "76 367 121 947",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "MP-7313",
+        "confidence": 0.98
+      },
+      "invoice_date": {
+        "value": "2026-09-22",
+        "confidence": 0.97
+      },
+      "due_date": {
+        "value": null,
+        "confidence": 0.85
+      },
+      "po_number": {
+        "value": "4500012167",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "TIMBER PALLET 1165X1165 STANDARD",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": "PAL-AUS-STD",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": 10,
+            "confidence": 0.98
+          },
+          "quantity": {
+            "value": 300.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "EA",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 24.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 7200.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 7200.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 720.0,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 7920.0,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": null,
+        "confidence": 0.85
+      },
+      "notes_for_ap": "No explicit due date is printed; terms are 30 days from invoice date. Docket DD621654 is referenced and may be useful for goods receipt matching."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 76367121947 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($7,200.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$7,200.00 + $720.00 GST = $7,920.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.97
+    },
+    "invoice": {
+      "vendor_name": "MOORABOOL PALLETS PTY LTD",
+      "vendor_abn": "76367121947",
+      "invoice_number": "MP-7313",
+      "invoice_date": "2026-09-22",
+      "po_number": "4500012167",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "TIMBER PALLET 1165X1165 STANDARD",
+          "item_code": "PAL-AUS-STD",
+          "po_line": 10,
+          "quantity": "300.0",
+          "uom": "EA",
+          "unit_price": "24.0",
+          "amount": "7200.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "7200.0",
+      "gst_amount": "720.0",
+      "total": "7920.0",
+      "remarks": null
+    },
+    "match": {
+      "invoice_number": "MP-7313",
+      "vendor_id": "V1007",
+      "vendor_name": "Moorabool Pallets Pty Ltd",
+      "po_number": "4500012167",
+      "exceptions": [
+        {
+          "type": "short_shipped",
+          "message": "Line 1 (Timber pallet 1165x1165 standard): billed 300 ea, but only 280 ea have been received and not yet invoiced (20 ea short, $480.00 ex GST). Receiving note: 20 pallets rejected at receipt: broken bearers.",
+          "line": 1,
+          "details": {
+            "received": "280",
+            "previously_invoiced": "0",
+            "invoiced": "300.0",
+            "short": "20.0"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Timber pallet 1165x1165 standard",
+          "po_line": 10,
+          "match_method": "PO line reference",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "24.00",
+          "invoice_price": "24.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "300",
+          "received_qty": "280",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "300.0",
+          "amount": "7200.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($7,920.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 76 367 121 947 is Moorabool Pallets Pty Ltd (V1007)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Moorabool Pallets Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012167 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Timber pallet 1165x1165 standard) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$24.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "fail",
+          "detail": "Line 1 (Timber pallet 1165x1165 standard): billed 300 ea, but only 280 ea have been received and not yet invoiced (20 ea short, $480.00 ex GST). Receiving note: 20 pallets rejected at receipt: broken bearers."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $720.00 = 10% of $7,200.00 taxable."
+        }
+      ],
+      "taxable_amount": "7200.00",
+      "expected_gst": "720.00",
+      "invoice_total": "7920.0"
+    },
+    "analysis": {
+      "headline": "Moorabool Pallets invoice MP-7313 bills 20 pallets more than we received, an overbilling of $480.00 ex GST on a $7,920.00 invoice.",
+      "explanation": "Line 1 (Timber pallet 1165x1165 standard) is billed at 300 ea, but only 280 ea have been received and none previously invoiced. The 20 ea difference is worth $480.00 ex GST. The receiving note records 20 pallets rejected at receipt due to broken bearers.",
+      "recommended_action": "Hold invoice MP-7313 and ask Moorabool Pallets for a credit note covering the 20 rejected pallets. Pay for the 280 ea received once the credit note arrives.",
+      "drafts": [
+        {
+          "kind": "vendor_email",
+          "to": "Moorabool Pallets Pty Ltd <office@mooraboolpallets.example>",
+          "subject": "Invoice MP-7313 (PO 4500012167) - credit note request for 20 pallets",
+          "body": "Hello,\n\nThank you for invoice MP-7313 dated 22 September 2026 against our purchase order 4500012167, totalling $7,920.00 including GST.\n\nOn line 1 (Timber pallet 1165x1165 standard), the invoice bills 300 ea. Our receiving records show 280 ea were accepted, as 20 pallets were rejected at receipt because of broken bearers. This leaves a difference of 20 ea, or $480.00 excluding GST.\n\nCould you please issue a credit note for the 20 pallets, referencing invoice MP-7313? Once we have received it, we will process payment for the 280 pallets received.\n\nIf you would like to arrange collection of the rejected pallets, or if you believe our records are incorrect, please let us know and we will look into it promptly.\n\nKind regards,\nAccounts Payable, Corio Packaging"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "vendor_email",
+        "to": "Moorabool Pallets Pty Ltd <office@mooraboolpallets.example>",
+        "purpose": "Tell the vendor we received fewer units than they billed and ask for a credit note for the shortfall. We'll pay for what was received once that's sorted.",
+        "exception_types": [
+          "short_shipped"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Officer",
+      "reasons": [
+        "Billed for more than we received (reviewer: AP Officer)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:23:25+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0038",
+    "approver": "AP Officer",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "Billed for more than we received (reviewer: AP Officer)."
+    ],
+    "vendor": "MOORABOOL PALLETS PTY LTD",
+    "invoice_number": "MP-7313",
+    "total": "7920.0",
+    "headline": "Moorabool Pallets invoice MP-7313 bills 20 pallets more than we received, an overbilling of $480.00 ex GST on a $7,920.00 invoice."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:15+00:00",
+      "duration_ms": 4320,
+      "summary": "Read MOORABOOL PALLETS PTY LTD invoice MP-7313: 1 line, total 7920.0.",
+      "reasoning": "No explicit due date is printed; terms are 30 days from invoice date. Docket DD621654 is referenced and may be useful for goods receipt matching. Least certain fields: invoice_date (97%), line 1 description (97%), vendor_name (98%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2124,
+      "output_tokens": 564,
+      "cost_usd": 0.010395,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:20+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 76367121947 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($7,200.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$7,200.00 + $720.00 GST = $7,920.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:20+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: billed for more than we received",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($7,920.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 76 367 121 947 is Moorabool Pallets Pty Ltd (V1007)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Moorabool Pallets Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012167 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Timber pallet 1165x1165 standard) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$24.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "fail",
+          "detail": "Line 1 (Timber pallet 1165x1165 standard): billed 300 ea, but only 280 ea have been received and not yet invoiced (20 ea short, $480.00 ex GST). Receiving note: 20 pallets rejected at receipt: broken bearers."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $720.00 = 10% of $7,200.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:20+00:00",
+      "duration_ms": 5287,
+      "summary": "Moorabool Pallets invoice MP-7313 bills 20 pallets more than we received, an overbilling of $480.00 ex GST on a $7,920.00 invoice. Drafted 1 message(s).",
+      "reasoning": "Line 1 (Timber pallet 1165x1165 standard) is billed at 300 ea, but only 280 ea have been received and none previously invoiced. The 20 ea difference is worth $480.00 ex GST. The receiving note records 20 pallets rejected at receipt due to broken bearers. Recommended: Hold invoice MP-7313 and ask Moorabool Pallets for a credit note covering the 20 rejected pallets. Pay for the 280 ea received once the credit note arrives.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 539,
+      "output_tokens": 633,
+      "cost_usd": 0.007616,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:25+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Officer.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Billed for more than we received (reviewer: AP Officer)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 9607,
+    "llm_ms": 9607,
+    "cost_usd": 0.018011,
+    "input_tokens": 2663,
+    "output_tokens": 1197
+  }
+}

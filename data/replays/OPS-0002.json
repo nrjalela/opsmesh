@@ -1,0 +1,409 @@
+{
+  "doc_id": "OPS-0002",
+  "file": "OPS-0002.pdf",
+  "received_date": "2026-09-02",
+  "recorded_at": "2026-09-29T13:22:17+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "MOORABOOL PALLETS PTY LTD",
+        "confidence": 0.98
+      },
+      "vendor_abn": {
+        "value": "76 367 121 947",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "MP-7308",
+        "confidence": 0.98
+      },
+      "invoice_date": {
+        "value": "2026-09-01",
+        "confidence": 0.97
+      },
+      "due_date": {
+        "value": null,
+        "confidence": 0.9
+      },
+      "po_number": {
+        "value": "4500012099",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.97
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "TIMBER PALLET 1165X1165 STANDARD",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": "PAL-AUS-STD",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": 10,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 240.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "EA",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 24.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 5760.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.8
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 5760.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 576.0,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 6336.0,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "TERMS: 30 DAYS FROM INVOICE DATE. DOCKET: DD568042. PLEASE REMIT BY EFT QUOTING INVOICE NUMBER.",
+        "confidence": 0.85
+      },
+      "notes_for_ap": "No explicit due date printed; terms are 30 days from invoice date (would be 2026-10-01). Arithmetic and GST are consistent."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 76367121947 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($5,760.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$5,760.00 + $576.00 GST = $6,336.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.97
+    },
+    "invoice": {
+      "vendor_name": "MOORABOOL PALLETS PTY LTD",
+      "vendor_abn": "76367121947",
+      "invoice_number": "MP-7308",
+      "invoice_date": "2026-09-01",
+      "po_number": "4500012099",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "TIMBER PALLET 1165X1165 STANDARD",
+          "item_code": "PAL-AUS-STD",
+          "po_line": 10,
+          "quantity": "240.0",
+          "uom": "EA",
+          "unit_price": "24.0",
+          "amount": "5760.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "5760.0",
+      "gst_amount": "576.0",
+      "total": "6336.0",
+      "remarks": "TERMS: 30 DAYS FROM INVOICE DATE. DOCKET: DD568042. PLEASE REMIT BY EFT QUOTING INVOICE NUMBER."
+    },
+    "match": {
+      "invoice_number": "MP-7308",
+      "vendor_id": "V1007",
+      "vendor_name": "Moorabool Pallets Pty Ltd",
+      "po_number": "4500012099",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Timber pallet 1165x1165 standard",
+          "po_line": 10,
+          "match_method": "PO line reference",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "24.00",
+          "invoice_price": "24.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "240",
+          "received_qty": "240",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "240.0",
+          "amount": "5760.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($6,336.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 76 367 121 947 is Moorabool Pallets Pty Ltd (V1007)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Moorabool Pallets Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012099 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Timber pallet 1165x1165 standard) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$24.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 240 ea; received 240 ea. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $576.00 = 10% of $5,760.00 taxable."
+        }
+      ],
+      "taxable_amount": "5760.00",
+      "expected_gst": "576.00",
+      "invoice_total": "6336.0"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $6,336.00 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:22:17+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900002",
+      "due_date": "2026-10-01",
+      "amount": "6336.0",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:11+00:00",
+      "duration_ms": 5607,
+      "summary": "Read MOORABOOL PALLETS PTY LTD invoice MP-7308: 1 line, total 6336.0.",
+      "reasoning": "No explicit due date printed; terms are 30 days from invoice date (would be 2026-10-01). Arithmetic and GST are consistent. Least certain fields: invoice_date (97%), line 1 po_line (97%), vendor_name (98%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2124,
+      "output_tokens": 625,
+      "cost_usd": 0.011005,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:17+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 76367121947 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($5,760.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$5,760.00 + $576.00 GST = $6,336.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:17+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($6,336.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 76 367 121 947 is Moorabool Pallets Pty Ltd (V1007)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Moorabool Pallets Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012099 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Timber pallet 1165x1165 standard) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$24.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 240 ea; received 240 ea. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $576.00 = 10% of $5,760.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:17+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $6,336.00 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:17+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900002; $6,336.00 scheduled for payment on 1 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 5607,
+    "llm_ms": 5607,
+    "cost_usd": 0.011005,
+    "input_tokens": 2124,
+    "output_tokens": 625
+  }
+}

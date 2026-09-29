@@ -1,0 +1,499 @@
+{
+  "doc_id": "OPS-0007",
+  "file": "OPS-0007.pdf",
+  "received_date": "2026-09-05",
+  "recorded_at": "2026-09-29T13:22:24+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Surf Coast Corrugated Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "27 591 768 909",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "INV-004421",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-05",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-10-30",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012106",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "RSC carton 400x300x250 C-flute",
+            "confidence": 0.95
+          },
+          "item_code": {
+            "value": "CTN-RSC-400",
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 4000.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "ea",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 1.12,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 4480.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.95
+          }
+        },
+        {
+          "description": {
+            "value": "12-cell carton divider",
+            "confidence": 0.95
+          },
+          "item_code": {
+            "value": "CTN-DIV-12",
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 4000.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "ea",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 0.38,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 1520.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 6000.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 600.0,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 6600.0,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Terms: 30 days from end of month. Pay by EFT, reference INV-004421.",
+        "confidence": 0.9
+      },
+      "notes_for_ap": "Stated terms (30 days from end of month) may not match the printed due date of 30 Oct 2026, which is about 55 days after the issue date. Lines carry no PO line numbers."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 27591768909 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($6,000.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$6,000.00 + $600.00 GST = $6,600.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Surf Coast Corrugated Pty Ltd",
+      "vendor_abn": "27591768909",
+      "invoice_number": "INV-004421",
+      "invoice_date": "2026-09-05",
+      "po_number": "4500012106",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "RSC carton 400x300x250 C-flute",
+          "item_code": "CTN-RSC-400",
+          "po_line": null,
+          "quantity": "4000.0",
+          "uom": "ea",
+          "unit_price": "1.12",
+          "amount": "4480.0",
+          "gst_applicable": true
+        },
+        {
+          "description": "12-cell carton divider",
+          "item_code": "CTN-DIV-12",
+          "po_line": null,
+          "quantity": "4000.0",
+          "uom": "ea",
+          "unit_price": "0.38",
+          "amount": "1520.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "6000.0",
+      "gst_amount": "600.0",
+      "total": "6600.0",
+      "remarks": "Terms: 30 days from end of month. Pay by EFT, reference INV-004421."
+    },
+    "match": {
+      "invoice_number": "INV-004421",
+      "vendor_id": "V1002",
+      "vendor_name": "Surf Coast Corrugated Pty Ltd",
+      "po_number": "4500012106",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "RSC carton 400x300x250 C-flute",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "1.12",
+          "invoice_price": "1.12",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "4000",
+          "received_qty": "4000",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "4000.0",
+          "amount": "4480.0"
+        },
+        {
+          "invoice_line": 2,
+          "description": "12-cell carton divider",
+          "po_line": 20,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "0.38",
+          "invoice_price": "0.38",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "4000",
+          "received_qty": "4000",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "4000.0",
+          "amount": "1520.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($6,600.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 27 591 768 909 is Surf Coast Corrugated Pty Ltd (V1002)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Surf Coast Corrugated Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012106 (2 lines, buyer M. Tran)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (RSC carton 400x300x250 C-flute) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$1.12/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 4,000 ea; received 4,000 ea. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (12-cell carton divider) by item code."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$0.38/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 4,000 ea; received 4,000 ea. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $600.00 = 10% of $6,000.00 taxable."
+        }
+      ],
+      "taxable_amount": "6000.00",
+      "expected_gst": "600.00",
+      "invoice_total": "6600.0"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $6,600.00 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:22:24+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900007",
+      "due_date": "2026-10-30",
+      "amount": "6600.0",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:19+00:00",
+      "duration_ms": 5311,
+      "summary": "Read Surf Coast Corrugated Pty Ltd invoice INV-004421: 2 lines, total 6600.0.",
+      "reasoning": "Stated terms (30 days from end of month) may not match the printed due date of 30 Oct 2026, which is about 55 days after the issue date. Lines carry no PO line numbers. Least certain fields: line 1 description (95%), line 1 po_line (95%), line 2 description (95%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2091,
+      "output_tokens": 786,
+      "cost_usd": 0.012549,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:24+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 27591768909 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($6,000.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$6,000.00 + $600.00 GST = $6,600.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:24+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($6,600.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 27 591 768 909 is Surf Coast Corrugated Pty Ltd (V1002)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Surf Coast Corrugated Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012106 (2 lines, buyer M. Tran)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (RSC carton 400x300x250 C-flute) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$1.12/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 4,000 ea; received 4,000 ea. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (12-cell carton divider) by item code."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$0.38/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 4,000 ea; received 4,000 ea. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $600.00 = 10% of $6,000.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:24+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $6,600.00 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:24+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900007; $6,600.00 scheduled for payment on 30 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 5311,
+    "llm_ms": 5311,
+    "cost_usd": 0.012549,
+    "input_tokens": 2091,
+    "output_tokens": 786
+  }
+}

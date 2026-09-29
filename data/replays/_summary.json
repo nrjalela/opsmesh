@@ -1,0 +1,23 @@
+{
+  "invoices": 40,
+  "model": "claude-sonnet-5-5",
+  "statuses": {
+    "posted": 20,
+    "awaiting_approval": 20
+  },
+  "touchless": 20,
+  "exceptions_match_answer_key": 40,
+  "extraction": {
+    "fields_total": 645,
+    "fields_correct": 645,
+    "field_accuracy": 1.0,
+    "invoices_total": 40,
+    "invoices_all_correct": 40,
+    "avg_confidence_correct": 0.978,
+    "avg_confidence_wrong": null
+  },
+  "extraction_errors": [],
+  "cost_usd": 0.6,
+  "input_tokens": 93004,
+  "output_tokens": 39040
+}

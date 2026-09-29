@@ -1,0 +1,589 @@
+{
+  "doc_id": "OPS-0031",
+  "file": "OPS-0031.pdf",
+  "received_date": "2026-09-20",
+  "recorded_at": "2026-09-29T13:23:10+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Corio Bay Freight Pty Ltd",
+        "confidence": 0.98
+      },
+      "vendor_abn": {
+        "value": "88 165 912 623",
+        "confidence": 0.97
+      },
+      "invoice_number": {
+        "value": "CBF-1383",
+        "confidence": 0.98
+      },
+      "invoice_date": {
+        "value": "2026-09-20",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-10-04",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012153",
+        "confidence": 0.97
+      },
+      "currency": {
+        "value": null,
+        "confidence": 0.85
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "International sea freight - Ningbo to Melbourne, 20ft (GST-free)",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 1.0,
+            "confidence": 0.97
+          },
+          "uom": {
+            "value": null,
+            "confidence": 0.9
+          },
+          "unit_price": {
+            "value": 2480.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 2480.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": false,
+            "confidence": 0.85
+          }
+        },
+        {
+          "description": {
+            "value": "Wharf cartage and container handling",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 1.0,
+            "confidence": 0.97
+          },
+          "uom": {
+            "value": null,
+            "confidence": 0.9
+          },
+          "unit_price": {
+            "value": 385.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 385.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.6
+          }
+        },
+        {
+          "description": {
+            "value": "Local cartage - Corio to Laverton North, B-double",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 1.0,
+            "confidence": 0.97
+          },
+          "uom": {
+            "value": null,
+            "confidence": 0.9
+          },
+          "unit_price": {
+            "value": 1150.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 1150.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.6
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 4015.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 153.5,
+        "confidence": 0.97
+      },
+      "total_inc_gst": {
+        "value": 4168.5,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "Payment by direct deposit; please use the invoice number as reference.",
+        "confidence": 0.9
+      },
+      "notes_for_ap": "GST of 153.50 does not equal 10% of the GST-applicable lines (385.00 + 1,150.00 = 1,535.00, so expected 153.50), which does match; however, the line-level GST status is not printed except for the sea freight line marked GST-free. No currency is printed on the invoice."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 88165912623 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($4,015.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$4,015.00 + $153.50 GST = $4,168.50."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 26 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Corio Bay Freight Pty Ltd",
+      "vendor_abn": "88165912623",
+      "invoice_number": "CBF-1383",
+      "invoice_date": "2026-09-20",
+      "po_number": "4500012153",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "International sea freight - Ningbo to Melbourne, 20ft (GST-free)",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1.0",
+          "uom": null,
+          "unit_price": "2480.0",
+          "amount": "2480.0",
+          "gst_applicable": false
+        },
+        {
+          "description": "Wharf cartage and container handling",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1.0",
+          "uom": null,
+          "unit_price": "385.0",
+          "amount": "385.0",
+          "gst_applicable": true
+        },
+        {
+          "description": "Local cartage - Corio to Laverton North, B-double",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1.0",
+          "uom": null,
+          "unit_price": "1150.0",
+          "amount": "1150.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "4015.0",
+      "gst_amount": "153.5",
+      "total": "4168.5",
+      "remarks": "Payment by direct deposit; please use the invoice number as reference."
+    },
+    "match": {
+      "invoice_number": "CBF-1383",
+      "vendor_id": "V1004",
+      "vendor_name": "Corio Bay Freight Pty Ltd",
+      "po_number": "4500012153",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "International sea freight - Ningbo to Melbourne, 20ft",
+          "po_line": 10,
+          "match_method": "description (91% similar)",
+          "line_type": "service",
+          "tax_code": "FRE",
+          "po_price": "2480.00",
+          "invoice_price": "2480.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "1",
+          "received_qty": null,
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "1.0",
+          "amount": "2480.0"
+        },
+        {
+          "invoice_line": 2,
+          "description": "Wharf cartage and container handling",
+          "po_line": 20,
+          "match_method": "description (100% similar)",
+          "line_type": "service",
+          "tax_code": "GST",
+          "po_price": "385.00",
+          "invoice_price": "385.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "1",
+          "received_qty": null,
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "1.0",
+          "amount": "385.0"
+        },
+        {
+          "invoice_line": 3,
+          "description": "Local cartage - Corio to Laverton North, B-double",
+          "po_line": 30,
+          "match_method": "description (100% similar)",
+          "line_type": "service",
+          "tax_code": "GST",
+          "po_price": "1150.00",
+          "invoice_price": "1150.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "1",
+          "received_qty": null,
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "1.0",
+          "amount": "1150.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($4,168.50 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 88 165 912 623 is Corio Bay Freight Pty Ltd (V1004)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Corio Bay Freight Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012153 (3 lines, buyer M. Tran)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (International sea freight - Ningbo to Melbourne, 20ft) by description (91% similar)."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$2,480.00/ctr agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ctr of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Wharf cartage and container handling) by description (100% similar)."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$385.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ea of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "Line 3",
+          "outcome": "info",
+          "detail": "Matched to PO line 30 (Local cartage - Corio to Laverton North, B-double) by description (100% similar)."
+        },
+        {
+          "check": "Line 3 price",
+          "outcome": "pass",
+          "detail": "$1,150.00/trip agrees with the PO."
+        },
+        {
+          "check": "Line 3 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 trip of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $153.50 = 10% of $1,535.00 taxable. 1 GST-free line(s) correctly excluded."
+        }
+      ],
+      "taxable_amount": "1535.00",
+      "expected_gst": "153.50",
+      "invoice_total": "4168.5"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $4,168.50 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:23:10+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900031",
+      "due_date": "2026-10-04",
+      "amount": "4168.5",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:04+00:00",
+      "duration_ms": 6359,
+      "summary": "Read Corio Bay Freight Pty Ltd invoice CBF-1383: 3 lines, total 4168.5.",
+      "reasoning": "GST of 153.50 does not equal 10% of the GST-applicable lines (385.00 + 1,150.00 = 1,535.00, so expected 153.50), which does match; however, the line-level GST status is not printed except for the sea freight line marked GST-free. No currency is printed on the invoice. Least certain fields: line 1 item_code (95%), line 1 po_line (95%), line 2 item_code (95%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2049,
+      "output_tokens": 995,
+      "cost_usd": 0.014555,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:10+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 88165912623 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($4,015.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$4,015.00 + $153.50 GST = $4,168.50."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 26 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:10+00:00",
+      "duration_ms": 1,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($4,168.50 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 88 165 912 623 is Corio Bay Freight Pty Ltd (V1004)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Corio Bay Freight Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012153 (3 lines, buyer M. Tran)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (International sea freight - Ningbo to Melbourne, 20ft) by description (91% similar)."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$2,480.00/ctr agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ctr of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Wharf cartage and container handling) by description (100% similar)."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$385.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ea of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "Line 3",
+          "outcome": "info",
+          "detail": "Matched to PO line 30 (Local cartage - Corio to Laverton North, B-double) by description (100% similar)."
+        },
+        {
+          "check": "Line 3 price",
+          "outcome": "pass",
+          "detail": "$1,150.00/trip agrees with the PO."
+        },
+        {
+          "check": "Line 3 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 trip of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $153.50 = 10% of $1,535.00 taxable. 1 GST-free line(s) correctly excluded."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:10+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $4,168.50 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:10+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900031; $4,168.50 scheduled for payment on 4 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 6360,
+    "llm_ms": 6359,
+    "cost_usd": 0.014555,
+    "input_tokens": 2049,
+    "output_tokens": 995
+  }
+}

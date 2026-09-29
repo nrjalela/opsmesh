@@ -1,0 +1,445 @@
+{
+  "doc_id": "OPS-0040",
+  "file": "OPS-0040.pdf",
+  "received_date": "2026-09-25",
+  "recorded_at": "2026-09-29T13:23:31+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Portarlington Packaging Films Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "21 983 167 249",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "PPF-03558",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-24",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-10-30",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012169",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "CPP sealant film 30um x 1000mm",
+            "confidence": 0.95
+          },
+          "item_code": {
+            "value": "FLM-CPP-30",
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 18.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "roll",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 288.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 5184.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 5184.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 518.4,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 5702.4,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "Terms: 30 days from end of month. Pay by EFT, reference PPF-03558.",
+        "confidence": 0.95
+      },
+      "notes_for_ap": "Due date (30 Oct 2026) is printed on the invoice and is consistent with the 30 days from end of month terms. No PO line number is printed."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 21983167249 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($5,184.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$5,184.00 + $518.40 GST = $5,702.40."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Portarlington Packaging Films Pty Ltd",
+      "vendor_abn": "21983167249",
+      "invoice_number": "PPF-03558",
+      "invoice_date": "2026-09-24",
+      "po_number": "4500012169",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "CPP sealant film 30um x 1000mm",
+          "item_code": "FLM-CPP-30",
+          "po_line": null,
+          "quantity": "18.0",
+          "uom": "roll",
+          "unit_price": "288.0",
+          "amount": "5184.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "5184.0",
+      "gst_amount": "518.4",
+      "total": "5702.4",
+      "remarks": "Terms: 30 days from end of month. Pay by EFT, reference PPF-03558."
+    },
+    "match": {
+      "invoice_number": "PPF-03558",
+      "vendor_id": "V1014",
+      "vendor_name": "Portarlington Packaging Films Pty Ltd",
+      "po_number": "4500012169",
+      "exceptions": [
+        {
+          "type": "missing_goods_receipt",
+          "message": "Line 1 (CPP sealant film 30um x 1000mm): everything received so far on PO 4500012169 line 10 (18 roll) has already been invoiced. This invoice bills another 18 roll that hasn't been receipted yet.",
+          "line": 1,
+          "details": {
+            "received": "18",
+            "previously_invoiced": "18",
+            "invoiced": "18.0"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "CPP sealant film 30um x 1000mm",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "288.00",
+          "invoice_price": "288.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "36",
+          "received_qty": "18",
+          "previously_invoiced_qty": "18",
+          "invoiced_qty": "18.0",
+          "amount": "5184.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($5,702.40 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 21 983 167 249 is Portarlington Packaging Films Pty Ltd (V1014)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Portarlington Packaging Films Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012169 (1 line, buyer M. Tran)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (CPP sealant film 30um x 1000mm) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$288.00/roll agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "fail",
+          "detail": "Line 1 (CPP sealant film 30um x 1000mm): everything received so far on PO 4500012169 line 10 (18 roll) has already been invoiced. This invoice bills another 18 roll that hasn't been receipted yet."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $518.40 = 10% of $5,184.00 taxable."
+        }
+      ],
+      "taxable_amount": "5184.00",
+      "expected_gst": "518.40",
+      "invoice_total": "5702.4"
+    },
+    "analysis": {
+      "headline": "Invoice PPF-03558 from Portarlington Packaging Films for $5,702.40 can't be paid yet because the 18 rolls it bills have no goods receipt.",
+      "explanation": "All 18 rolls of CPP sealant film 30um x 1000mm received so far on PO 4500012169 line 10 have already been invoiced. Invoice PPF-03558 bills another 18 rolls that haven't been receipted. Without a goods receipt, the invoice can't be matched to the PO.",
+      "recommended_action": "Hold the invoice and ask Receiving to confirm whether the second 18 rolls have arrived. If they have, get the goods receipt posted so the invoice can be paid; if not, query the vendor.",
+      "drafts": [
+        {
+          "kind": "internal_note",
+          "to": "Receiving team, Corio plant",
+          "subject": "Goods receipt check: PO 4500012169 line 10 (invoice PPF-03558)",
+          "body": "Hi team,\n\nPortarlington Packaging Films has invoiced PPF-03558 ($5,702.40 inc GST) against PO 4500012169 line 10, CPP sealant film 30um x 1000mm, for 18 rolls.\n\nOur records show 18 rolls received on this line so far, and those have already been invoiced. This invoice bills a further 18 rolls with no goods receipt.\n\nCould you please check whether this second delivery of 18 rolls has arrived?\n- If it has, please post the goods receipt against PO 4500012169 line 10 so AP can pay the invoice.\n- If it hasn't arrived, please let us know and AP will query the vendor.\n\nThanks,\nAccounts Payable"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "internal_note",
+        "to": "Receiving team, Corio plant",
+        "purpose": "Ask receiving to confirm whether these goods arrived and, if so, post the goods receipt so the invoice can be paid. If they haven't arrived, say so and AP will query the vendor.",
+        "exception_types": [
+          "missing_goods_receipt"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Officer",
+      "reasons": [
+        "No goods receipt yet (reviewer: AP Officer)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:23:31+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0040",
+    "approver": "AP Officer",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "No goods receipt yet (reviewer: AP Officer)."
+    ],
+    "vendor": "Portarlington Packaging Films Pty Ltd",
+    "invoice_number": "PPF-03558",
+    "total": "5702.4",
+    "headline": "Invoice PPF-03558 from Portarlington Packaging Films for $5,702.40 can't be paid yet because the 18 rolls it bills have no goods receipt."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:22+00:00",
+      "duration_ms": 4786,
+      "summary": "Read Portarlington Packaging Films Pty Ltd invoice PPF-03558: 1 line, total 5702.4.",
+      "reasoning": "Due date (30 Oct 2026) is printed on the invoice and is consistent with the 30 days from end of month terms. No PO line number is printed. Least certain fields: line 1 description (95%), line 1 po_line (95%), line 1 item_code (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2045,
+      "output_tokens": 592,
+      "cost_usd": 0.010517,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:26+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 21983167249 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($5,184.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$5,184.00 + $518.40 GST = $5,702.40."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:26+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: no goods receipt yet",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($5,702.40 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 21 983 167 249 is Portarlington Packaging Films Pty Ltd (V1014)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Portarlington Packaging Films Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012169 (1 line, buyer M. Tran)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (CPP sealant film 30um x 1000mm) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$288.00/roll agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "fail",
+          "detail": "Line 1 (CPP sealant film 30um x 1000mm): everything received so far on PO 4500012169 line 10 (18 roll) has already been invoiced. This invoice bills another 18 roll that hasn't been receipted yet."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $518.40 = 10% of $5,184.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:26+00:00",
+      "duration_ms": 4292,
+      "summary": "Invoice PPF-03558 from Portarlington Packaging Films for $5,702.40 can't be paid yet because the 18 rolls it bills have no goods receipt. Drafted 1 message(s).",
+      "reasoning": "All 18 rolls of CPP sealant film 30um x 1000mm received so far on PO 4500012169 line 10 have already been invoiced. Invoice PPF-03558 bills another 18 rolls that haven't been receipted. Without a goods receipt, the invoice can't be matched to the PO. Recommended: Hold the invoice and ask Receiving to confirm whether the second 18 rolls have arrived. If they have, get the goods receipt posted so the invoice can be paid; if not, query the vendor.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 552,
+      "output_tokens": 566,
+      "cost_usd": 0.006972,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:31+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Officer.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "No goods receipt yet (reviewer: AP Officer)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 9078,
+    "llm_ms": 9078,
+    "cost_usd": 0.017489,
+    "input_tokens": 2597,
+    "output_tokens": 1158
+  }
+}

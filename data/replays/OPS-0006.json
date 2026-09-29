@@ -1,0 +1,410 @@
+{
+  "doc_id": "OPS-0006",
+  "file": "OPS-0006.pdf",
+  "received_date": "2026-09-04",
+  "recorded_at": "2026-09-29T13:22:29+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Geelong Precision Maintenance Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "70 930 658 512",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "GPM-0142",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-03",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-09-17",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": null,
+        "confidence": 0.95
+      },
+      "currency": {
+        "value": null,
+        "confidence": 0.85
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "Gearbox rebuild - conveyor 4",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 1.0,
+            "confidence": 0.97
+          },
+          "uom": {
+            "value": null,
+            "confidence": 0.85
+          },
+          "unit_price": {
+            "value": 3860.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 3860.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.6
+          }
+        },
+        {
+          "description": {
+            "value": "Call-out and travel",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 1.0,
+            "confidence": 0.97
+          },
+          "uom": {
+            "value": null,
+            "confidence": 0.85
+          },
+          "unit_price": {
+            "value": 240.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 240.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.6
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 4100.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 410.0,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 4510.0,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "Reference: Job 142, requested by plant maintenance (no order number supplied)",
+        "confidence": 0.93
+      },
+      "notes_for_ap": "No purchase order number is on the invoice; the reference states no order number was supplied, so this is a service invoice with no PO to match. The Reference text overlaps the customer address block in the PDF layout."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 70930658512 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($4,100.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$4,100.00 + $410.00 GST = $4,510.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Geelong Precision Maintenance Pty Ltd",
+      "vendor_abn": "70930658512",
+      "invoice_number": "GPM-0142",
+      "invoice_date": "2026-09-03",
+      "po_number": null,
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Gearbox rebuild - conveyor 4",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1.0",
+          "uom": null,
+          "unit_price": "3860.0",
+          "amount": "3860.0",
+          "gst_applicable": null
+        },
+        {
+          "description": "Call-out and travel",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1.0",
+          "uom": null,
+          "unit_price": "240.0",
+          "amount": "240.0",
+          "gst_applicable": null
+        }
+      ],
+      "subtotal": "4100.0",
+      "gst_amount": "410.0",
+      "total": "4510.0",
+      "remarks": "Reference: Job 142, requested by plant maintenance (no order number supplied)"
+    },
+    "match": {
+      "invoice_number": "GPM-0142",
+      "vendor_id": null,
+      "vendor_name": null,
+      "po_number": null,
+      "exceptions": [
+        {
+          "type": "unknown_vendor",
+          "message": "Geelong Precision Maintenance Pty Ltd (ABN 70 930 658 512) isn't set up in the vendor master. A new vendor needs onboarding (ABN lookup, verified bank details) before anything can be paid.",
+          "line": null,
+          "details": {
+            "abn": "70 930 658 512"
+          }
+        }
+      ],
+      "lines": [],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($4,510.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "fail",
+          "detail": "Geelong Precision Maintenance Pty Ltd (ABN 70 930 658 512) isn't set up in the vendor master. A new vendor needs onboarding (ABN lookup, verified bank details) before anything can be paid."
+        }
+      ],
+      "taxable_amount": null,
+      "expected_gst": null,
+      "invoice_total": "4510.0"
+    },
+    "analysis": {
+      "headline": "Invoice GPM-0142 from Geelong Precision Maintenance Pty Ltd for $4,510.00 inc GST can't be paid: the supplier isn't in the vendor master and there is no PO.",
+      "explanation": "Geelong Precision Maintenance Pty Ltd (ABN 70 930 658 512) has no vendor record. The invoice, dated 3 September 2026, has no PO number and refers only to 'Job 142, requested by plant maintenance'. Without a vendor record and an approved order, there is nothing to match against and no verified payee.",
+      "recommended_action": "Hold the invoice and don't pay. Ask the Vendor master team to find out who engaged the supplier, then onboard them properly and get a PO or non-PO approval before payment is considered.",
+      "drafts": [
+        {
+          "kind": "internal_note",
+          "to": "Vendor master team",
+          "subject": "New supplier with no vendor record: invoice GPM-0142 ($4,510.00) on hold",
+          "body": "Hi team,\n\nWe've received invoice GPM-0142 dated 3 September 2026 from Geelong Precision Maintenance Pty Ltd (ABN 70 930 658 512) for $4,510.00 inc GST. They aren't in the vendor master and the invoice has no PO number. The only reference is 'Job 142, requested by plant maintenance'.\n\nCould you please:\n1. Work out who engaged this supplier (plant maintenance looks like the starting point).\n2. If they are a legitimate new supplier, onboard them properly, including an ABN check and independently verified bank details. Please don't take bank details from the invoice alone.\n3. Make sure a PO or non-PO approval is in place before anything is paid.\n\nThe invoice is on hold until that's done. Please let AP know the outcome.\n\nThanks,\nAccounts Payable, Corio Packaging"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "internal_note",
+        "to": "Vendor master team",
+        "purpose": "A supplier with no vendor record and no PO has invoiced us. Find out who engaged them, then onboard properly (ABN check, verified bank details) and get a PO or non-PO approval before anything is paid.",
+        "exception_types": [
+          "unknown_vendor"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Supervisor",
+      "reasons": [
+        "Vendor not in master (reviewer: AP Supervisor)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:22:29+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0006",
+    "approver": "AP Supervisor",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "Vendor not in master (reviewer: AP Supervisor)."
+    ],
+    "vendor": "Geelong Precision Maintenance Pty Ltd",
+    "invoice_number": "GPM-0142",
+    "total": "4510.0",
+    "headline": "Invoice GPM-0142 from Geelong Precision Maintenance Pty Ltd for $4,510.00 inc GST can't be paid: the supplier isn't in the vendor master and there is no PO."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:17+00:00",
+      "duration_ms": 7013,
+      "summary": "Read Geelong Precision Maintenance Pty Ltd invoice GPM-0142: 2 lines, total 4510.0.",
+      "reasoning": "No purchase order number is on the invoice; the reference states no order number was supplied, so this is a service invoice with no PO to match. The Reference text overlaps the customer address block in the PDF layout. Least certain fields: po_number (95%), line 1 description (97%), line 1 item_code (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2014,
+      "output_tokens": 762,
+      "cost_usd": 0.012155,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:24+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 70930658512 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($4,100.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$4,100.00 + $410.00 GST = $4,510.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:24+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: vendor not in master",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($4,510.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "fail",
+          "detail": "Geelong Precision Maintenance Pty Ltd (ABN 70 930 658 512) isn't set up in the vendor master. A new vendor needs onboarding (ABN lookup, verified bank details) before anything can be paid."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:24+00:00",
+      "duration_ms": 5506,
+      "summary": "Invoice GPM-0142 from Geelong Precision Maintenance Pty Ltd for $4,510.00 inc GST can't be paid: the supplier isn't in the vendor master and there is no PO. Drafted 1 message(s).",
+      "reasoning": "Geelong Precision Maintenance Pty Ltd (ABN 70 930 658 512) has no vendor record. The invoice, dated 3 September 2026, has no PO number and refers only to 'Job 142, requested by plant maintenance'. Without a vendor record and an approved order, there is nothing to match against and no verified payee. Recommended: Hold the invoice and don't pay. Ask the Vendor master team to find out who engaged the supplier, then onboard them properly and get a PO or non-PO approval before payment is considered.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 494,
+      "output_tokens": 632,
+      "cost_usd": 0.007516,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:29+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Supervisor.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Vendor not in master (reviewer: AP Supervisor)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 12519,
+    "llm_ms": 12519,
+    "cost_usd": 0.019671,
+    "input_tokens": 2508,
+    "output_tokens": 1394
+  }
+}

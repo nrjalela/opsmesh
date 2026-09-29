@@ -1,0 +1,499 @@
+{
+  "doc_id": "OPS-0012",
+  "file": "OPS-0012.pdf",
+  "received_date": "2026-09-08",
+  "recorded_at": "2026-09-29T13:22:35+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Anakie Engineering Services Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "56 231 520 675",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "AES-7876",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-05",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-10-05",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012115",
+        "confidence": 0.97
+      },
+      "currency": {
+        "value": null,
+        "confidence": 0.9
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "Preventive maintenance - Line 3 blow moulder",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 38.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "hrs",
+            "confidence": 0.6
+          },
+          "unit_price": {
+            "value": 135.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 5130.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.6
+          }
+        },
+        {
+          "description": {
+            "value": "Emergency call-out fee",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 1.0,
+            "confidence": 0.97
+          },
+          "uom": {
+            "value": null,
+            "confidence": 0.7
+          },
+          "unit_price": {
+            "value": 280.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 280.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.6
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 5410.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 541.0,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 5951.0,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "Payment by direct deposit; please use the invoice number as reference.",
+        "confidence": 0.9
+      },
+      "notes_for_ap": "No currency is printed. The Qty / hrs column does not give a unit for each line, so the uom values are inferred or left empty. Line amounts and totals are consistent with the printed figures."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 56231520675 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($5,410.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$5,410.00 + $541.00 GST = $5,951.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.97
+    },
+    "invoice": {
+      "vendor_name": "Anakie Engineering Services Pty Ltd",
+      "vendor_abn": "56231520675",
+      "invoice_number": "AES-7876",
+      "invoice_date": "2026-09-05",
+      "po_number": "4500012115",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Preventive maintenance - Line 3 blow moulder",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "38.0",
+          "uom": "hrs",
+          "unit_price": "135.0",
+          "amount": "5130.0",
+          "gst_applicable": null
+        },
+        {
+          "description": "Emergency call-out fee",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1.0",
+          "uom": null,
+          "unit_price": "280.0",
+          "amount": "280.0",
+          "gst_applicable": null
+        }
+      ],
+      "subtotal": "5410.0",
+      "gst_amount": "541.0",
+      "total": "5951.0",
+      "remarks": "Payment by direct deposit; please use the invoice number as reference."
+    },
+    "match": {
+      "invoice_number": "AES-7876",
+      "vendor_id": "V1010",
+      "vendor_name": "Anakie Engineering Services Pty Ltd",
+      "po_number": "4500012115",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Preventive maintenance - Line 3 blow moulder",
+          "po_line": 10,
+          "match_method": "description (100% similar)",
+          "line_type": "service",
+          "tax_code": "GST",
+          "po_price": "135.00",
+          "invoice_price": "135.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "40",
+          "received_qty": null,
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "38.0",
+          "amount": "5130.0"
+        },
+        {
+          "invoice_line": 2,
+          "description": "Emergency call-out fee",
+          "po_line": 20,
+          "match_method": "description (100% similar)",
+          "line_type": "service",
+          "tax_code": "GST",
+          "po_price": "280.00",
+          "invoice_price": "280.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "1",
+          "received_qty": null,
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "1.0",
+          "amount": "280.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($5,951.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 56 231 520 675 is Anakie Engineering Services Pty Ltd (V1010)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Anakie Engineering Services Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012115 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Preventive maintenance - Line 3 blow moulder) by description (100% similar)."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$135.00/hr agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 38 hr of 40 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Emergency call-out fee) by description (100% similar)."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$280.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ea of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $541.00 = 10% of $5,410.00 taxable."
+        }
+      ],
+      "taxable_amount": "5410.00",
+      "expected_gst": "541.00",
+      "invoice_total": "5951.0"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $5,951.00 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:22:35+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900012",
+      "due_date": "2026-10-05",
+      "amount": "5951.0",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:29+00:00",
+      "duration_ms": 5388,
+      "summary": "Read Anakie Engineering Services Pty Ltd invoice AES-7876: 2 lines, total 5951.0.",
+      "reasoning": "No currency is printed. The Qty / hrs column does not give a unit for each line, so the uom values are inferred or left empty. Line amounts and totals are consistent with the printed figures. Least certain fields: po_number (97%), line 1 item_code (97%), line 1 po_line (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 1999,
+      "output_tokens": 760,
+      "cost_usd": 0.012105,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:35+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 56231520675 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($5,410.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$5,410.00 + $541.00 GST = $5,951.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:35+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($5,951.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 56 231 520 675 is Anakie Engineering Services Pty Ltd (V1010)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Anakie Engineering Services Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012115 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Preventive maintenance - Line 3 blow moulder) by description (100% similar)."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$135.00/hr agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 38 hr of 40 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Emergency call-out fee) by description (100% similar)."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$280.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ea of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $541.00 = 10% of $5,410.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:35+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $5,951.00 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:35+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900012; $5,951.00 scheduled for payment on 5 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 5388,
+    "llm_ms": 5388,
+    "cost_usd": 0.012105,
+    "input_tokens": 1999,
+    "output_tokens": 760
+  }
+}

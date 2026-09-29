@@ -1,0 +1,409 @@
+{
+  "doc_id": "OPS-0010",
+  "file": "OPS-0010.pdf",
+  "received_date": "2026-09-07",
+  "recorded_at": "2026-09-29T13:22:29+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Leopold Electrical Contractors Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "65 338 848 939",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "LEC-1739",
+        "confidence": 0.98
+      },
+      "invoice_date": {
+        "value": "2026-09-06",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-09-20",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012111",
+        "confidence": 0.97
+      },
+      "currency": {
+        "value": null,
+        "confidence": 0.85
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "Electrician labour",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 22.0,
+            "confidence": 0.97
+          },
+          "uom": {
+            "value": "hrs",
+            "confidence": 0.6
+          },
+          "unit_price": {
+            "value": 118.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 2596.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 2596.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 259.6,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 2855.6,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "Thank you for your business. Payment by direct deposit; please use the invoice number as reference.",
+        "confidence": 0.95
+      },
+      "notes_for_ap": "Invoice is for electrician labour (service) referencing PO 4500012111 with no PO line number or item code. Column header is 'Qty / hrs' so the unit of measure is inferred as hours; no currency is printed."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 65338848939 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($2,596.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$2,596.00 + $259.60 GST = $2,855.60."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.97
+    },
+    "invoice": {
+      "vendor_name": "Leopold Electrical Contractors Pty Ltd",
+      "vendor_abn": "65338848939",
+      "invoice_number": "LEC-1739",
+      "invoice_date": "2026-09-06",
+      "po_number": "4500012111",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Electrician labour",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "22.0",
+          "uom": "hrs",
+          "unit_price": "118.0",
+          "amount": "2596.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "2596.0",
+      "gst_amount": "259.6",
+      "total": "2855.6",
+      "remarks": "Thank you for your business. Payment by direct deposit; please use the invoice number as reference."
+    },
+    "match": {
+      "invoice_number": "LEC-1739",
+      "vendor_id": "V1013",
+      "vendor_name": "Leopold Electrical Contractors Pty Ltd",
+      "po_number": "4500012111",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Electrician labour",
+          "po_line": 10,
+          "match_method": "description (100% similar)",
+          "line_type": "service",
+          "tax_code": "GST",
+          "po_price": "118.00",
+          "invoice_price": "118.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "40",
+          "received_qty": null,
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "22.0",
+          "amount": "2596.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($2,855.60 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 65 338 848 939 is Leopold Electrical Contractors Pty Ltd (V1013)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Leopold Electrical Contractors Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012111 (1 line, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Electrician labour) by description (100% similar)."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$118.00/hr agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 22 hr of 40 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $259.60 = 10% of $2,596.00 taxable."
+        }
+      ],
+      "taxable_amount": "2596.00",
+      "expected_gst": "259.60",
+      "invoice_total": "2855.6"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $2,855.60 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:22:29+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900010",
+      "due_date": "2026-09-20",
+      "amount": "2855.6",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:24+00:00",
+      "duration_ms": 4696,
+      "summary": "Read Leopold Electrical Contractors Pty Ltd invoice LEC-1739: 1 line, total 2855.6.",
+      "reasoning": "Invoice is for electrician labour (service) referencing PO 4500012111 with no PO line number or item code. Column header is 'Qty / hrs' so the unit of measure is inferred as hours; no currency is printed. Least certain fields: po_number (97%), line 1 item_code (97%), line 1 po_line (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 1973,
+      "output_tokens": 596,
+      "cost_usd": 0.010413,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:29+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 65338848939 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($2,596.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$2,596.00 + $259.60 GST = $2,855.60."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:29+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($2,855.60 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 65 338 848 939 is Leopold Electrical Contractors Pty Ltd (V1013)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Leopold Electrical Contractors Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012111 (1 line, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Electrician labour) by description (100% similar)."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$118.00/hr agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 22 hr of 40 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $259.60 = 10% of $2,596.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:29+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $2,855.60 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:29+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900010; $2,855.60 scheduled for payment on 20 Sep 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 4696,
+    "llm_ms": 4696,
+    "cost_usd": 0.010413,
+    "input_tokens": 1973,
+    "output_tokens": 596
+  }
+}

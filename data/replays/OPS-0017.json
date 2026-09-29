@@ -1,0 +1,409 @@
+{
+  "doc_id": "OPS-0017",
+  "file": "OPS-0017.pdf",
+  "received_date": "2026-09-11",
+  "recorded_at": "2026-09-29T13:22:43+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Barwon Polymers Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "64 939 659 707",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "BP-03748",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-11",
+        "confidence": 0.97
+      },
+      "due_date": {
+        "value": "2026-10-30",
+        "confidence": 0.97
+      },
+      "po_number": {
+        "value": "4500012128",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": null,
+        "confidence": 0.85
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "HDPE blow-moulding resin",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": "RES-HDPE-BM",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 5.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "t",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 1965.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 9825.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.6
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 9825.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 982.5,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 10807.5,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Payment by EFT within terms. Please quote invoice number BP-03748 on your remittance. Remittances to accounts@barwonpolymers.example",
+        "confidence": 0.9
+      },
+      "notes_for_ap": ""
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 64939659707 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($9,825.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$9,825.00 + $982.50 GST = $10,807.50."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Barwon Polymers Pty Ltd",
+      "vendor_abn": "64939659707",
+      "invoice_number": "BP-03748",
+      "invoice_date": "2026-09-11",
+      "po_number": "4500012128",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "HDPE blow-moulding resin",
+          "item_code": "RES-HDPE-BM",
+          "po_line": null,
+          "quantity": "5.0",
+          "uom": "t",
+          "unit_price": "1965.0",
+          "amount": "9825.0",
+          "gst_applicable": null
+        }
+      ],
+      "subtotal": "9825.0",
+      "gst_amount": "982.5",
+      "total": "10807.5",
+      "remarks": "Payment by EFT within terms. Please quote invoice number BP-03748 on your remittance. Remittances to accounts@barwonpolymers.example"
+    },
+    "match": {
+      "invoice_number": "BP-03748",
+      "vendor_id": "V1001",
+      "vendor_name": "Barwon Polymers Pty Ltd",
+      "po_number": "4500012128",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "HDPE blow-moulding resin",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "1965.00",
+          "invoice_price": "1965.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "10",
+          "received_qty": "10",
+          "previously_invoiced_qty": "5",
+          "invoiced_qty": "5.0",
+          "amount": "9825.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($10,807.50 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 64 939 659 707 is Barwon Polymers Pty Ltd (V1001)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Barwon Polymers Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012128 (1 line, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (HDPE blow-moulding resin) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$1,965.00/t agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 5 t; received 10 t, 5 already invoiced. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $982.50 = 10% of $9,825.00 taxable."
+        }
+      ],
+      "taxable_amount": "9825.00",
+      "expected_gst": "982.50",
+      "invoice_total": "10807.5"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $10,807.50 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:22:43+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900017",
+      "due_date": "2026-10-30",
+      "amount": "10807.5",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:39+00:00",
+      "duration_ms": 4155,
+      "summary": "Read Barwon Polymers Pty Ltd invoice BP-03748: 1 line, total 10807.5.",
+      "reasoning": "Nothing unusual noted on the document. Least certain fields: line 1 po_line (95%), invoice_date (97%), vendor_abn (98%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2077,
+      "output_tokens": 554,
+      "cost_usd": 0.010201,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:43+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 64939659707 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($9,825.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$9,825.00 + $982.50 GST = $10,807.50."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:43+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($10,807.50 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 64 939 659 707 is Barwon Polymers Pty Ltd (V1001)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Barwon Polymers Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012128 (1 line, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (HDPE blow-moulding resin) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$1,965.00/t agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 5 t; received 10 t, 5 already invoiced. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $982.50 = 10% of $9,825.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:43+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $10,807.50 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:43+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900017; $10,807.50 scheduled for payment on 30 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 4155,
+    "llm_ms": 4155,
+    "cost_usd": 0.010201,
+    "input_tokens": 2077,
+    "output_tokens": 554
+  }
+}

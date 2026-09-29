@@ -1,0 +1,409 @@
+{
+  "doc_id": "OPS-0013",
+  "file": "OPS-0013.pdf",
+  "received_date": "2026-09-09",
+  "recorded_at": "2026-09-29T13:22:37+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Otway Adhesives Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "10 398 434 205",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "OA-02288",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-09",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-10-09",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012116",
+        "confidence": 0.99
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "Hot-melt adhesive EVA, 20 kg bag",
+            "confidence": 0.95
+          },
+          "item_code": {
+            "value": "ADH-HM-EVA",
+            "confidence": 0.95
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 40.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "bag",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 96.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 3840.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 3840.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 384.0,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 4224.0,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Terms: 30 days from invoice date. Pay by EFT, reference OA-02288.",
+        "confidence": 0.9
+      },
+      "notes_for_ap": ""
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 10398434205 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($3,840.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$3,840.00 + $384.00 GST = $4,224.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Otway Adhesives Pty Ltd",
+      "vendor_abn": "10398434205",
+      "invoice_number": "OA-02288",
+      "invoice_date": "2026-09-09",
+      "po_number": "4500012116",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Hot-melt adhesive EVA, 20 kg bag",
+          "item_code": "ADH-HM-EVA",
+          "po_line": null,
+          "quantity": "40.0",
+          "uom": "bag",
+          "unit_price": "96.0",
+          "amount": "3840.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "3840.0",
+      "gst_amount": "384.0",
+      "total": "4224.0",
+      "remarks": "Terms: 30 days from invoice date. Pay by EFT, reference OA-02288."
+    },
+    "match": {
+      "invoice_number": "OA-02288",
+      "vendor_id": "V1005",
+      "vendor_name": "Otway Adhesives Pty Ltd",
+      "po_number": "4500012116",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Hot-melt adhesive EVA, 20 kg bag",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "96.00",
+          "invoice_price": "96.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "40",
+          "received_qty": "40",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "40.0",
+          "amount": "3840.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($4,224.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 10 398 434 205 is Otway Adhesives Pty Ltd (V1005)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Otway Adhesives Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012116 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Hot-melt adhesive EVA, 20 kg bag) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$96.00/bag agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 40 bag; received 40 bag. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $384.00 = 10% of $3,840.00 taxable."
+        }
+      ],
+      "taxable_amount": "3840.00",
+      "expected_gst": "384.00",
+      "invoice_total": "4224.0"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $4,224.00 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:22:37+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900013",
+      "due_date": "2026-10-09",
+      "amount": "4224.0",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:32+00:00",
+      "duration_ms": 4070,
+      "summary": "Read Otway Adhesives Pty Ltd invoice OA-02288: 1 line, total 4224.0.",
+      "reasoning": "Nothing unusual noted on the document. Least certain fields: line 1 description (95%), line 1 item_code (95%), line 1 po_line (95%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2041,
+      "output_tokens": 546,
+      "cost_usd": 0.010049,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:37+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 10398434205 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($3,840.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$3,840.00 + $384.00 GST = $4,224.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:37+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($4,224.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 10 398 434 205 is Otway Adhesives Pty Ltd (V1005)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Otway Adhesives Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012116 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Hot-melt adhesive EVA, 20 kg bag) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$96.00/bag agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 40 bag; received 40 bag. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $384.00 = 10% of $3,840.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:37+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $4,224.00 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:37+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900013; $4,224.00 scheduled for payment on 9 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 4070,
+    "llm_ms": 4070,
+    "cost_usd": 0.010049,
+    "input_tokens": 2041,
+    "output_tokens": 546
+  }
+}

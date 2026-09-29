@@ -1,0 +1,536 @@
+{
+  "doc_id": "OPS-0008",
+  "file": "OPS-0008.pdf",
+  "received_date": "2026-09-05",
+  "recorded_at": "2026-09-29T13:22:32+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "YOU YANGS GAS & WELDING PTY LTD",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "33 515 465 462",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "YYG08477",
+        "confidence": 0.98
+      },
+      "invoice_date": {
+        "value": "2026-09-02",
+        "confidence": 0.97
+      },
+      "due_date": {
+        "value": null,
+        "confidence": 0.9
+      },
+      "po_number": {
+        "value": "4500012108",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.97
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "NITROGEN, G-SIZE CYLINDER REFILL",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": "GAS-N2-G",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": 10,
+            "confidence": 0.98
+          },
+          "quantity": {
+            "value": 12.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "EA",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 64.5,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 774.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.85
+          }
+        },
+        {
+          "description": {
+            "value": "CYLINDER RENTAL, G-SIZE (MONTHLY)",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": "GAS-RENT-G",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": 20,
+            "confidence": 0.98
+          },
+          "quantity": {
+            "value": 12.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "EA",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 12.8,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 153.6,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 927.6,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 92.76,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 1020.36,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "TERMS: 30 DAYS FROM INVOICE DATE. Docket DD134022. Please remit by EFT quoting invoice number.",
+        "confidence": 0.85
+      },
+      "notes_for_ap": "No explicit due date printed; terms are 30 days from invoice date (would be 2026-10-02). Document carries a synthetic-document footer stating it is not a real tax invoice."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 33515465462 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($927.60)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$927.60 + $92.76 GST = $1,020.36."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.97
+    },
+    "invoice": {
+      "vendor_name": "YOU YANGS GAS & WELDING PTY LTD",
+      "vendor_abn": "33515465462",
+      "invoice_number": "YYG08477",
+      "invoice_date": "2026-09-02",
+      "po_number": "4500012108",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "NITROGEN, G-SIZE CYLINDER REFILL",
+          "item_code": "GAS-N2-G",
+          "po_line": 10,
+          "quantity": "12.0",
+          "uom": "EA",
+          "unit_price": "64.5",
+          "amount": "774.0",
+          "gst_applicable": true
+        },
+        {
+          "description": "CYLINDER RENTAL, G-SIZE (MONTHLY)",
+          "item_code": "GAS-RENT-G",
+          "po_line": 20,
+          "quantity": "12.0",
+          "uom": "EA",
+          "unit_price": "12.8",
+          "amount": "153.6",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "927.6",
+      "gst_amount": "92.76",
+      "total": "1020.36",
+      "remarks": "TERMS: 30 DAYS FROM INVOICE DATE. Docket DD134022. Please remit by EFT quoting invoice number."
+    },
+    "match": {
+      "invoice_number": "YYG08477",
+      "vendor_id": "V1015",
+      "vendor_name": "You Yangs Gas & Welding Pty Ltd",
+      "po_number": "4500012108",
+      "exceptions": [
+        {
+          "type": "short_shipped",
+          "message": "Line 1 (Nitrogen, G-size cylinder refill): billed 12 ea, but only 10 ea have been received and not yet invoiced (2 ea short, $129.00 ex GST).",
+          "line": 1,
+          "details": {
+            "received": "10",
+            "previously_invoiced": "0",
+            "invoiced": "12.0",
+            "short": "2.0"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Nitrogen, G-size cylinder refill",
+          "po_line": 10,
+          "match_method": "PO line reference",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "64.50",
+          "invoice_price": "64.5",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "12",
+          "received_qty": "10",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "12.0",
+          "amount": "774.0"
+        },
+        {
+          "invoice_line": 2,
+          "description": "Cylinder rental, G-size (monthly)",
+          "po_line": 20,
+          "match_method": "PO line reference",
+          "line_type": "service",
+          "tax_code": "GST",
+          "po_price": "12.80",
+          "invoice_price": "12.8",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "12",
+          "received_qty": null,
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "12.0",
+          "amount": "153.6"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($1,020.36 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 33 515 465 462 is You Yangs Gas & Welding Pty Ltd (V1015)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from You Yangs Gas & Welding Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012108 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Nitrogen, G-size cylinder refill) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$64.50/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "fail",
+          "detail": "Line 1 (Nitrogen, G-size cylinder refill): billed 12 ea, but only 10 ea have been received and not yet invoiced (2 ea short, $129.00 ex GST)."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Cylinder rental, G-size (monthly)) by PO line reference."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$12.80/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 12 ea of 12 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $92.76 = 10% of $927.60 taxable."
+        }
+      ],
+      "taxable_amount": "927.60",
+      "expected_gst": "92.76",
+      "invoice_total": "1020.36"
+    },
+    "analysis": {
+      "headline": "You Yangs Gas & Welding billed 2 more nitrogen cylinder refills than we received on invoice YYG08477, a $129.00 ex GST overbilling on a $1,020.36 invoice.",
+      "explanation": "Invoice YYG08477 against PO 4500012108 bills 12 ea of Nitrogen, G-size cylinder refill on line 1, but only 10 ea have been received and none were previously invoiced. The 2 ea shortfall is worth $129.00 ex GST. No other exceptions were found.",
+      "recommended_action": "Hold the invoice and ask the vendor for a credit note covering the 2 ea shortfall. Pay for the 10 ea received once the credit note arrives, or confirm with R. Delaney that the missing units were not delivered.",
+      "drafts": [
+        {
+          "kind": "vendor_email",
+          "to": "You Yangs Gas & Welding Pty Ltd <accounts@youyangsgas.example>",
+          "subject": "Invoice YYG08477 / PO 4500012108 - quantity billed exceeds quantity received",
+          "body": "Hello,\n\nThank you for invoice YYG08477 dated 2 September 2026 against our purchase order 4500012108 (your docket DD134022).\n\nOn line 1, Nitrogen, G-size cylinder refill, the invoice bills 12 ea. Our goods receipts show only 10 ea received, and none of these have previously been invoiced. This leaves a shortfall of 2 ea, which is $129.00 ex GST.\n\nCould you please issue a credit note for the 2 ea shortfall, quoting invoice number YYG08477, so we can match it against the invoice? If you believe all 12 ea were delivered, please send us proof of delivery for the remaining 2 ea and we will review it promptly.\n\nOnce the credit note is received we will arrange payment for the 10 ea received in line with the 30-day terms.\n\nKind regards,\nAccounts Payable, Corio Packaging"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "vendor_email",
+        "to": "You Yangs Gas & Welding Pty Ltd <accounts@youyangsgas.example>",
+        "purpose": "Tell the vendor we received fewer units than they billed and ask for a credit note for the shortfall. We'll pay for what was received once that's sorted.",
+        "exception_types": [
+          "short_shipped"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Officer",
+      "reasons": [
+        "Billed for more than we received (reviewer: AP Officer)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:22:32+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0008",
+    "approver": "AP Officer",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "Billed for more than we received (reviewer: AP Officer)."
+    ],
+    "vendor": "YOU YANGS GAS & WELDING PTY LTD",
+    "invoice_number": "YYG08477",
+    "total": "1020.36",
+    "headline": "You Yangs Gas & Welding billed 2 more nitrogen cylinder refills than we received on invoice YYG08477, a $129.00 ex GST overbilling on a $1,020.36 invoice."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:20+00:00",
+      "duration_ms": 5802,
+      "summary": "Read YOU YANGS GAS & WELDING PTY LTD invoice YYG08477: 2 lines, total 1020.36.",
+      "reasoning": "No explicit due date printed; terms are 30 days from invoice date (would be 2026-10-02). Document carries a synthetic-document footer stating it is not a real tax invoice. Least certain fields: invoice_date (97%), line 2 description (97%), vendor_abn (98%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2180,
+      "output_tokens": 821,
+      "cost_usd": 0.013077,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:26+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 33515465462 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($927.60)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$927.60 + $92.76 GST = $1,020.36."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:26+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: billed for more than we received",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($1,020.36 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 33 515 465 462 is You Yangs Gas & Welding Pty Ltd (V1015)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from You Yangs Gas & Welding Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012108 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Nitrogen, G-size cylinder refill) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$64.50/ea agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "fail",
+          "detail": "Line 1 (Nitrogen, G-size cylinder refill): billed 12 ea, but only 10 ea have been received and not yet invoiced (2 ea short, $129.00 ex GST)."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Cylinder rental, G-size (monthly)) by PO line reference."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$12.80/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 12 ea of 12 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $92.76 = 10% of $927.60 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:26+00:00",
+      "duration_ms": 6590,
+      "summary": "You Yangs Gas & Welding billed 2 more nitrogen cylinder refills than we received on invoice YYG08477, a $129.00 ex GST overbilling on a $1,020.36 invoice. Drafted 1 message(s).",
+      "reasoning": "Invoice YYG08477 against PO 4500012108 bills 12 ea of Nitrogen, G-size cylinder refill on line 1, but only 10 ea have been received and none were previously invoiced. The 2 ea shortfall is worth $129.00 ex GST. No other exceptions were found. Recommended: Hold the invoice and ask the vendor for a credit note covering the 2 ea shortfall. Pay for the 10 ea received once the credit note arrives, or confirm with R. Delaney that the missing units were not delivered.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 571,
+      "output_tokens": 671,
+      "cost_usd": 0.00806,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:32+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Officer.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Billed for more than we received (reviewer: AP Officer)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 12392,
+    "llm_ms": 12392,
+    "cost_usd": 0.021137,
+    "input_tokens": 2751,
+    "output_tokens": 1492
+  }
+}

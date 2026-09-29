@@ -1,0 +1,447 @@
+{
+  "doc_id": "OPS-0019",
+  "file": "OPS-0019.pdf",
+  "received_date": "2026-09-12",
+  "recorded_at": "2026-09-29T13:22:53+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "HOVELLS CREEK CHEMICALS PTY LTD",
+        "confidence": 0.98
+      },
+      "vendor_abn": {
+        "value": "98 988 677 750",
+        "confidence": 0.97
+      },
+      "invoice_number": {
+        "value": "HCC/03785",
+        "confidence": 0.97
+      },
+      "invoice_date": {
+        "value": "2026-09-12",
+        "confidence": 0.95
+      },
+      "due_date": {
+        "value": null,
+        "confidence": 0.9
+      },
+      "po_number": {
+        "value": "4500012132",
+        "confidence": 0.97
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "CAUSTIC SODA 30% BULK",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": "CHM-NAOH-30",
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": 10,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 18000.0,
+            "confidence": 0.97
+          },
+          "uom": {
+            "value": "L",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 1.45,
+            "confidence": 0.97
+          },
+          "amount": {
+            "value": 26100.0,
+            "confidence": 0.97
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 26100.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 2610.0,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 28710.0,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "Terms: 30 days from invoice date. Docket DD462886.",
+        "confidence": 0.8
+      },
+      "notes_for_ap": "Due date is not printed; terms are 30 days from invoice date (would be 2026-10-12). Arithmetic and GST at 10% are consistent."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 98988677750 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($26,100.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$26,100.00 + $2,610.00 GST = $28,710.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "HOVELLS CREEK CHEMICALS PTY LTD",
+      "vendor_abn": "98988677750",
+      "invoice_number": "HCC/03785",
+      "invoice_date": "2026-09-12",
+      "po_number": "4500012132",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "CAUSTIC SODA 30% BULK",
+          "item_code": "CHM-NAOH-30",
+          "po_line": 10,
+          "quantity": "18000.0",
+          "uom": "L",
+          "unit_price": "1.45",
+          "amount": "26100.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "26100.0",
+      "gst_amount": "2610.0",
+      "total": "28710.0",
+      "remarks": "Terms: 30 days from invoice date. Docket DD462886."
+    },
+    "match": {
+      "invoice_number": "HCC/03785",
+      "vendor_id": "V1011",
+      "vendor_name": "Hovells Creek Chemicals Pty Ltd",
+      "po_number": "4500012132",
+      "exceptions": [
+        {
+          "type": "price_variance",
+          "message": "Line 1 (Caustic soda 30% bulk): billed $1.45/L against a PO price of $1.425 (+1.8%, $450.00 over on this line). Breaches the dollar limit (limit 2% or $250.00 per line, whichever is lower).",
+          "line": 1,
+          "details": {
+            "po_price": "1.425",
+            "invoice_price": "1.45",
+            "variance_pct": "0.0175",
+            "over_value": "450.00",
+            "breached": "dollar"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Caustic soda 30% bulk",
+          "po_line": 10,
+          "match_method": "PO line reference",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "1.425",
+          "invoice_price": "1.45",
+          "price_variance_pct": "0.0175",
+          "ordered_qty": "18000",
+          "received_qty": "18000",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "18000.0",
+          "amount": "26100.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($28,710.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 98 988 677 750 is Hovells Creek Chemicals Pty Ltd (V1011)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Hovells Creek Chemicals Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012132 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Caustic soda 30% bulk) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "fail",
+          "detail": "Line 1 (Caustic soda 30% bulk): billed $1.45/L against a PO price of $1.425 (+1.8%, $450.00 over on this line). Breaches the dollar limit (limit 2% or $250.00 per line, whichever is lower)."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 18,000 L; received 18,000 L. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $2,610.00 = 10% of $26,100.00 taxable."
+        }
+      ],
+      "taxable_amount": "26100.00",
+      "expected_gst": "2610.00",
+      "invoice_total": "28710.0"
+    },
+    "analysis": {
+      "headline": "Hovells Creek Chemicals invoice HCC/03785 bills caustic soda above the PO price, putting $450.00 in dispute on a $28,710.00 invoice.",
+      "explanation": "Line 1 (Caustic soda 30% bulk) was billed at $1.45/L against a PO 4500012132 price of $1.425, which is 1.8% higher and $450.00 over on the line. The percentage is within the 2% limit, but the $450.00 breaches the $250.00 per-line dollar limit. This is the only exception found on the invoice.",
+      "recommended_action": "Hold the invoice and ask the buyer, J. Okafor, whether the $1.45/L price was agreed. If it was, have the PO price amended so the invoice can be released; if not, request a credit note from the vendor for the $450.00 difference.",
+      "drafts": [
+        {
+          "kind": "internal_note",
+          "to": "J. Okafor (Procurement, buyer on PO 4500012132)",
+          "subject": "Price check needed: Hovells Creek Chemicals invoice HCC/03785, PO 4500012132",
+          "body": "Hi J.,\n\nInvoice HCC/03785 from Hovells Creek Chemicals (dated 12 September 2026, total $28,710.00 inc GST) is on hold for a price variance against PO 4500012132.\n\nLine 1, Caustic soda 30% bulk, is billed at $1.45/L against a PO price of $1.425/L. That is 1.8% higher and $450.00 over on the line, which breaches our $250.00 per-line limit.\n\nCould you please confirm whether the higher price was agreed with the vendor?\n- If yes, please amend the PO price so we can release the invoice for payment.\n- If no, let us know and AP will ask Hovells Creek Chemicals for a credit note for the $450.00 difference.\n\nThe invoice is on 30-day terms from the invoice date, so a prompt reply would be appreciated.\n\nThanks,\nAccounts Payable, Corio Packaging"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "internal_note",
+        "to": "J. Okafor (Procurement, buyer on PO 4500012132)",
+        "purpose": "Ask the buyer whether the higher price was agreed. If yes, they amend the PO price so the invoice can be released; if not, AP will ask the vendor for a credit note for the difference.",
+        "exception_types": [
+          "price_variance"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Officer",
+      "reasons": [
+        "Price higher than PO (reviewer: AP Officer)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:22:53+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0019",
+    "approver": "AP Officer",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "Price higher than PO (reviewer: AP Officer)."
+    ],
+    "vendor": "HOVELLS CREEK CHEMICALS PTY LTD",
+    "invoice_number": "HCC/03785",
+    "total": "28710.0",
+    "headline": "Hovells Creek Chemicals invoice HCC/03785 bills caustic soda above the PO price, putting $450.00 in dispute on a $28,710.00 invoice."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:43+00:00",
+      "duration_ms": 4406,
+      "summary": "Read HOVELLS CREEK CHEMICALS PTY LTD invoice HCC/03785: 1 line, total 28710.0.",
+      "reasoning": "Due date is not printed; terms are 30 days from invoice date (would be 2026-10-12). Arithmetic and GST at 10% are consistent. Least certain fields: invoice_date (95%), vendor_abn (97%), invoice_number (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2130,
+      "output_tokens": 587,
+      "cost_usd": 0.010637,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:48+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 98988677750 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($26,100.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$26,100.00 + $2,610.00 GST = $28,710.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:48+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: price higher than po",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($28,710.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 98 988 677 750 is Hovells Creek Chemicals Pty Ltd (V1011)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Hovells Creek Chemicals Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012132 (1 line, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Caustic soda 30% bulk) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "fail",
+          "detail": "Line 1 (Caustic soda 30% bulk): billed $1.45/L against a PO price of $1.425 (+1.8%, $450.00 over on this line). Breaches the dollar limit (limit 2% or $250.00 per line, whichever is lower)."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 18,000 L; received 18,000 L. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $2,610.00 = 10% of $26,100.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:48+00:00",
+      "duration_ms": 5298,
+      "summary": "Hovells Creek Chemicals invoice HCC/03785 bills caustic soda above the PO price, putting $450.00 in dispute on a $28,710.00 invoice. Drafted 1 message(s).",
+      "reasoning": "Line 1 (Caustic soda 30% bulk) was billed at $1.45/L against a PO 4500012132 price of $1.425, which is 1.8% higher and $450.00 over on the line. The percentage is within the 2% limit, but the $450.00 breaches the $250.00 per-line dollar limit. This is the only exception found on the invoice. Recommended: Hold the invoice and ask the buyer, J. Okafor, whether the $1.45/L price was agreed. If it was, have the PO price amended so the invoice can be released; if not, request a credit note from the vendor for the $450.00 difference.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 593,
+      "output_tokens": 685,
+      "cost_usd": 0.008244,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:53+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Officer.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Price higher than PO (reviewer: AP Officer)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 9704,
+    "llm_ms": 9704,
+    "cost_usd": 0.018881,
+    "input_tokens": 2723,
+    "output_tokens": 1272
+  }
+}

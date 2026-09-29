@@ -1,0 +1,499 @@
+{
+  "doc_id": "OPS-0028",
+  "file": "OPS-0028.pdf",
+  "received_date": "2026-09-18",
+  "recorded_at": "2026-09-29T13:23:04+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "HOVELLS CREEK CHEMICALS PTY LTD",
+        "confidence": 0.98
+      },
+      "vendor_abn": {
+        "value": "98 988 677 750",
+        "confidence": 0.97
+      },
+      "invoice_number": {
+        "value": "HCC/03791",
+        "confidence": 0.98
+      },
+      "invoice_date": {
+        "value": "2026-09-16",
+        "confidence": 0.97
+      },
+      "due_date": {
+        "value": null,
+        "confidence": 0.85
+      },
+      "po_number": {
+        "value": "4500012147",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "ACID CIP DETERGENT, 200 L DRUM",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": "CHM-ACID-CIP",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": 10,
+            "confidence": 0.98
+          },
+          "quantity": {
+            "value": 6.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "DRUM",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 412.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 2472.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.85
+          }
+        },
+        {
+          "description": {
+            "value": "PERACETIC ACID SANITISER, 20 L",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": "CHM-SAN-PAA",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": 20,
+            "confidence": 0.98
+          },
+          "quantity": {
+            "value": 12.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "EA",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 96.5,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 1158.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 3630.0,
+        "confidence": 0.98
+      },
+      "gst_amount": {
+        "value": 363.0,
+        "confidence": 0.98
+      },
+      "total_inc_gst": {
+        "value": 3993.0,
+        "confidence": 0.98
+      },
+      "remarks": {
+        "value": "Terms: 30 days from invoice date. Docket DD686209.",
+        "confidence": 0.8
+      },
+      "notes_for_ap": "No explicit due date printed; terms are 30 days from invoice date (would be 2026-10-16). Line and total arithmetic is consistent."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 98988677750 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($3,630.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$3,630.00 + $363.00 GST = $3,993.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.97
+    },
+    "invoice": {
+      "vendor_name": "HOVELLS CREEK CHEMICALS PTY LTD",
+      "vendor_abn": "98988677750",
+      "invoice_number": "HCC/03791",
+      "invoice_date": "2026-09-16",
+      "po_number": "4500012147",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "ACID CIP DETERGENT, 200 L DRUM",
+          "item_code": "CHM-ACID-CIP",
+          "po_line": 10,
+          "quantity": "6.0",
+          "uom": "DRUM",
+          "unit_price": "412.0",
+          "amount": "2472.0",
+          "gst_applicable": true
+        },
+        {
+          "description": "PERACETIC ACID SANITISER, 20 L",
+          "item_code": "CHM-SAN-PAA",
+          "po_line": 20,
+          "quantity": "12.0",
+          "uom": "EA",
+          "unit_price": "96.5",
+          "amount": "1158.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "3630.0",
+      "gst_amount": "363.0",
+      "total": "3993.0",
+      "remarks": "Terms: 30 days from invoice date. Docket DD686209."
+    },
+    "match": {
+      "invoice_number": "HCC/03791",
+      "vendor_id": "V1011",
+      "vendor_name": "Hovells Creek Chemicals Pty Ltd",
+      "po_number": "4500012147",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Acid CIP detergent, 200 L drum",
+          "po_line": 10,
+          "match_method": "PO line reference",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "412.00",
+          "invoice_price": "412.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "6",
+          "received_qty": "6",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "6.0",
+          "amount": "2472.0"
+        },
+        {
+          "invoice_line": 2,
+          "description": "Peracetic acid sanitiser, 20 L",
+          "po_line": 20,
+          "match_method": "PO line reference",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "96.50",
+          "invoice_price": "96.5",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "12",
+          "received_qty": "12",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "12.0",
+          "amount": "1158.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($3,993.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 98 988 677 750 is Hovells Creek Chemicals Pty Ltd (V1011)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Hovells Creek Chemicals Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012147 (2 lines, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Acid CIP detergent, 200 L drum) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$412.00/drum agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 6 drum; received 6 drum. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Peracetic acid sanitiser, 20 L) by PO line reference."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$96.50/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 12 ea; received 12 ea. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $363.00 = 10% of $3,630.00 taxable."
+        }
+      ],
+      "taxable_amount": "3630.00",
+      "expected_gst": "363.00",
+      "invoice_total": "3993.0"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $3,993.00 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:23:04+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900028",
+      "due_date": "2026-10-16",
+      "amount": "3993.0",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:58+00:00",
+      "duration_ms": 5620,
+      "summary": "Read HOVELLS CREEK CHEMICALS PTY LTD invoice HCC/03791: 2 lines, total 3993.0.",
+      "reasoning": "No explicit due date printed; terms are 30 days from invoice date (would be 2026-10-16). Line and total arithmetic is consistent. Least certain fields: vendor_abn (97%), invoice_date (97%), line 1 description (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2182,
+      "output_tokens": 787,
+      "cost_usd": 0.012741,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:04+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 98988677750 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($3,630.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$3,630.00 + $363.00 GST = $3,993.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:04+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($3,993.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 98 988 677 750 is Hovells Creek Chemicals Pty Ltd (V1011)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Hovells Creek Chemicals Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012147 (2 lines, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Acid CIP detergent, 200 L drum) by PO line reference."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$412.00/drum agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 6 drum; received 6 drum. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Peracetic acid sanitiser, 20 L) by PO line reference."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$96.50/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 12 ea; received 12 ea. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $363.00 = 10% of $3,630.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:04+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $3,993.00 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:04+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900028; $3,993.00 scheduled for payment on 16 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 5620,
+    "llm_ms": 5620,
+    "cost_usd": 0.012741,
+    "input_tokens": 2182,
+    "output_tokens": 787
+  }
+}

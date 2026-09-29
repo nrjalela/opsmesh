@@ -1,0 +1,409 @@
+{
+  "doc_id": "OPS-0020",
+  "file": "OPS-0020.pdf",
+  "received_date": "2026-09-13",
+  "recorded_at": "2026-09-29T13:22:48+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Barwon Polymers Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "64 939 659 707",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "BP-03753",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-13",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-10-30",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012133",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": null,
+        "confidence": 0.8
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "PET bottle-grade resin",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": "RES-PET-BTL",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 8.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "t",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 1780.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 14240.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.85
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 14240.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 1424.0,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 15664.0,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Payment by EFT within terms. Please quote invoice number BP-03753 on your remittance. Remittances to accounts@barwonpolymers.example",
+        "confidence": 0.9
+      },
+      "notes_for_ap": ""
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 64939659707 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($14,240.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$14,240.00 + $1,424.00 GST = $15,664.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Barwon Polymers Pty Ltd",
+      "vendor_abn": "64939659707",
+      "invoice_number": "BP-03753",
+      "invoice_date": "2026-09-13",
+      "po_number": "4500012133",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "PET bottle-grade resin",
+          "item_code": "RES-PET-BTL",
+          "po_line": null,
+          "quantity": "8.0",
+          "uom": "t",
+          "unit_price": "1780.0",
+          "amount": "14240.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "14240.0",
+      "gst_amount": "1424.0",
+      "total": "15664.0",
+      "remarks": "Payment by EFT within terms. Please quote invoice number BP-03753 on your remittance. Remittances to accounts@barwonpolymers.example"
+    },
+    "match": {
+      "invoice_number": "BP-03753",
+      "vendor_id": "V1001",
+      "vendor_name": "Barwon Polymers Pty Ltd",
+      "po_number": "4500012133",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "PET bottle-grade resin",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "1780.00",
+          "invoice_price": "1780.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "8",
+          "received_qty": "8",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "8.0",
+          "amount": "14240.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($15,664.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 64 939 659 707 is Barwon Polymers Pty Ltd (V1001)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Barwon Polymers Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012133 (1 line, buyer S. Kowalski)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (PET bottle-grade resin) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$1,780.00/t agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 8 t; received 8 t. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $1,424.00 = 10% of $14,240.00 taxable."
+        }
+      ],
+      "taxable_amount": "14240.00",
+      "expected_gst": "1424.00",
+      "invoice_total": "15664.0"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $15,664.00 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:22:48+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900020",
+      "due_date": "2026-10-30",
+      "amount": "15664.0",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:43+00:00",
+      "duration_ms": 4137,
+      "summary": "Read Barwon Polymers Pty Ltd invoice BP-03753: 1 line, total 15664.0.",
+      "reasoning": "Nothing unusual noted on the document. Least certain fields: line 1 po_line (95%), vendor_abn (98%), invoice_date (98%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2076,
+      "output_tokens": 552,
+      "cost_usd": 0.010179,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:48+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 64939659707 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($14,240.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$14,240.00 + $1,424.00 GST = $15,664.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:48+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($15,664.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 64 939 659 707 is Barwon Polymers Pty Ltd (V1001)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Barwon Polymers Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012133 (1 line, buyer S. Kowalski)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (PET bottle-grade resin) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$1,780.00/t agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 8 t; received 8 t. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $1,424.00 = 10% of $14,240.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:48+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $15,664.00 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:48+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900020; $15,664.00 scheduled for payment on 30 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 4137,
+    "llm_ms": 4137,
+    "cost_usd": 0.010179,
+    "input_tokens": 2076,
+    "output_tokens": 552
+  }
+}

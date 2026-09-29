@@ -1,0 +1,537 @@
+{
+  "doc_id": "OPS-0009",
+  "file": "OPS-0009.pdf",
+  "received_date": "2026-09-06",
+  "recorded_at": "2026-09-29T13:22:33+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Portarlington Packaging Films Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "21 983 167 249",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "PPF-03539",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-06",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-10-30",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012110",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "BOPP film 20um x 1000mm, 6000 m roll",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": "FLM-BOPP-20",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 30.0,
+            "confidence": 0.99
+          },
+          "uom": {
+            "value": "roll",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 281.0,
+            "confidence": 0.99
+          },
+          "amount": {
+            "value": 8430.0,
+            "confidence": 0.99
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.95
+          }
+        },
+        {
+          "description": {
+            "value": "CPP sealant film 30um x 1000mm",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": "FLM-CPP-30",
+            "confidence": 0.98
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 10.0,
+            "confidence": 0.99
+          },
+          "uom": {
+            "value": "roll",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 288.0,
+            "confidence": 0.99
+          },
+          "amount": {
+            "value": 2880.0,
+            "confidence": 0.99
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 11310.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 1131.0,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 12441.0,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Terms: 30 days from end of month. Pay by EFT, reference PPF-03539.",
+        "confidence": 0.95
+      },
+      "notes_for_ap": "Stated terms of 30 days from end of month would give a due date of 30 Sep 2026 for a 6 Sep invoice, but the printed due date is 30 Oct 2026. Line totals and GST are arithmetically consistent."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 21983167249 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($11,310.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$11,310.00 + $1,131.00 GST = $12,441.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.97
+    },
+    "invoice": {
+      "vendor_name": "Portarlington Packaging Films Pty Ltd",
+      "vendor_abn": "21983167249",
+      "invoice_number": "PPF-03539",
+      "invoice_date": "2026-09-06",
+      "po_number": "4500012110",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "BOPP film 20um x 1000mm, 6000 m roll",
+          "item_code": "FLM-BOPP-20",
+          "po_line": null,
+          "quantity": "30.0",
+          "uom": "roll",
+          "unit_price": "281.0",
+          "amount": "8430.0",
+          "gst_applicable": true
+        },
+        {
+          "description": "CPP sealant film 30um x 1000mm",
+          "item_code": "FLM-CPP-30",
+          "po_line": null,
+          "quantity": "10.0",
+          "uom": "roll",
+          "unit_price": "288.0",
+          "amount": "2880.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "11310.0",
+      "gst_amount": "1131.0",
+      "total": "12441.0",
+      "remarks": "Terms: 30 days from end of month. Pay by EFT, reference PPF-03539."
+    },
+    "match": {
+      "invoice_number": "PPF-03539",
+      "vendor_id": "V1014",
+      "vendor_name": "Portarlington Packaging Films Pty Ltd",
+      "po_number": "4500012110",
+      "exceptions": [
+        {
+          "type": "price_variance",
+          "message": "Line 1 (BOPP film 20um x 1000mm, 6000 m roll): billed $281.00/roll against a PO price of $265.00 (+6.0%, $480.00 over on this line). Breaches the percentage and dollar limit (limit 2% or $250.00 per line, whichever is lower).",
+          "line": 1,
+          "details": {
+            "po_price": "265.00",
+            "invoice_price": "281.0",
+            "variance_pct": "0.0604",
+            "over_value": "480.00",
+            "breached": "percentage and dollar"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "BOPP film 20um x 1000mm, 6000 m roll",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "265.00",
+          "invoice_price": "281.0",
+          "price_variance_pct": "0.0604",
+          "ordered_qty": "30",
+          "received_qty": "30",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "30.0",
+          "amount": "8430.0"
+        },
+        {
+          "invoice_line": 2,
+          "description": "CPP sealant film 30um x 1000mm",
+          "po_line": 20,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "288.00",
+          "invoice_price": "288.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "10",
+          "received_qty": "10",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "10.0",
+          "amount": "2880.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($12,441.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 21 983 167 249 is Portarlington Packaging Films Pty Ltd (V1014)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Portarlington Packaging Films Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012110 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (BOPP film 20um x 1000mm, 6000 m roll) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "fail",
+          "detail": "Line 1 (BOPP film 20um x 1000mm, 6000 m roll): billed $281.00/roll against a PO price of $265.00 (+6.0%, $480.00 over on this line). Breaches the percentage and dollar limit (limit 2% or $250.00 per line, whichever is lower)."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 30 roll; received 30 roll. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (CPP sealant film 30um x 1000mm) by item code."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$288.00/roll agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 10 roll; received 10 roll. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $1,131.00 = 10% of $11,310.00 taxable."
+        }
+      ],
+      "taxable_amount": "11310.00",
+      "expected_gst": "1131.00",
+      "invoice_total": "12441.0"
+    },
+    "analysis": {
+      "headline": "Invoice PPF-03539 from Portarlington Packaging Films bills BOPP film above the PO price, putting $480.00 in dispute on a $12,441.00 invoice.",
+      "explanation": "Line 1 (BOPP film 20um x 1000mm, 6000 m roll) was billed at $281.00 per roll against a PO 4500012110 price of $265.00, which is 6.0% or $480.00 over on the line. This breaches both the percentage and dollar limits (2% or $250.00 per line, whichever is lower). No other exceptions were found.",
+      "recommended_action": "Hold the invoice and ask the buyer, R. Delaney, whether the higher price was agreed. If it was, have the PO price amended so the invoice can be released; if not, request a credit note from the vendor for the $480.00 difference.",
+      "drafts": [
+        {
+          "kind": "internal_note",
+          "to": "R. Delaney (Procurement, buyer on PO 4500012110)",
+          "subject": "Price query: invoice PPF-03539 against PO 4500012110",
+          "body": "Hi R. Delaney,\n\nInvoice PPF-03539 from Portarlington Packaging Films Pty Ltd (total $12,441.00 inc GST) is on hold because line 1 is priced above PO 4500012110.\n\nLine 1 (BOPP film 20um x 1000mm, 6000 m roll): billed $281.00 per roll against the PO price of $265.00. That is 6.0% higher, or $480.00 over on the line, and it exceeds our tolerance of 2% or $250.00 per line, whichever is lower.\n\nCould you please let us know whether this higher price was agreed with the vendor?\n\n- If yes: please amend the PO price to $281.00 (with the supporting agreement) so we can release the invoice for payment.\n- If no: we will ask the vendor for a credit note for the $480.00 difference.\n\nA reply at your earliest convenience would be appreciated so we can pay within terms.\n\nThanks,\nAccounts Payable, Corio Packaging"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "internal_note",
+        "to": "R. Delaney (Procurement, buyer on PO 4500012110)",
+        "purpose": "Ask the buyer whether the higher price was agreed. If yes, they amend the PO price so the invoice can be released; if not, AP will ask the vendor for a credit note for the difference.",
+        "exception_types": [
+          "price_variance"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Officer",
+      "reasons": [
+        "Price higher than PO (reviewer: AP Officer)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:22:33+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0009",
+    "approver": "AP Officer",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "Price higher than PO (reviewer: AP Officer)."
+    ],
+    "vendor": "Portarlington Packaging Films Pty Ltd",
+    "invoice_number": "PPF-03539",
+    "total": "12441.0",
+    "headline": "Invoice PPF-03539 from Portarlington Packaging Films bills BOPP film above the PO price, putting $480.00 in dispute on a $12,441.00 invoice."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:22+00:00",
+      "duration_ms": 5166,
+      "summary": "Read Portarlington Packaging Films Pty Ltd invoice PPF-03539: 2 lines, total 12441.0.",
+      "reasoning": "Stated terms of 30 days from end of month would give a due date of 30 Sep 2026 for a 6 Sep invoice, but the printed due date is 30 Oct 2026. Line totals and GST are arithmetically consistent. Least certain fields: line 1 description (97%), line 1 po_line (97%), line 2 description (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2108,
+      "output_tokens": 819,
+      "cost_usd": 0.012913,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:27+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 21983167249 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($11,310.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$11,310.00 + $1,131.00 GST = $12,441.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:27+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: price higher than po",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($12,441.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 21 983 167 249 is Portarlington Packaging Films Pty Ltd (V1014)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Portarlington Packaging Films Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012110 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (BOPP film 20um x 1000mm, 6000 m roll) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "fail",
+          "detail": "Line 1 (BOPP film 20um x 1000mm, 6000 m roll): billed $281.00/roll against a PO price of $265.00 (+6.0%, $480.00 over on this line). Breaches the percentage and dollar limit (limit 2% or $250.00 per line, whichever is lower)."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 30 roll; received 30 roll. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (CPP sealant film 30um x 1000mm) by item code."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$288.00/roll agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 10 roll; received 10 roll. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $1,131.00 = 10% of $11,310.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:27+00:00",
+      "duration_ms": 5761,
+      "summary": "Invoice PPF-03539 from Portarlington Packaging Films bills BOPP film above the PO price, putting $480.00 in dispute on a $12,441.00 invoice. Drafted 1 message(s).",
+      "reasoning": "Line 1 (BOPP film 20um x 1000mm, 6000 m roll) was billed at $281.00 per roll against a PO 4500012110 price of $265.00, which is 6.0% or $480.00 over on the line. This breaches both the percentage and dollar limits (2% or $250.00 per line, whichever is lower). No other exceptions were found. Recommended: Hold the invoice and ask the buyer, R. Delaney, whether the higher price was agreed. If it was, have the PO price amended so the invoice can be released; if not, request a credit note from the vendor for the $480.00 difference.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 614,
+      "output_tokens": 696,
+      "cost_usd": 0.008396,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:33+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Officer.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Price higher than PO (reviewer: AP Officer)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 10927,
+    "llm_ms": 10927,
+    "cost_usd": 0.021309,
+    "input_tokens": 2722,
+    "output_tokens": 1515
+  }
+}

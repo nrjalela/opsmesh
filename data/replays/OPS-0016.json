@@ -1,0 +1,537 @@
+{
+  "doc_id": "OPS-0016",
+  "file": "OPS-0016.pdf",
+  "received_date": "2026-09-10",
+  "recorded_at": "2026-09-29T13:22:48+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Bellarine Inks & Coatings Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "30 214 928 551",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "BIC-06474",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-09",
+        "confidence": 0.97
+      },
+      "due_date": {
+        "value": "2026-10-09",
+        "confidence": 0.97
+      },
+      "po_number": {
+        "value": "4500012124",
+        "confidence": 0.99
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.7
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "Flexo process ink - cyan",
+            "confidence": 0.99
+          },
+          "item_code": {
+            "value": "INK-FLX-CY",
+            "confidence": 0.99
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 150.0,
+            "confidence": 0.99
+          },
+          "uom": {
+            "value": "kg",
+            "confidence": 0.99
+          },
+          "unit_price": {
+            "value": 12.9,
+            "confidence": 0.99
+          },
+          "amount": {
+            "value": 1935.0,
+            "confidence": 0.99
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.6
+          }
+        },
+        {
+          "description": {
+            "value": "Flexo process ink - black",
+            "confidence": 0.99
+          },
+          "item_code": {
+            "value": "INK-FLX-BK",
+            "confidence": 0.99
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 100.0,
+            "confidence": 0.99
+          },
+          "uom": {
+            "value": "kg",
+            "confidence": 0.99
+          },
+          "unit_price": {
+            "value": 10.9,
+            "confidence": 0.99
+          },
+          "amount": {
+            "value": 1090.0,
+            "confidence": 0.99
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.6
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 3025.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 302.5,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 3327.5,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Payment by EFT within terms. Please quote invoice number BIC-06474 on your remittance. Remittances to invoices@bellarineinks.example",
+        "confidence": 0.9
+      },
+      "notes_for_ap": "Currency is not printed on the invoice; AUD is assumed. Lines do not show a PO line number or per-line GST flag. The footer marks this as a synthetic document."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 30214928551 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($3,025.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$3,025.00 + $302.50 GST = $3,327.50."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Bellarine Inks & Coatings Pty Ltd",
+      "vendor_abn": "30214928551",
+      "invoice_number": "BIC-06474",
+      "invoice_date": "2026-09-09",
+      "po_number": "4500012124",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "Flexo process ink - cyan",
+          "item_code": "INK-FLX-CY",
+          "po_line": null,
+          "quantity": "150.0",
+          "uom": "kg",
+          "unit_price": "12.9",
+          "amount": "1935.0",
+          "gst_applicable": null
+        },
+        {
+          "description": "Flexo process ink - black",
+          "item_code": "INK-FLX-BK",
+          "po_line": null,
+          "quantity": "100.0",
+          "uom": "kg",
+          "unit_price": "10.9",
+          "amount": "1090.0",
+          "gst_applicable": null
+        }
+      ],
+      "subtotal": "3025.0",
+      "gst_amount": "302.5",
+      "total": "3327.5",
+      "remarks": "Payment by EFT within terms. Please quote invoice number BIC-06474 on your remittance. Remittances to invoices@bellarineinks.example"
+    },
+    "match": {
+      "invoice_number": "BIC-06474",
+      "vendor_id": "V1003",
+      "vendor_name": "Bellarine Inks & Coatings Pty Ltd",
+      "po_number": "4500012124",
+      "exceptions": [
+        {
+          "type": "price_variance",
+          "message": "Line 1 (Flexo process ink - cyan): billed $12.90/kg against a PO price of $12.35 (+4.5%, $82.50 over on this line). Breaches the percentage limit (limit 2% or $250.00 per line, whichever is lower).",
+          "line": 1,
+          "details": {
+            "po_price": "12.35",
+            "invoice_price": "12.9",
+            "variance_pct": "0.0445",
+            "over_value": "82.50",
+            "breached": "percentage"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "Flexo process ink - cyan",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "12.35",
+          "invoice_price": "12.9",
+          "price_variance_pct": "0.0445",
+          "ordered_qty": "150",
+          "received_qty": "150",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "150.0",
+          "amount": "1935.0"
+        },
+        {
+          "invoice_line": 2,
+          "description": "Flexo process ink - black",
+          "po_line": 20,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "10.90",
+          "invoice_price": "10.9",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "100",
+          "received_qty": "100",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "100.0",
+          "amount": "1090.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($3,327.50 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 30 214 928 551 is Bellarine Inks & Coatings Pty Ltd (V1003)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Bellarine Inks & Coatings Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012124 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Flexo process ink - cyan) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "fail",
+          "detail": "Line 1 (Flexo process ink - cyan): billed $12.90/kg against a PO price of $12.35 (+4.5%, $82.50 over on this line). Breaches the percentage limit (limit 2% or $250.00 per line, whichever is lower)."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 150 kg; received 150 kg. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Flexo process ink - black) by item code."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$10.90/kg agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 100 kg; received 100 kg. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $302.50 = 10% of $3,025.00 taxable."
+        }
+      ],
+      "taxable_amount": "3025.00",
+      "expected_gst": "302.50",
+      "invoice_total": "3327.5"
+    },
+    "analysis": {
+      "headline": "Bellarine Inks & Coatings invoice BIC-06474 ($3,327.50) is held because cyan ink is billed $82.50 above the PO price.",
+      "explanation": "Line 1 (Flexo process ink - cyan) is billed at $12.90/kg against a PO 4500012124 price of $12.35/kg. That is 4.5% higher, or $82.50 over on the line, which breaches the 2% per-line percentage limit. No other exceptions were found.",
+      "recommended_action": "Ask R. Delaney whether the higher price was agreed with Bellarine. If it was, have the PO price amended so the invoice can be released; if not, AP will request a credit note for $82.50.",
+      "drafts": [
+        {
+          "kind": "internal_note",
+          "to": "R. Delaney (Procurement, buyer on PO 4500012124)",
+          "subject": "Price query: Bellarine invoice BIC-06474 against PO 4500012124",
+          "body": "Hi R. Delaney,\n\nInvoice BIC-06474 from Bellarine Inks & Coatings Pty Ltd ($3,327.50 inc GST) is on hold because of a price difference on line 1 (Flexo process ink - cyan).\n\nBilled price: $12.90/kg\nPO price: $12.35/kg\nDifference: +4.5%, $82.50 over on this line\n\nThis breaches our 2% per-line tolerance.\n\nCould you please confirm whether this higher price was agreed with the vendor?\n\n- If yes, please amend the PO price to $12.90/kg so we can release the invoice for payment.\n- If no, please let me know and AP will ask Bellarine for a credit note for the $82.50 difference.\n\nThanks,\nAccounts Payable"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "internal_note",
+        "to": "R. Delaney (Procurement, buyer on PO 4500012124)",
+        "purpose": "Ask the buyer whether the higher price was agreed. If yes, they amend the PO price so the invoice can be released; if not, AP will ask the vendor for a credit note for the difference.",
+        "exception_types": [
+          "price_variance"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Officer",
+      "reasons": [
+        "Price higher than PO (reviewer: AP Officer)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:22:48+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0016",
+    "approver": "AP Officer",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "Price higher than PO (reviewer: AP Officer)."
+    ],
+    "vendor": "Bellarine Inks & Coatings Pty Ltd",
+    "invoice_number": "BIC-06474",
+    "total": "3327.5",
+    "headline": "Bellarine Inks & Coatings invoice BIC-06474 ($3,327.50) is held because cyan ink is billed $82.50 above the PO price."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:37+00:00",
+      "duration_ms": 5498,
+      "summary": "Read Bellarine Inks & Coatings Pty Ltd invoice BIC-06474: 2 lines, total 3327.5.",
+      "reasoning": "Currency is not printed on the invoice; AUD is assumed. Lines do not show a PO line number or per-line GST flag. The footer marks this as a synthetic document. Least certain fields: line 1 po_line (95%), line 2 po_line (95%), invoice_date (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2116,
+      "output_tokens": 799,
+      "cost_usd": 0.012729,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:42+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 30214928551 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($3,025.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$3,025.00 + $302.50 GST = $3,327.50."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:42+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: price higher than po",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($3,327.50 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 30 214 928 551 is Bellarine Inks & Coatings Pty Ltd (V1003)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Bellarine Inks & Coatings Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012124 (2 lines, buyer R. Delaney)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (Flexo process ink - cyan) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "fail",
+          "detail": "Line 1 (Flexo process ink - cyan): billed $12.90/kg against a PO price of $12.35 (+4.5%, $82.50 over on this line). Breaches the percentage limit (limit 2% or $250.00 per line, whichever is lower)."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 150 kg; received 150 kg. Covered by receipts."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Flexo process ink - black) by item code."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$10.90/kg agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Billed 100 kg; received 100 kg. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $302.50 = 10% of $3,025.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:42+00:00",
+      "duration_ms": 6106,
+      "summary": "Bellarine Inks & Coatings invoice BIC-06474 ($3,327.50) is held because cyan ink is billed $82.50 above the PO price. Drafted 1 message(s).",
+      "reasoning": "Line 1 (Flexo process ink - cyan) is billed at $12.90/kg against a PO 4500012124 price of $12.35/kg. That is 4.5% higher, or $82.50 over on the line, which breaches the 2% per-line percentage limit. No other exceptions were found. Recommended: Ask R. Delaney whether the higher price was agreed with Bellarine. If it was, have the PO price amended so the invoice can be released; if not, AP will request a credit note for $82.50.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 619,
+      "output_tokens": 592,
+      "cost_usd": 0.007366,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:48+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Officer.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Price higher than PO (reviewer: AP Officer)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 11604,
+    "llm_ms": 11604,
+    "cost_usd": 0.020095,
+    "input_tokens": 2735,
+    "output_tokens": 1391
+  }
+}

@@ -1,0 +1,409 @@
+{
+  "doc_id": "OPS-0015",
+  "file": "OPS-0015.pdf",
+  "received_date": "2026-09-10",
+  "recorded_at": "2026-09-29T13:22:39+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "posted",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Portarlington Packaging Films Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "21 983 167 249",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "PPF-03544",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-07",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-10-30",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012122",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "BOPP film 20um x 1000mm, 6000 m roll",
+            "confidence": 0.97
+          },
+          "item_code": {
+            "value": "FLM-BOPP-20",
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 24.0,
+            "confidence": 0.99
+          },
+          "uom": {
+            "value": "roll",
+            "confidence": 0.98
+          },
+          "unit_price": {
+            "value": 265.0,
+            "confidence": 0.99
+          },
+          "amount": {
+            "value": 6360.0,
+            "confidence": 0.99
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.97
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 6360.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 636.0,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 6996.0,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Terms: 30 days from end of month. Pay by EFT, reference PPF-03544.",
+        "confidence": 0.95
+      },
+      "notes_for_ap": "Stated terms (30 days from end of month) do not match the printed due date of 30 Oct 2026 for a 7 Sep invoice date; the due date may be inconsistent with the terms as stated."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 21983167249 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($6,360.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$6,360.00 + $636.00 GST = $6,996.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Portarlington Packaging Films Pty Ltd",
+      "vendor_abn": "21983167249",
+      "invoice_number": "PPF-03544",
+      "invoice_date": "2026-09-07",
+      "po_number": "4500012122",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "BOPP film 20um x 1000mm, 6000 m roll",
+          "item_code": "FLM-BOPP-20",
+          "po_line": null,
+          "quantity": "24.0",
+          "uom": "roll",
+          "unit_price": "265.0",
+          "amount": "6360.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "6360.0",
+      "gst_amount": "636.0",
+      "total": "6996.0",
+      "remarks": "Terms: 30 days from end of month. Pay by EFT, reference PPF-03544."
+    },
+    "match": {
+      "invoice_number": "PPF-03544",
+      "vendor_id": "V1014",
+      "vendor_name": "Portarlington Packaging Films Pty Ltd",
+      "po_number": "4500012122",
+      "exceptions": [],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "BOPP film 20um x 1000mm, 6000 m roll",
+          "po_line": 10,
+          "match_method": "item code",
+          "line_type": "goods",
+          "tax_code": "GST",
+          "po_price": "265.00",
+          "invoice_price": "265.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "24",
+          "received_qty": "24",
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "24.0",
+          "amount": "6360.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($6,996.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 21 983 167 249 is Portarlington Packaging Films Pty Ltd (V1014)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Portarlington Packaging Films Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012122 (1 line, buyer M. Tran)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (BOPP film 20um x 1000mm, 6000 m roll) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$265.00/roll agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 24 roll; received 24 roll. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $636.00 = 10% of $6,360.00 taxable."
+        }
+      ],
+      "taxable_amount": "6360.00",
+      "expected_gst": "636.00",
+      "invoice_total": "6996.0"
+    },
+    "analysis": null,
+    "draft_requests": null,
+    "route": {
+      "action": "auto_post",
+      "approver": null,
+      "reasons": [
+        "Clean three-way match and $6,996.00 is within the $20,000.00 auto-post limit."
+      ],
+      "recommendation": null,
+      "decided_at": "2026-09-29T13:22:39+00:00"
+    },
+    "decision": null,
+    "outcome": {
+      "status": "posted",
+      "document_number": "5105900015",
+      "due_date": "2026-10-30",
+      "amount": "6996.0",
+      "approved_by": "Rules (touchless)",
+      "note": null
+    },
+    "errors": []
+  },
+  "pending": null,
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:35+00:00",
+      "duration_ms": 4247,
+      "summary": "Read Portarlington Packaging Films Pty Ltd invoice PPF-03544: 1 line, total 6996.0.",
+      "reasoning": "Stated terms (30 days from end of month) do not match the printed due date of 30 Oct 2026 for a 7 Sep invoice date; the due date may be inconsistent with the terms as stated. Least certain fields: line 1 po_line (95%), line 1 description (97%), line 1 item_code (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2053,
+      "output_tokens": 615,
+      "cost_usd": 0.010763,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:39+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 21983167249 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($6,360.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$6,360.00 + $636.00 GST = $6,996.00."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:39+00:00",
+      "duration_ms": 0,
+      "summary": "Matched: PO, receipt and invoice agree",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($6,996.00 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 21 983 167 249 is Portarlington Packaging Films Pty Ltd (V1014)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Portarlington Packaging Films Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012122 (1 line, buyer M. Tran)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (BOPP film 20um x 1000mm, 6000 m roll) by item code."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$265.00/roll agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Billed 24 roll; received 24 roll. Covered by receipts."
+        },
+        {
+          "check": "GST",
+          "outcome": "pass",
+          "detail": "GST $636.00 = 10% of $6,360.00 taxable."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:39+00:00",
+      "duration_ms": 0,
+      "summary": "Auto-post: no human needed.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Clean three-way match and $6,996.00 is within the $20,000.00 auto-post limit."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "post",
+      "title": "Posted to the ledger",
+      "kind": "code",
+      "started_at": "2026-09-29T13:22:39+00:00",
+      "duration_ms": 0,
+      "summary": "Posted as document 5105900015; $6,996.00 scheduled for payment on 30 Oct 2026.",
+      "reasoning": "",
+      "trace": [],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 4247,
+    "llm_ms": 4247,
+    "cost_usd": 0.010763,
+    "input_tokens": 2053,
+    "output_tokens": 615
+  }
+}

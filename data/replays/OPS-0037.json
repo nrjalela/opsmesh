@@ -1,0 +1,536 @@
+{
+  "doc_id": "OPS-0037",
+  "file": "OPS-0037.pdf",
+  "received_date": "2026-09-23",
+  "recorded_at": "2026-09-29T13:23:24+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Corio Bay Freight Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "88 165 912 623",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "CBF-1401",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-09-22",
+        "confidence": 0.99
+      },
+      "due_date": {
+        "value": "2026-10-06",
+        "confidence": 0.99
+      },
+      "po_number": {
+        "value": "4500012166",
+        "confidence": 0.97
+      },
+      "currency": {
+        "value": null,
+        "confidence": 0.85
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "International sea freight - Ningbo to Melbourne, 20ft",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 1.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": null,
+            "confidence": 0.9
+          },
+          "unit_price": {
+            "value": 2480.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 2480.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.6
+          }
+        },
+        {
+          "description": {
+            "value": "Wharf cartage and container handling",
+            "confidence": 0.98
+          },
+          "item_code": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.97
+          },
+          "quantity": {
+            "value": 1.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": null,
+            "confidence": 0.9
+          },
+          "unit_price": {
+            "value": 385.0,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 385.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": null,
+            "confidence": 0.6
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 2865.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 286.5,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 3151.5,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Payment by direct deposit; please use the invoice number as reference.",
+        "confidence": 0.9
+      },
+      "notes_for_ap": "Freight invoice for international sea freight; no currency stated (assumed AUD but not printed). Line-level GST treatment is not shown, though total GST is 10% of the subtotal. PO is referenced under 'Reference'."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 88165912623 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($2,865.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$2,865.00 + $286.50 GST = $3,151.50."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.97
+    },
+    "invoice": {
+      "vendor_name": "Corio Bay Freight Pty Ltd",
+      "vendor_abn": "88165912623",
+      "invoice_number": "CBF-1401",
+      "invoice_date": "2026-09-22",
+      "po_number": "4500012166",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "International sea freight - Ningbo to Melbourne, 20ft",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1.0",
+          "uom": null,
+          "unit_price": "2480.0",
+          "amount": "2480.0",
+          "gst_applicable": null
+        },
+        {
+          "description": "Wharf cartage and container handling",
+          "item_code": null,
+          "po_line": null,
+          "quantity": "1.0",
+          "uom": null,
+          "unit_price": "385.0",
+          "amount": "385.0",
+          "gst_applicable": null
+        }
+      ],
+      "subtotal": "2865.0",
+      "gst_amount": "286.5",
+      "total": "3151.5",
+      "remarks": "Payment by direct deposit; please use the invoice number as reference."
+    },
+    "match": {
+      "invoice_number": "CBF-1401",
+      "vendor_id": "V1004",
+      "vendor_name": "Corio Bay Freight Pty Ltd",
+      "po_number": "4500012166",
+      "exceptions": [
+        {
+          "type": "gst_error",
+          "message": "GST has been charged on GST-free line 1 (International sea freight - Ningbo to Melbourne, 20ft). Expected GST is $38.50 (10% of $385.00 taxable) but the invoice shows $286.50, $248.00 too much. Ask the vendor for a corrected tax invoice.",
+          "line": null,
+          "details": {
+            "expected_gst": "38.50",
+            "invoice_gst": "286.5",
+            "difference": "248.00",
+            "cause": "gst_on_gst_free"
+          }
+        }
+      ],
+      "lines": [
+        {
+          "invoice_line": 1,
+          "description": "International sea freight - Ningbo to Melbourne, 20ft",
+          "po_line": 10,
+          "match_method": "description (100% similar)",
+          "line_type": "service",
+          "tax_code": "FRE",
+          "po_price": "2480.00",
+          "invoice_price": "2480.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "1",
+          "received_qty": null,
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "1.0",
+          "amount": "2480.0"
+        },
+        {
+          "invoice_line": 2,
+          "description": "Wharf cartage and container handling",
+          "po_line": 20,
+          "match_method": "description (100% similar)",
+          "line_type": "service",
+          "tax_code": "GST",
+          "po_price": "385.00",
+          "invoice_price": "385.0",
+          "price_variance_pct": "0.0000",
+          "ordered_qty": "1",
+          "received_qty": null,
+          "previously_invoiced_qty": "0",
+          "invoiced_qty": "1.0",
+          "amount": "385.0"
+        }
+      ],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($3,151.50 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 88 165 912 623 is Corio Bay Freight Pty Ltd (V1004)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Corio Bay Freight Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012166 (2 lines, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (International sea freight - Ningbo to Melbourne, 20ft) by description (100% similar)."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$2,480.00/ctr agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ctr of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Wharf cartage and container handling) by description (100% similar)."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$385.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ea of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "fail",
+          "detail": "GST has been charged on GST-free line 1 (International sea freight - Ningbo to Melbourne, 20ft). Expected GST is $38.50 (10% of $385.00 taxable) but the invoice shows $286.50, $248.00 too much. Ask the vendor for a corrected tax invoice."
+        }
+      ],
+      "taxable_amount": "385.00",
+      "expected_gst": "38.50",
+      "invoice_total": "3151.5"
+    },
+    "analysis": {
+      "headline": "Invoice CBF-1401 from Corio Bay Freight overcharges GST by $248.00 on a total of $3,151.50.",
+      "explanation": "GST has been charged on line 1, International sea freight - Ningbo to Melbourne, 20ft, which is GST-free. Expected GST is $38.50 (10% of the $385.00 taxable amount), but the invoice shows $286.50, which is $248.00 too much. Vendor and PO details otherwise match our records.",
+      "recommended_action": "Hold the invoice for payment and request a corrected tax invoice from Corio Bay Freight. Release payment only once the corrected invoice is received and checked.",
+      "drafts": [
+        {
+          "kind": "vendor_email",
+          "to": "Corio Bay Freight Pty Ltd <billing@coriobayfreight.example>",
+          "subject": "Invoice CBF-1401 (PO 4500012166) - request for corrected tax invoice",
+          "body": "Hello,\n\nThank you for invoice CBF-1401 dated 22 September 2026 against our purchase order 4500012166, with a total of $3,151.50 including GST.\n\nDuring our review we noticed that GST appears to have been charged on line 1, International sea freight - Ningbo to Melbourne, 20ft, which we understand to be GST-free. Based on the taxable amount of $385.00, we would expect GST of $38.50 (10%). The invoice shows GST of $286.50, which is $248.00 higher than expected.\n\nCould you please review this and send us a corrected tax invoice showing the correct GST amount? If you believe the GST as charged is correct, please let us know the basis so we can review it on our side.\n\nWe will process payment once the corrected invoice has been received. Please quote invoice number CBF-1401 and PO 4500012166 in your reply.\n\nKind regards,\nAccounts Payable, Corio Packaging"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "vendor_email",
+        "to": "Corio Bay Freight Pty Ltd <billing@coriobayfreight.example>",
+        "purpose": "Ask the vendor for a corrected tax invoice, stating the GST we expected and why.",
+        "exception_types": [
+          "gst_error"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Officer",
+      "reasons": [
+        "GST doesn't add up (reviewer: AP Officer)."
+      ],
+      "recommendation": "resolve_first",
+      "decided_at": "2026-09-29T13:23:24+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0037",
+    "approver": "AP Officer",
+    "recommendation": "resolve_first",
+    "reasons": [
+      "GST doesn't add up (reviewer: AP Officer)."
+    ],
+    "vendor": "Corio Bay Freight Pty Ltd",
+    "invoice_number": "CBF-1401",
+    "total": "3151.5",
+    "headline": "Invoice CBF-1401 from Corio Bay Freight overcharges GST by $248.00 on a total of $3,151.50."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:14+00:00",
+      "duration_ms": 5209,
+      "summary": "Read Corio Bay Freight Pty Ltd invoice CBF-1401: 2 lines, total 3151.5.",
+      "reasoning": "Freight invoice for international sea freight; no currency stated (assumed AUD but not printed). Line-level GST treatment is not shown, though total GST is 10% of the subtotal. PO is referenced under 'Reference'. Least certain fields: po_number (97%), line 1 item_code (97%), line 1 po_line (97%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2009,
+      "output_tokens": 778,
+      "cost_usd": 0.012305,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:19+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 88165912623 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($2,865.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$2,865.00 + $286.50 GST = $3,151.50."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 20 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:19+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: gst doesn't add up",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($3,151.50 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 88 165 912 623 is Corio Bay Freight Pty Ltd (V1004)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "pass",
+          "detail": "No earlier invoice from Corio Bay Freight Pty Ltd matches this number, amount or date."
+        },
+        {
+          "check": "Purchase order",
+          "outcome": "pass",
+          "detail": "PO 4500012166 (2 lines, buyer J. Okafor)."
+        },
+        {
+          "check": "Line 1",
+          "outcome": "info",
+          "detail": "Matched to PO line 10 (International sea freight - Ningbo to Melbourne, 20ft) by description (100% similar)."
+        },
+        {
+          "check": "Line 1 price",
+          "outcome": "pass",
+          "detail": "$2,480.00/ctr agrees with the PO."
+        },
+        {
+          "check": "Line 1 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ctr of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "Line 2",
+          "outcome": "info",
+          "detail": "Matched to PO line 20 (Wharf cartage and container handling) by description (100% similar)."
+        },
+        {
+          "check": "Line 2 price",
+          "outcome": "pass",
+          "detail": "$385.00/ea agrees with the PO."
+        },
+        {
+          "check": "Line 2 quantity",
+          "outcome": "pass",
+          "detail": "Service line, two-way match: billed 1 ea of 1 remaining on the PO. No goods receipt needed."
+        },
+        {
+          "check": "GST",
+          "outcome": "fail",
+          "detail": "GST has been charged on GST-free line 1 (International sea freight - Ningbo to Melbourne, 20ft). Expected GST is $38.50 (10% of $385.00 taxable) but the invoice shows $286.50, $248.00 too much. Ask the vendor for a corrected tax invoice."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:19+00:00",
+      "duration_ms": 4916,
+      "summary": "Invoice CBF-1401 from Corio Bay Freight overcharges GST by $248.00 on a total of $3,151.50. Drafted 1 message(s).",
+      "reasoning": "GST has been charged on line 1, International sea freight - Ningbo to Melbourne, 20ft, which is GST-free. Expected GST is $38.50 (10% of the $385.00 taxable amount), but the invoice shows $286.50, which is $248.00 too much. Vendor and PO details otherwise match our records. Recommended: Hold the invoice for payment and request a corrected tax invoice from Corio Bay Freight. Release payment only once the corrected invoice is received and checked.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 560,
+      "output_tokens": 636,
+      "cost_usd": 0.007688,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:24+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Officer.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "GST doesn't add up (reviewer: AP Officer)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 10125,
+    "llm_ms": 10125,
+    "cost_usd": 0.019993,
+    "input_tokens": 2569,
+    "output_tokens": 1414
+  }
+}

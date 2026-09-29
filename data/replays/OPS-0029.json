@@ -1,0 +1,378 @@
+{
+  "doc_id": "OPS-0029",
+  "file": "OPS-0029.pdf",
+  "received_date": "2026-09-19",
+  "recorded_at": "2026-09-29T13:23:08+00:00",
+  "model": "claude-sonnet-5-5",
+  "status": "awaiting_approval",
+  "state": {
+    "extraction": {
+      "is_tax_invoice": true,
+      "vendor_name": {
+        "value": "Surf Coast Corrugated Pty Ltd",
+        "confidence": 0.99
+      },
+      "vendor_abn": {
+        "value": "27 591 768 909",
+        "confidence": 0.98
+      },
+      "invoice_number": {
+        "value": "INV-004417",
+        "confidence": 0.99
+      },
+      "invoice_date": {
+        "value": "2026-08-14",
+        "confidence": 0.98
+      },
+      "due_date": {
+        "value": "2026-09-30",
+        "confidence": 0.98
+      },
+      "po_number": {
+        "value": "4500012148",
+        "confidence": 0.98
+      },
+      "currency": {
+        "value": "AUD",
+        "confidence": 0.95
+      },
+      "lines": [
+        {
+          "description": {
+            "value": "RSC carton 400x300x250 C-flute",
+            "confidence": 0.95
+          },
+          "item_code": {
+            "value": "CTN-RSC-400",
+            "confidence": 0.95
+          },
+          "po_line": {
+            "value": null,
+            "confidence": 0.95
+          },
+          "quantity": {
+            "value": 4400.0,
+            "confidence": 0.98
+          },
+          "uom": {
+            "value": "ea",
+            "confidence": 0.97
+          },
+          "unit_price": {
+            "value": 1.12,
+            "confidence": 0.98
+          },
+          "amount": {
+            "value": 4928.0,
+            "confidence": 0.98
+          },
+          "gst_applicable": {
+            "value": true,
+            "confidence": 0.95
+          }
+        }
+      ],
+      "subtotal_ex_gst": {
+        "value": 4928.0,
+        "confidence": 0.99
+      },
+      "gst_amount": {
+        "value": 492.8,
+        "confidence": 0.99
+      },
+      "total_inc_gst": {
+        "value": 5420.8,
+        "confidence": 0.99
+      },
+      "remarks": {
+        "value": "Terms: 30 days from end of month. Pay by EFT, reference INV-004417.",
+        "confidence": 0.9
+      },
+      "notes_for_ap": "Printed due date (30 Sep 2026) is consistent with the terms of 30 days from end of month only loosely: end of August plus 30 days would be 30 Sep. Invoice received 2026-09-19, so payment is due soon. No PO line number is printed."
+    },
+    "validation": {
+      "checks": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 27591768909 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($4,928.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$4,928.00 + $492.80 GST = $5,420.80."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "missing": [],
+      "low_confidence": [],
+      "min_confidence": 0.95
+    },
+    "invoice": {
+      "vendor_name": "Surf Coast Corrugated Pty Ltd",
+      "vendor_abn": "27591768909",
+      "invoice_number": "INV-004417",
+      "invoice_date": "2026-08-14",
+      "po_number": "4500012148",
+      "currency": "AUD",
+      "lines": [
+        {
+          "description": "RSC carton 400x300x250 C-flute",
+          "item_code": "CTN-RSC-400",
+          "po_line": null,
+          "quantity": "4400.0",
+          "uom": "ea",
+          "unit_price": "1.12",
+          "amount": "4928.0",
+          "gst_applicable": true
+        }
+      ],
+      "subtotal": "4928.0",
+      "gst_amount": "492.8",
+      "total": "5420.8",
+      "remarks": "Terms: 30 days from end of month. Pay by EFT, reference INV-004417."
+    },
+    "match": {
+      "invoice_number": "INV-004417",
+      "vendor_id": "V1002",
+      "vendor_name": "Surf Coast Corrugated Pty Ltd",
+      "po_number": "4500012148",
+      "exceptions": [
+        {
+          "type": "duplicate_invoice",
+          "message": "Invoice INV-004417 from Surf Coast Corrugated Pty Ltd was already posted on 18 Aug 2026 (document 5105000249, $5,420.80). This is a resent copy. Paying it would pay the vendor twice.",
+          "line": null,
+          "details": {
+            "match": "exact",
+            "posted_document": "5105000249",
+            "posted_invoice_number": "INV-004417"
+          }
+        }
+      ],
+      "lines": [],
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($5,420.80 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 27 591 768 909 is Surf Coast Corrugated Pty Ltd (V1002)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "fail",
+          "detail": "Invoice INV-004417 from Surf Coast Corrugated Pty Ltd was already posted on 18 Aug 2026 (document 5105000249, $5,420.80). This is a resent copy. Paying it would pay the vendor twice."
+        }
+      ],
+      "taxable_amount": null,
+      "expected_gst": null,
+      "invoice_total": "5420.8"
+    },
+    "analysis": {
+      "headline": "Invoice INV-004417 from Surf Coast Corrugated for $5,420.80 is a resent duplicate of an invoice already posted, and paying it would double-pay the vendor.",
+      "explanation": "Invoice INV-004417 (PO 4500012148) matches exactly an invoice already posted on 18 Aug 2026 as document 5105000249 for $5,420.80. The copy received is a resend of the same invoice. The original is already in the system for payment, so this copy should not be processed.",
+      "recommended_action": "Do not post or pay this copy; hold it as a duplicate and keep document 5105000249 as the only payable item. Send the vendor the courtesy note so they stop resending.",
+      "drafts": [
+        {
+          "kind": "vendor_email",
+          "to": "Surf Coast Corrugated Pty Ltd <ar@surfcoastcorrugated.example>",
+          "subject": "Invoice INV-004417 (PO 4500012148) - already received, no action needed",
+          "body": "Hello,\n\nThank you for your invoice INV-004417 dated 14 August 2026 for $5,420.80 (including GST), raised against our purchase order 4500012148.\n\nWe received a second copy of this invoice. Our records show the original was already entered into our system on 18 August 2026, so the resent copy will not be processed and the invoice will not be paid twice. It is scheduled for payment on 30 September 2026 in line with the agreed terms.\n\nNo action is needed from you, and there is no need to resend the invoice.\n\nKind regards,\nAccounts Payable, Corio Packaging"
+        }
+      ]
+    },
+    "draft_requests": [
+      {
+        "kind": "vendor_email",
+        "to": "Surf Coast Corrugated Pty Ltd <ar@surfcoastcorrugated.example>",
+        "purpose": "Let the vendor know this invoice is already in our system and won't be paid twice; it is due for payment on 30 September 2026. No action needed from them; please don't resend.",
+        "exception_types": [
+          "duplicate_invoice"
+        ]
+      }
+    ],
+    "route": {
+      "action": "needs_approval",
+      "approver": "AP Officer",
+      "reasons": [
+        "Duplicate invoice (reviewer: AP Officer)."
+      ],
+      "recommendation": "reject",
+      "decided_at": "2026-09-29T13:23:08+00:00"
+    },
+    "decision": null,
+    "outcome": null,
+    "errors": []
+  },
+  "pending": {
+    "doc_id": "OPS-0029",
+    "approver": "AP Officer",
+    "recommendation": "reject",
+    "reasons": [
+      "Duplicate invoice (reviewer: AP Officer)."
+    ],
+    "vendor": "Surf Coast Corrugated Pty Ltd",
+    "invoice_number": "INV-004417",
+    "total": "5420.8",
+    "headline": "Invoice INV-004417 from Surf Coast Corrugated for $5,420.80 is a resent duplicate of an invoice already posted, and paying it would double-pay the vendor."
+  },
+  "steps": [
+    {
+      "node": "intake",
+      "title": "Intake agent read the PDF",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:22:59+00:00",
+      "duration_ms": 4761,
+      "summary": "Read Surf Coast Corrugated Pty Ltd invoice INV-004417: 1 line, total 5420.8.",
+      "reasoning": "Printed due date (30 Sep 2026) is consistent with the terms of 30 days from end of month only loosely: end of August plus 30 days would be 30 Sep. Invoice received 2026-09-19, so payment is due soon. No PO line number is printed. Least certain fields: line 1 description (95%), line 1 item_code (95%), line 1 po_line (95%).",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 2044,
+      "output_tokens": 628,
+      "cost_usd": 0.010875,
+      "error": null
+    },
+    {
+      "node": "validate",
+      "title": "Checked the extraction",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:03+00:00",
+      "duration_ms": 0,
+      "summary": "All extraction checks passed.",
+      "reasoning": "ABN checksum, arithmetic cross-checks and per-field confidence, in code.",
+      "trace": [
+        {
+          "check": "Required fields",
+          "outcome": "pass",
+          "detail": "Vendor, ABN, invoice number, date and total were all found."
+        },
+        {
+          "check": "ABN checksum",
+          "outcome": "pass",
+          "detail": "ABN 27591768909 passes the ATO checksum."
+        },
+        {
+          "check": "Line arithmetic",
+          "outcome": "pass",
+          "detail": "Every line: quantity x unit price = amount."
+        },
+        {
+          "check": "Lines vs subtotal",
+          "outcome": "pass",
+          "detail": "Lines add up to the subtotal ($4,928.00)."
+        },
+        {
+          "check": "Subtotal + GST = total",
+          "outcome": "pass",
+          "detail": "$4,928.00 + $492.80 GST = $5,420.80."
+        },
+        {
+          "check": "Confidence",
+          "outcome": "pass",
+          "detail": "All 14 fields at or above 80% confidence."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "match",
+      "title": "Three-way match",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:03+00:00",
+      "duration_ms": 0,
+      "summary": "1 exception: duplicate invoice",
+      "reasoning": "Deterministic rules: vendor master, AP ledger, PO, goods receipts and GST, with the tolerances in config/tolerances.yaml.",
+      "trace": [
+        {
+          "check": "Arithmetic",
+          "outcome": "pass",
+          "detail": "Lines, subtotal, GST and total add up ($5,420.80 inc GST)."
+        },
+        {
+          "check": "Vendor",
+          "outcome": "pass",
+          "detail": "ABN 27 591 768 909 is Surf Coast Corrugated Pty Ltd (V1002)."
+        },
+        {
+          "check": "Duplicate",
+          "outcome": "fail",
+          "detail": "Invoice INV-004417 from Surf Coast Corrugated Pty Ltd was already posted on 18 Aug 2026 (document 5105000249, $5,420.80). This is a resent copy. Paying it would pay the vendor twice."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    },
+    {
+      "node": "explain",
+      "title": "Exception agent explained the problem",
+      "kind": "llm",
+      "started_at": "2026-09-29T13:23:03+00:00",
+      "duration_ms": 4958,
+      "summary": "Invoice INV-004417 from Surf Coast Corrugated for $5,420.80 is a resent duplicate of an invoice already posted, and paying it would double-pay the vendor. Drafted 1 message(s).",
+      "reasoning": "Invoice INV-004417 (PO 4500012148) matches exactly an invoice already posted on 18 Aug 2026 as document 5105000249 for $5,420.80. The copy received is a resend of the same invoice. The original is already in the system for payment, so this copy should not be processed. Recommended: Do not post or pay this copy; hold it as a duplicate and keep document 5105000249 as the only payable item. Send the vendor the courtesy note so they stop resending.",
+      "trace": [],
+      "model": "claude-sonnet-5-5",
+      "input_tokens": 571,
+      "output_tokens": 531,
+      "cost_usd": 0.00666,
+      "error": null
+    },
+    {
+      "node": "route",
+      "title": "Approval router",
+      "kind": "code",
+      "started_at": "2026-09-29T13:23:08+00:00",
+      "duration_ms": 0,
+      "summary": "Needs approval from the AP Officer.",
+      "reasoning": "Rules in config/approval_rules.yaml: auto-post limit, amount tiers, exception reviewers and confidence threshold.",
+      "trace": [
+        {
+          "check": "Rule",
+          "outcome": "info",
+          "detail": "Duplicate invoice (reviewer: AP Officer)."
+        }
+      ],
+      "model": null,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0,
+      "error": null
+    }
+  ],
+  "metrics": {
+    "automated_ms": 9719,
+    "llm_ms": 9719,
+    "cost_usd": 0.017535,
+    "input_tokens": 2615,
+    "output_tokens": 1159
+  }
+}
