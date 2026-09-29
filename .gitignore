@@ -23,3 +23,7 @@ data/runtime/
 
 # Local tooling
 .claude/
+
+# Live-mode working folders (the workflow uses these; state lives on the opsmesh-state branch)
+/state/
+/out/

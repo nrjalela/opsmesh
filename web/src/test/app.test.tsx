@@ -68,6 +68,17 @@ describe("replay site", () => {
   });
 });
 
+describe("controls page", () => {
+  it("explains limits, live mode and the honest limitations", () => {
+    render(<App batch={batch} />);
+    goTo("#/controls");
+    expect(screen.getByRole("heading", { name: "How OpsMesh keeps AP safe" })).toBeTruthy();
+    expect(screen.getByText(/5 invoices a day/)).toBeTruthy();
+    expect(screen.getByText(/Honest limitation/)).toBeTruthy();
+    expect(screen.getAllByText(/\$20,000\.00/).length).toBeGreaterThan(0);
+  });
+});
+
 describe("amber is reserved for holds and exceptions", () => {
   it("a clean, auto-posted invoice shows no warning styling", () => {
     const { container } = render(<App batch={batch} />);

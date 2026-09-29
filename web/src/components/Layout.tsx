@@ -36,6 +36,7 @@ export function Layout({ route, children }: { route: RouteMatch; children: React
       active: route.page === "inbox",
     },
     { to: { page: "dashboard" }, label: <Label long="AP dashboard" short="Dashboard" />, active: route.page === "dashboard" },
+    { to: { page: "controls" }, label: <Label long="Controls" short="Controls" />, active: route.page === "controls" },
   ];
   const recorded = batch.runs[0]?.recorded_at;
   return (

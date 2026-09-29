@@ -1,0 +1,7 @@
+# Minimal set for the GitHub Actions live runner (no Streamlit, reportlab or pandas).
+anthropic==1.9.0
+langgraph==1.2.12
+langgraph-checkpoint-sqlite==3.1.1
+pydantic==2.13.5
+PyYAML==6.0.3
+python-dotenv==1.2.3

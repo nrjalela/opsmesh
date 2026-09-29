@@ -1,0 +1,26 @@
+name: Submit invoice
+description: Run a supplier invoice PDF through OpsMesh live (repo owner only).
+title: "Invoice: "
+labels: ["invoice"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **OpsMesh live mode.** Only issues opened by @nrjalela are processed; anything else is ignored.
+        This repo is **public**: the PDF and every bot comment are visible to anyone.
+        Use the synthetic sample invoices in [`data/invoices/`](https://github.com/nrjalela/opsmesh/tree/main/data/invoices) only.
+  - type: upload
+    id: invoice_pdf
+    attributes:
+      label: Invoice PDF
+      description: One invoice, as a PDF (10 MB max).
+    validations:
+      required: true
+      accept: ".pdf"
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: This is a synthetic demo invoice with no real personal or company data.
+          required: true

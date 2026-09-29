@@ -6,7 +6,8 @@ export type RouteMatch =
   | { page: "queue" }
   | { page: "invoice"; id: string }
   | { page: "inbox" }
-  | { page: "dashboard" };
+  | { page: "dashboard" }
+  | { page: "controls" };
 
 export function parse(hash: string): RouteMatch {
   const path = hash.replace(/^#/, "") || "/";
@@ -14,6 +15,7 @@ export function parse(hash: string): RouteMatch {
   if (inv) return { page: "invoice", id: inv[1] };
   if (path === "/inbox") return { page: "inbox" };
   if (path === "/dashboard") return { page: "dashboard" };
+  if (path === "/controls") return { page: "controls" };
   return { page: "queue" };
 }
 

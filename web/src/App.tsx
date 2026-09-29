@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { AppProvider } from "./app-context";
 import { Layout } from "./components/Layout";
 import { Toast } from "./components/ui";
+import { ControlsPage } from "./pages/Controls";
 import { DashboardPage } from "./pages/Dashboard";
 import { InboxPage } from "./pages/Inbox";
 import { InvoicePage } from "./pages/Invoice";
@@ -27,6 +28,7 @@ function Routes() {
       {route.page === "invoice" && <InvoicePage key={route.id} id={route.id} onToast={setToast} />}
       {route.page === "inbox" && <InboxPage onToast={setToast} />}
       {route.page === "dashboard" && <DashboardPage />}
+      {route.page === "controls" && <ControlsPage />}
       <Toast message={toast} onClear={clear} />
     </Layout>
   );

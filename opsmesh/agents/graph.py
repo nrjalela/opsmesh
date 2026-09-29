@@ -55,9 +55,22 @@ class APState(TypedDict, total=False):
     steps: Annotated[list[dict], operator.add]
 
 
+_master_override: MasterData | None = None
+
+
 @lru_cache
-def get_master() -> MasterData:
+def _static_master() -> MasterData:
     return MasterData.load(MASTER_DIR)
+
+
+def get_master() -> MasterData:
+    """Master data for matching. Live mode swaps in a copy whose AP ledger also holds live postings."""
+    return _master_override or _static_master()
+
+
+def use_master(master: MasterData | None) -> None:
+    global _master_override
+    _master_override = master
 
 
 def _step(**kw: Any) -> list[dict]:

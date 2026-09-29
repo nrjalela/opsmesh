@@ -1,0 +1,104 @@
+name: OpsMesh Live
+
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+# Nothing by default; the job below asks only for what it needs.
+permissions: {}
+
+# One run at a time, in order, so two runs never race to update the state branch.
+concurrency:
+  group: opsmesh-live
+  cancel-in-progress: false
+
+jobs:
+  live:
+    # The gate. It is evaluated before the job starts, so an issue or comment from
+    # anyone else never reaches a step that can read ANTHROPIC_API_KEY.
+    if: >-
+      github.repository == 'nrjalela/opsmesh' &&
+      contains(github.event.issue.labels.*.name, 'invoice') &&
+      !github.event.issue.pull_request && (
+        (github.event_name == 'issues' && github.event.issue.user.login == 'nrjalela') ||
+        (github.event_name == 'issue_comment' && github.event.comment.user.login == 'nrjalela' &&
+         startsWith(github.event.comment.body, '/'))
+      )
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write   # push the opsmesh-state branch
+      issues: write     # comment, label, close
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements-live.txt
+
+      - run: pip install -r requirements-live.txt
+
+      - name: Check out the state branch (checkpoints, ledger, audit log)
+        run: |
+          git config --global user.name "opsmesh-bot"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin opsmesh-state >/dev/null; then
+            git fetch --depth=1 origin opsmesh-state
+            git worktree add -B opsmesh-state state FETCH_HEAD
+          else
+            git worktree add --orphan -b opsmesh-state state
+          fi
+
+      - name: Make sure the labels exist
+        run: |
+          gh label create invoice   --color 2F6B3F --description "Submitted to OpsMesh live" --force
+          gh label create posted    --color 2F6B3F --description "Posted to the ledger"      --force
+          gh label create held      --color D99A2B --description "Waiting for /approve or /reject" --force
+          gh label create rejected  --color A3362A --description "Rejected by the approver" --force
+          gh label create duplicate --color 6B6B6B --description "Same PDF already submitted" --force
+          gh label create over-cap  --color D99A2B --description "Daily cap reached; /retry tomorrow" --force
+
+      - name: Run OpsMesh
+        # Issue and comment text reach Python as environment variables, never pasted into the script.
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPSMESH_MODEL: claude-sonnet-5-5
+          GITHUB_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_AUTHOR: ${{ github.event.issue.user.login }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_CREATED_AT: ${{ github.event.issue.created_at }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EVENT: ${{ github.event_name == 'issues' && 'issue' || 'comment' }}
+        run: python -m opsmesh.live.cli "$EVENT" --state state --out out
+
+      - name: Save state (commit to opsmesh-state)
+        run: |
+          cd state
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Live: issue #$ISSUE ($(jq -r .status ../out/result.json))"
+            git push origin HEAD:opsmesh-state
+          fi
+
+      - name: Comment, label, close
+        run: |
+          r=out/result.json
+          if [ "$(jq -r .comment $r)" = "true" ]; then gh issue comment "$ISSUE" --body-file out/comment.md; fi
+          for l in $(jq -r '.add_labels[]' $r); do gh issue edit "$ISSUE" --add-label "$l"; done
+          if [ "$(jq -r .status $r)" != "ignored" ] && [ "$(jq -r .status $r)" != "noop" ]; then
+            for l in $(jq -r '.remove_labels[]' $r); do gh issue edit "$ISSUE" --remove-label "$l" 2>/dev/null || true; done
+          fi
+          if [ "$(jq -r .close $r)" = "true" ]; then
+            if [ "$(jq -r .status $r)" = "posted" ]; then reason=completed; else reason="not planned"; fi
+            gh issue close "$ISSUE" --reason "$reason"
+          fi

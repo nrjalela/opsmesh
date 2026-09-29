@@ -55,6 +55,44 @@ flowchart LR
     A -.-> E["Streamlit console<br/>live mode, run locally"]
 ```
 
+## Live mode: a real invoice through the real pipeline (GitHub Actions)
+
+The demo site replays recorded runs. **Live mode** runs the same LangGraph pipeline for real, on GitHub's own infrastructure, with no extra accounts:
+
+1. Open a **[Submit invoice](https://github.com/nrjalela/opsmesh/issues/new?template=submit-invoice.yml)** issue and upload a PDF. Only issues from @nrjalela are processed.
+2. A workflow ([.github/workflows/live.yml](.github/workflows/live.yml)) checks the author, the PDF hash (so a duplicate costs nothing) and the daily cap of 5. It then runs intake, match, explanation and routing, with Claude called through a repository secret.
+3. The bot comments with what it read, every match check, the exception explanation and the drafted follow-up. It labels the issue `posted`, `held` or `rejected`.
+4. For a held invoice, comment `/approve <note>` or `/reject <note>`. The paused run resumes from its checkpoint, posts or rejects, and closes the issue.
+
+```mermaid
+flowchart LR
+    I["Issue opened<br/>with a PDF"] --> G{"Owner? PDF?<br/>New hash? Under cap?"}
+    G -- no --> X["Comment only<br/>(no API call)"]
+    G -- yes --> P["LangGraph pipeline<br/>intake → match → explain → route"]
+    P -- clean --> C1["Comment + label posted<br/>close"]
+    P -- held --> C2["Comment + label held"]
+    C2 --> D["/approve or /reject<br/>from @nrjalela"]
+    D --> R["Resume from checkpoint<br/>post or reject, close"]
+    S[("opsmesh-state branch<br/>checkpoints.sqlite · ledger.json<br/>hashes.json · audit.jsonl")] <-.-> P
+    S <-.-> R
+```
+
+**Where the paused run lives between Action runs.** Every run starts on a fresh machine, so state goes on a dedicated `opsmesh-state` branch: LangGraph's SQLite checkpointer, the live ledger, the PDF-hash index and an append-only audit log.
+- It's durable, free and versioned: every decision is a commit.
+- The Actions cache was ruled out because it can be evicted, and artifacts because they expire.
+- The workflow's `concurrency` group runs one job at a time, so writes never collide.
+
+**Safety on a public repo.**
+- Only the owner can trigger work, and that check runs before any step that can see the API key.
+- Issue text is passed to the code as data, never pasted into shell commands.
+- PDFs are only fetched from GitHub's attachment host or this repo's sample invoices.
+- The workflow token can only write issues and the state branch.
+- Everything posted is public, so use the synthetic sample invoices only.
+
+The [Controls page](https://nrjalela.github.io/opsmesh/#/controls) covers this in plain English, including where data is processed. Neither GitHub's runners nor the Claude API guarantee processing in Australia.
+
+**Cost:** Actions minutes are free on public repos. Claude costs about $0.015 per invoice, capped at 5 a day.
+
 ## Why the matching is code, not an LLM
 
 The model does what code can't: it reads messy documents and writes clear explanations. Deciding whether an invoice gets paid stays in plain, tested Python, for five reasons:
@@ -130,7 +168,7 @@ Rebuild everything from scratch:
 | Bundle replays for the website | `.venv/bin/python -m opsmesh.replay.export_web` |
 | Run the React site locally | `cd web && npm ci && npm run dev` |
 
-CI runs the Python and web tests on every push and deploys the site to GitHub Pages from `main` ([.github/workflows/ci.yml](.github/workflows/ci.yml)).
+CI runs the Python and web tests on every push and deploys the site to GitHub Pages from `main` ([.github/workflows/ci.yml](.github/workflows/ci.yml)). Live mode needs one repository secret, set once with `gh secret set ANTHROPIC_API_KEY`.
 
 ## Project layout
 
@@ -142,6 +180,7 @@ opsmesh/
   replay/      recording, accuracy scoring, web export
 config/        tolerances and approval rules (YAML)
 data/          vendor master, POs, receipts, AP ledger, invoices, replays, answer key
+  live/        GitHub Actions live mode: issue parsing, gate, state branch, comments
 web/           React + TypeScript replay site (GitHub Pages)
 app/, streamlit_app.py   local Streamlit console with live mode
 tests/         pytest: engine, schema, offline graph, Streamlit smoke test
