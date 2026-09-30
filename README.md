@@ -190,4 +190,4 @@ tests/         pytest: engine, schema, offline graph, Streamlit smoke test
 
 ---
 
-Built by Nihar Jalela · [GitHub](https://github.com/nrjalela)
+Built by Nihar Jalela · [LinkedIn](https://www.linkedin.com/in/niharjalela/) · [GitHub](https://github.com/nrjalela)

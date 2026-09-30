@@ -5,8 +5,7 @@ import { href, type RouteMatch } from "../router";
 
 export const REPO_URL = "https://github.com/nrjalela/opsmesh";
 export const GITHUB_URL = "https://github.com/nrjalela";
-// TODO: set to the LinkedIn profile URL; the link is hidden while this is empty.
-export const LINKEDIN_URL = "";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/niharjalela/";
 
 function Label({ long, short }: { long: string; short: string }) {
   return (
