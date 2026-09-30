@@ -108,9 +108,3 @@ The branch holds `checkpoints.sqlite` (LangGraph's official SQLite checkpointer)
 Three new tests cover it. The retry then ran for real ($0.033), was held for the price variance and short shipment, and `/approve` posted it and closed the issue.
 
 **Interview line:** *"My first live run exposed that failed attempts were being counted as processed. I made failures release their duplicate-hash and quota claims, and I corrected the record by appending a void event, because you don't rewrite an audit trail."*
-
----
-
-## Parked: Azure
-
-See [azure-plan.md](azure-plan.md) for the parked Azure plan: Functions, Blob, Cosmos DB, Foundry, and the honest data-zone findings.

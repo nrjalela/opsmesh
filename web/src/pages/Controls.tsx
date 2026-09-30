@@ -97,7 +97,6 @@ export function ControlsPage() {
           reading and explaining. Neither guarantees processing in Australia, so this is not an
           Australian-data-residency setup.
         </>,
-        <>An Azure version with more control over where data lives is planned; see <a href={`${REPO_URL}/blob/main/docs/azure-plan.md`}>docs/azure-plan.md</a>.</>,
       ],
     },
   ];
